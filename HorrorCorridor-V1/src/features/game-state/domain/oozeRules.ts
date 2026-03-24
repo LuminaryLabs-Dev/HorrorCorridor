@@ -12,15 +12,6 @@ const resolveRng = (rng?: MazeRng): MazeRng => rng ?? Math.random;
 const trailDistance = (left: { x: number; z: number }, right: { x: number; z: number }): number =>
   Math.hypot(left.x - right.x, left.z - right.z);
 
-const sortTrail = (trail: GameState["oozeTrail"]): GameState["oozeTrail"] =>
-  [...trail].sort(
-    (left, right) =>
-      left.createdAtMs - right.createdAtMs ||
-      left.lastUpdatedAtMs - right.lastUpdatedAtMs ||
-      left.x - right.x ||
-      left.z - right.z,
-  );
-
 export const decayOozeTrail = (
   state: GameState,
   input: OozeTrailUpdateInput,
@@ -30,15 +21,12 @@ export const decayOozeTrail = (
   }
 
   const rng = resolveRng(input.rng);
-  const nextTrail = sortTrail(
-    state.oozeTrail
-      .filter(() => rng() >= 0.1)
-      .map((ooze) => ({
-        ...ooze,
-        scale: round3(Math.max(0.001, ooze.scale * 0.75)),
-        lastUpdatedAtMs: input.nowMs,
-      })),
-  );
+  const nextTrail = state.oozeTrail
+    .filter(() => rng() >= 0.1)
+    .map((ooze) => ({
+      ...ooze,
+      scale: round3(Math.max(0.001, ooze.scale * 0.75)),
+    }));
 
   return {
     ...state,
@@ -69,14 +57,12 @@ export const spawnOozeTrail = (
       y: round3(0.01 + rng() * 0.02),
       rotY: rng() * Math.PI,
       scale: 1,
-      createdAtMs: input.nowMs,
-      lastUpdatedAtMs: input.nowMs,
     });
   }
 
   return {
     ...state,
-    oozeTrail: sortTrail(nextTrail),
+    oozeTrail: nextTrail,
     oozeLevel: nextTrail.length,
   };
 };

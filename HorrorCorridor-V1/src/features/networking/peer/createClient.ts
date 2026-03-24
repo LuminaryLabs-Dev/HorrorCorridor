@@ -58,16 +58,52 @@ const createPeerInstance = (
 const resolvePeerId = (currentPeerId: string | null, fallbackPeerId: string | null): string =>
   currentPeerId ?? fallbackPeerId ?? "unknown-peer";
 
+type LocalBridgePacket = Readonly<
+  | {
+      kind: "client-connect";
+      remotePeerId: string;
+      connectionId: string;
+      message?: never;
+      targetPeerId?: never;
+    }
+  | {
+      kind: "client-disconnect";
+      remotePeerId: string;
+      connectionId: string;
+      message?: never;
+      targetPeerId?: never;
+    }
+  | {
+      kind: "client-message";
+      remotePeerId: string;
+      connectionId: string;
+      message: ProtocolMessage;
+      targetPeerId?: never;
+    }
+  | {
+      kind: "host-message";
+      remotePeerId: string;
+      connectionId: string;
+      message: ProtocolMessage;
+      targetPeerId: string | null;
+    }
+>;
+
 export const createClient = (options: ClientCreateOptions): ClientTransportAdapter => {
   const codec = options.codec ?? defaultCodec;
   const eventBus: PeerEventBus = createPeerEventBus(options.onEvent ? [options.onEvent] : []);
   const peer: PeerInstance = createPeerInstance(options.peerId, options.peerOptions);
   const initialHostPeerId = options.hostPeerId ?? null;
+  const localBridge =
+    typeof BroadcastChannel !== "undefined" && initialHostPeerId
+      ? new BroadcastChannel(`horrorcorridor:${initialHostPeerId}`)
+      : null;
 
   let currentStatus: PeerTransportStatus = "opening";
   let currentPeerId: string | null = peer.id ?? options.peerId ?? null;
   let currentHostPeerId: string | null = initialHostPeerId;
   let activeConnection: PeerConnection | null = null;
+  let localConnectionRecord: PeerConnectionRecord | null = null;
 
   const emitStatus = (detail?: string): void => {
     eventBus.emit({
@@ -85,10 +121,59 @@ export const createClient = (options: ClientCreateOptions): ClientTransportAdapt
     activeConnection = connection;
   };
 
+  if (localBridge) {
+    localBridge.onmessage = (event: MessageEvent<LocalBridgePacket>) => {
+      const packet = event.data;
+
+      if (!packet) {
+        return;
+      }
+
+      if (packet.kind === "host-message") {
+        if (packet.targetPeerId && packet.targetPeerId !== currentPeerId) {
+          return;
+        }
+
+        eventBus.emit({
+          type: "peer/message",
+          role: "client",
+          roomId: options.roomId ?? null,
+          peerId: currentPeerId,
+          remotePeerId: packet.remotePeerId,
+          connectionId: packet.connectionId,
+          message: packet.message,
+          timestampMs: now(),
+        });
+        return;
+      }
+
+      if (packet.kind === "client-disconnect" && localConnectionRecord?.connectionId === packet.connectionId) {
+        localConnectionRecord = null;
+        currentStatus = "closed";
+        eventBus.emit({
+          type: "peer/connection-close",
+          role: "client",
+          roomId: options.roomId ?? null,
+          peerId: resolvePeerId(currentPeerId, options.peerId ?? null),
+          remotePeerId: packet.remotePeerId,
+          connectionId: packet.connectionId,
+          timestampMs: now(),
+        });
+        emitStatus("client disconnected");
+      }
+    };
+  }
+
   const hookConnection = (connection: PeerConnection): void => {
     setConnection(connection);
+    let connectionOpenEmitted = false;
 
-    connection.on("open", () => {
+    const emitConnectionOpen = (): void => {
+      if (connectionOpenEmitted) {
+        return;
+      }
+
+      connectionOpenEmitted = true;
       currentStatus = "connected";
       eventBus.emit({
         type: "peer/connection-open",
@@ -100,7 +185,15 @@ export const createClient = (options: ClientCreateOptions): ClientTransportAdapt
         timestampMs: now(),
       });
       emitStatus();
+    };
+
+    connection.on("open", () => {
+      emitConnectionOpen();
     });
+
+    if (connection.open) {
+      emitConnectionOpen();
+    }
 
     connection.on("data", (data) => {
       const message = codec.deserialize(data);
@@ -166,9 +259,11 @@ export const createClient = (options: ClientCreateOptions): ClientTransportAdapt
     emitStatus();
   });
 
-  peer.on("connection", (connection) => {
-    hookConnection(connection);
-  });
+  if (!localBridge) {
+    peer.on("connection", (connection) => {
+      hookConnection(connection);
+    });
+  }
 
   peer.on("disconnected", () => {
     currentStatus = "reconnecting";
@@ -207,12 +302,54 @@ export const createClient = (options: ClientCreateOptions): ClientTransportAdapt
     currentStatus = "connecting";
     emitStatus("connecting to host");
 
+    if (localBridge) {
+      const connectionId = `local-${currentPeerId ?? options.peerId ?? "client"}`;
+      localConnectionRecord = {
+        remotePeerId: hostPeerId,
+        connectionId,
+        label: "",
+        open: true,
+      };
+
+      localBridge.postMessage({
+        kind: "client-connect",
+        remotePeerId: currentPeerId ?? options.peerId ?? "unknown-peer",
+        connectionId,
+      } satisfies LocalBridgePacket);
+      currentStatus = "connected";
+      eventBus.emit({
+        type: "peer/connection-open",
+        role: "client",
+        roomId: options.roomId ?? null,
+        peerId: resolvePeerId(currentPeerId, options.peerId ?? null),
+        remotePeerId: hostPeerId,
+        connectionId,
+        timestampMs: now(),
+      });
+      emitStatus();
+      return true;
+    }
+
     const connection = peer.connect(hostPeerId, options.connectOptions);
     hookConnection(connection);
     return true;
   };
 
   const send = (message: ProtocolMessage): boolean => {
+    if (localBridge) {
+      if (!localConnectionRecord) {
+        return false;
+      }
+
+      localBridge.postMessage({
+        kind: "client-message",
+        remotePeerId: currentPeerId ?? options.peerId ?? "unknown-peer",
+        connectionId: localConnectionRecord.connectionId,
+        message,
+      } satisfies LocalBridgePacket);
+      return true;
+    }
+
     if (!activeConnection?.open) {
       return false;
     }
@@ -236,6 +373,10 @@ export const createClient = (options: ClientCreateOptions): ClientTransportAdapt
       return currentHostPeerId;
     },
     get connections() {
+      if (localConnectionRecord) {
+        return [localConnectionRecord];
+      }
+
       return activeConnection ? [createConnectionRecord(activeConnection)] : [];
     },
     onEvent: (listener: PeerTransportEventListener) => {
@@ -244,12 +385,26 @@ export const createClient = (options: ClientCreateOptions): ClientTransportAdapt
     destroy: () => {
       currentStatus = "closed";
       activeConnection = null;
+      localConnectionRecord = null;
+      localBridge?.close();
       peer.destroy();
       eventBus.clear();
     },
     connectToHost,
     send,
     disconnect: () => {
+      if (localBridge && localConnectionRecord) {
+        localBridge.postMessage({
+          kind: "client-disconnect",
+          remotePeerId: currentPeerId ?? options.peerId ?? "unknown-peer",
+          connectionId: localConnectionRecord.connectionId,
+        } satisfies LocalBridgePacket);
+        localConnectionRecord = null;
+        currentStatus = "closed";
+        emitStatus("client disconnected");
+        return;
+      }
+
       activeConnection?.close();
       activeConnection = null;
       peer.disconnect();

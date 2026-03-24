@@ -10,7 +10,18 @@ export const NETWORK_PROTOCOL_VERSION = 1 as const;
 
 export type ProtocolVersion = typeof NETWORK_PROTOCOL_VERSION;
 
-export type ProtocolEnvelope<TType extends string, TPayload> = Readonly<{
+export const PROTOCOL_MESSAGE_TYPES = {
+  START_GAME: "START_GAME",
+  PLAYER_UPDATE: "PLAYER_UPDATE",
+  TRY_INTERACT: "TRY_INTERACT",
+  SYNC: "SYNC",
+  LOBBY_EVENT: "LOBBY_EVENT",
+} as const;
+
+export type ProtocolMessageType =
+  (typeof PROTOCOL_MESSAGE_TYPES)[keyof typeof PROTOCOL_MESSAGE_TYPES];
+
+export type ProtocolEnvelope<TType extends ProtocolMessageType, TPayload> = Readonly<{
   type: TType;
   version: ProtocolVersion;
   senderId: PlayerId;
@@ -29,26 +40,21 @@ export type HostStartPayload = Readonly<{
   maxPlayers: number;
 }>;
 
-export type HostStartMessage = ProtocolEnvelope<"host/start", HostStartPayload>;
+export type HostStartMessage = ProtocolEnvelope<typeof PROTOCOL_MESSAGE_TYPES.START_GAME, HostStartPayload>;
 
 export type PlayerInputState = Readonly<{
   sequence: number;
   moveForward: number;
   moveStrafe: number;
   lookYaw: number;
-  sprint: boolean;
-  crouch: boolean;
   interact: boolean;
-  primaryAction: boolean;
-  secondaryAction: boolean;
 }>;
 
 export type PlayerPoseState = Readonly<{
   position: WorldPosition;
   rotationY: number;
+  pitch: number;
   velocity: WorldPosition;
-  grounded: boolean;
-  crouching: boolean;
 }>;
 
 export type PlayerUpdatePayload = Readonly<{
@@ -57,7 +63,10 @@ export type PlayerUpdatePayload = Readonly<{
   pose: PlayerPoseState;
 }>;
 
-export type PlayerUpdateMessage = ProtocolEnvelope<"client/player-update", PlayerUpdatePayload>;
+export type PlayerUpdateMessage = ProtocolEnvelope<
+  typeof PROTOCOL_MESSAGE_TYPES.PLAYER_UPDATE,
+  PlayerUpdatePayload
+>;
 
 export type InteractionRequestAction =
   | "pickup-cube"
@@ -77,7 +86,7 @@ export type InteractionRequestPayload = Readonly<{
 }>;
 
 export type InteractionRequestMessage = ProtocolEnvelope<
-  "client/interaction-request",
+  typeof PROTOCOL_MESSAGE_TYPES.TRY_INTERACT,
   InteractionRequestPayload
 >;
 
@@ -90,7 +99,7 @@ export type FullSyncPayload = Readonly<{
   authoritativeTick: number;
 }>;
 
-export type FullSyncMessage = ProtocolEnvelope<"host/full-sync", FullSyncPayload>;
+export type FullSyncMessage = ProtocolEnvelope<typeof PROTOCOL_MESSAGE_TYPES.SYNC, FullSyncPayload>;
 
 export type LobbyEventKind =
   | "room-created"
@@ -112,7 +121,7 @@ export type LobbyEventPayload = Readonly<{
   message?: string;
 }>;
 
-export type LobbyEventMessage = ProtocolEnvelope<"host/lobby-event", LobbyEventPayload>;
+export type LobbyEventMessage = ProtocolEnvelope<typeof PROTOCOL_MESSAGE_TYPES.LOBBY_EVENT, LobbyEventPayload>;
 
 export type ProtocolMessage =
   | HostStartMessage
@@ -120,5 +129,3 @@ export type ProtocolMessage =
   | InteractionRequestMessage
   | FullSyncMessage
   | LobbyEventMessage;
-
-export type ProtocolMessageType = ProtocolMessage["type"];

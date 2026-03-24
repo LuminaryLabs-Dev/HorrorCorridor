@@ -1,6 +1,6 @@
-import type { GameScreenState, RoomState, SequenceSlot } from "@/types/shared";
+import type { GameScreenState, RoomState } from "@/types/shared";
 
-import type { GameState, SequenceProgressState } from "./gameTypes";
+import type { GameState, SequenceProgressState, SequenceSlot } from "./gameTypes";
 
 const buildCubeLookup = (state: GameState): Readonly<Record<string, GameState["cubes"][number]>> => {
   const lookup: Record<string, GameState["cubes"][number]> = {};
@@ -16,15 +16,14 @@ const evaluateSlots = (state: GameState) => {
   const cubeLookup = buildCubeLookup(state);
   const nextSlots: SequenceSlot[] = [];
   let solvedCount = 0;
-  let nextSlotUnlocked = true;
+  let allSlotsFilled = state.sequenceSlots.length > 0;
+  let exactOrderMatch = state.sequenceSlots.length > 0;
 
   for (const slot of state.sequenceSlots) {
     const cube = slot.occupiedCubeId ? cubeLookup[slot.occupiedCubeId] : undefined;
-    const colorMatches =
-      cube !== undefined &&
-      (slot.requiredColor === null || cube.color === slot.requiredColor);
-    const isSolved = Boolean(cube && colorMatches && nextSlotUnlocked);
-    const isUnlocked = nextSlotUnlocked;
+    const colorMatches = cube !== undefined && cube.color === slot.requiredColor;
+    const isSolved = Boolean(cube && colorMatches);
+    const isUnlocked = slot.occupiedCubeId === null || isSolved;
 
     nextSlots.push({
       ...slot,
@@ -35,7 +34,12 @@ const evaluateSlots = (state: GameState) => {
     if (isSolved) {
       solvedCount += 1;
     } else {
-      nextSlotUnlocked = false;
+      exactOrderMatch = false;
+    }
+
+    if (!cube) {
+      allSlotsFilled = false;
+      exactOrderMatch = false;
     }
   }
 
@@ -44,7 +48,7 @@ const evaluateSlots = (state: GameState) => {
     progress: {
       solvedCount,
       totalCount: state.sequenceSlots.length,
-      complete: state.sequenceSlots.length > 0 && solvedCount === state.sequenceSlots.length,
+      complete: allSlotsFilled && exactOrderMatch && solvedCount === state.sequenceSlots.length,
     } satisfies SequenceProgressState,
   };
 };

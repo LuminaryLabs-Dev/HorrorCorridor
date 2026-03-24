@@ -21,8 +21,7 @@ export default function PauseMenu({
           The corridor is holding.
         </h2>
         <p className="mt-4 font-mono text-sm leading-7 text-[#d6ffd8]">
-          This is a temporary pause overlay. It confirms the app can move into and out of a paused
-          state without involving the renderer.
+          The run is paused. Resume to keep moving through the corridor, or return to the lobby.
         </p>
 
         <div className="mt-6 grid gap-3">

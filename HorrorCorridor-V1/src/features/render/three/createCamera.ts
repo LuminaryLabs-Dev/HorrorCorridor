@@ -5,9 +5,9 @@ export type CameraSurface = Readonly<{
 }>;
 
 export const createCamera = (surface?: CameraSurface): PerspectiveCamera => {
-  const camera = new PerspectiveCamera(72, surface?.aspect ?? 1, 0.05, 1000);
+  const camera = new PerspectiveCamera(75, surface?.aspect ?? 1, 0.05, 1000);
 
-  camera.position.set(0, 1.45, 0);
+  camera.position.set(0, 2, 0);
   camera.rotation.order = "YXZ";
 
   return camera;

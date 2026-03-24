@@ -87,6 +87,37 @@ const createPeerInstance = (
 const resolvePeerId = (currentPeerId: string | null, fallbackPeerId: string): string =>
   currentPeerId ?? fallbackPeerId ?? "unknown-peer";
 
+type LocalBridgePacket = Readonly<
+  | {
+      kind: "client-connect";
+      remotePeerId: string;
+      connectionId: string;
+      message?: never;
+      targetPeerId?: never;
+    }
+  | {
+      kind: "client-disconnect";
+      remotePeerId: string;
+      connectionId: string;
+      message?: never;
+      targetPeerId?: never;
+    }
+  | {
+      kind: "client-message";
+      remotePeerId: string;
+      connectionId: string;
+      message: ProtocolMessage;
+      targetPeerId?: never;
+    }
+  | {
+      kind: "host-message";
+      remotePeerId: string;
+      connectionId: string;
+      message: ProtocolMessage;
+      targetPeerId: string | null;
+    }
+>;
+
 export const createHost = (options: HostCreateOptions): HostTransportAdapter => {
   const codec = options.codec ?? defaultCodec;
   const eventBus: PeerEventBus = createPeerEventBus(options.onEvent ? [options.onEvent] : []);
@@ -95,9 +126,53 @@ export const createHost = (options: HostCreateOptions): HostTransportAdapter => 
   const roomId = options.roomId;
   const joinCode = options.joinCode;
   const connections = new Map<string, PeerConnection>();
+  const localConnections = new Map<string, PeerConnectionRecord>();
+  const localBridge =
+    typeof BroadcastChannel !== "undefined" ? new BroadcastChannel(`horrorcorridor:${joinCode}`) : null;
 
   let currentStatus: PeerTransportStatus = "opening";
   let currentPeerId: string | null = peer.id ?? peerId ?? null;
+
+  const emitLocalConnectionOpen = (remotePeerId: string, connectionId: string): void => {
+    if (localConnections.has(connectionId)) {
+      return;
+    }
+
+    const record: PeerConnectionRecord = {
+      remotePeerId,
+      connectionId,
+      label: "",
+      open: true,
+    };
+
+    localConnections.set(connectionId, record);
+    eventBus.emit({
+      type: "peer/connection-open",
+      role: "host",
+      roomId,
+      peerId: resolvePeerId(currentPeerId, peerId),
+      remotePeerId,
+      connectionId,
+      timestampMs: now(),
+    });
+  };
+
+  const emitLocalConnectionClose = (remotePeerId: string, connectionId: string): void => {
+    if (!localConnections.has(connectionId)) {
+      return;
+    }
+
+    localConnections.delete(connectionId);
+    eventBus.emit({
+      type: "peer/connection-close",
+      role: "host",
+      roomId,
+      peerId: resolvePeerId(currentPeerId, peerId),
+      remotePeerId,
+      connectionId,
+      timestampMs: now(),
+    });
+  };
 
   const updateStatus = (status: PeerTransportStatus, detail?: string): void => {
     currentStatus = status;
@@ -125,64 +200,115 @@ export const createHost = (options: HostCreateOptions): HostTransportAdapter => 
     });
   });
 
-  peer.on("connection", (connection) => {
-    setConnectionRecord(connections, connection);
+  if (!localBridge) {
+    peer.on("connection", (connection) => {
+      setConnectionRecord(connections, connection);
+      let connectionOpenEmitted = false;
 
-    connection.on("open", () => {
-      eventBus.emit({
-        type: "peer/connection-open",
-        role: "host",
-        roomId,
-        peerId: resolvePeerId(currentPeerId, peerId),
-        remotePeerId: connection.peer,
-        connectionId: connection.connectionId,
-        timestampMs: now(),
+      const emitConnectionOpen = (): void => {
+        if (connectionOpenEmitted) {
+          return;
+        }
+
+        connectionOpenEmitted = true;
+        eventBus.emit({
+          type: "peer/connection-open",
+          role: "host",
+          roomId,
+          peerId: resolvePeerId(currentPeerId, peerId),
+          remotePeerId: connection.peer,
+          connectionId: connection.connectionId,
+          timestampMs: now(),
+        });
+      };
+
+      connection.on("open", () => {
+        emitConnectionOpen();
+      });
+
+      if (connection.open) {
+        emitConnectionOpen();
+      }
+
+      emitConnectionOpen();
+
+      connection.on("data", (data) => {
+        const message = codec.deserialize(data);
+        if (!message) {
+          return;
+        }
+
+        eventBus.emit({
+          type: "peer/message",
+          role: "host",
+          roomId,
+          peerId: currentPeerId,
+          remotePeerId: connection.peer,
+          connectionId: connection.connectionId,
+          message,
+          timestampMs: now(),
+        });
+      });
+
+      connection.on("close", () => {
+        removeConnectionRecord(connections, connection.connectionId);
+        eventBus.emit({
+          type: "peer/connection-close",
+          role: "host",
+          roomId,
+          peerId: resolvePeerId(currentPeerId, peerId),
+          remotePeerId: connection.peer,
+          connectionId: connection.connectionId,
+          timestampMs: now(),
+        });
+      });
+
+      connection.on("error", (error) => {
+        eventBus.emit({
+          type: "peer/error",
+          role: "host",
+          roomId,
+          peerId: currentPeerId,
+          message: error?.message ?? "Peer connection error",
+          timestampMs: now(),
+          error,
+        });
       });
     });
+  }
 
-    connection.on("data", (data) => {
-      const message = codec.deserialize(data);
-      if (!message) {
+  if (localBridge) {
+    localBridge.onmessage = (event: MessageEvent<LocalBridgePacket>) => {
+      const packet = event.data;
+
+      if (!packet) {
         return;
       }
 
-      eventBus.emit({
-        type: "peer/message",
-        role: "host",
-        roomId,
-        peerId: currentPeerId,
-        remotePeerId: connection.peer,
-        connectionId: connection.connectionId,
-        message,
-        timestampMs: now(),
-      });
-    });
+      if (packet.kind === "client-connect") {
+        emitLocalConnectionOpen(packet.remotePeerId, packet.connectionId);
+        return;
+      }
 
-    connection.on("close", () => {
-      removeConnectionRecord(connections, connection.connectionId);
-      eventBus.emit({
-        type: "peer/connection-close",
-        role: "host",
-        roomId,
-        peerId: resolvePeerId(currentPeerId, peerId),
-        remotePeerId: connection.peer,
-        connectionId: connection.connectionId,
-        timestampMs: now(),
-      });
-    });
+      if (packet.kind === "client-disconnect") {
+        emitLocalConnectionClose(packet.remotePeerId, packet.connectionId);
+        return;
+      }
 
-    connection.on("error", (error) => {
-      eventBus.emit({
-        type: "peer/error",
-        role: "host",
-        roomId,
-        peerId: currentPeerId,
-        message: error?.message ?? "Peer connection error",
-        timestampMs: now(),
-        error,
-      });
-    });
-  });
+      if (packet.kind === "client-message") {
+        eventBus.emit({
+          type: "peer/message",
+          role: "host",
+          roomId,
+          peerId: currentPeerId,
+          remotePeerId: packet.remotePeerId,
+          connectionId: packet.connectionId,
+          message: packet.message,
+          timestampMs: now(),
+        });
+      }
+    };
+  }
 
   peer.on("disconnected", () => {
     updateStatus("reconnecting", "disconnected from signalling server");
@@ -226,6 +352,10 @@ export const createHost = (options: HostCreateOptions): HostTransportAdapter => 
       return currentStatus;
     },
     get connections() {
+      if (localBridge) {
+        return Array.from(localConnections.values());
+      }
+
       return Array.from(connections.values(), createConnectionRecord);
     },
     onEvent: (listener) => {
@@ -234,11 +364,28 @@ export const createHost = (options: HostCreateOptions): HostTransportAdapter => 
     destroy: () => {
       currentStatus = "closed";
       connections.clear();
+      localConnections.clear();
+      localBridge?.close();
       peer.destroy();
       eventBus.clear();
     },
     broadcast: (message) => {
       let sent = 0;
+
+      if (localBridge) {
+        for (const connection of localConnections.values()) {
+          localBridge.postMessage({
+            kind: "host-message",
+            remotePeerId: connection.remotePeerId,
+            connectionId: connection.connectionId,
+            targetPeerId: null,
+            message,
+          } satisfies LocalBridgePacket);
+          sent += 1;
+        }
+
+        return sent;
+      }
 
       for (const connection of connections.values()) {
         if (sendMessage(connection, message)) {
@@ -249,6 +396,25 @@ export const createHost = (options: HostCreateOptions): HostTransportAdapter => 
       return sent;
     },
     sendTo: (remotePeerId, message) => {
+      if (localBridge) {
+        const connection = Array.from(localConnections.values()).find(
+          (record) => record.remotePeerId === remotePeerId,
+        );
+
+        if (!connection) {
+          return false;
+        }
+
+        localBridge.postMessage({
+          kind: "host-message",
+          remotePeerId: connection.remotePeerId,
+          connectionId: connection.connectionId,
+          targetPeerId: remotePeerId,
+          message,
+        } satisfies LocalBridgePacket);
+        return true;
+      }
+
       for (const connection of connections.values()) {
         if (connection.peer === remotePeerId) {
           return sendMessage(connection, message);
@@ -258,6 +424,22 @@ export const createHost = (options: HostCreateOptions): HostTransportAdapter => 
       return false;
     },
     disconnectPeer: (remotePeerId) => {
+      if (localBridge) {
+        const connection = Array.from(localConnections.values()).find(
+          (record) => record.remotePeerId === remotePeerId,
+        );
+
+        if (connection) {
+          emitLocalConnectionClose(connection.remotePeerId, connection.connectionId);
+          localBridge.postMessage({
+            kind: "client-disconnect",
+            remotePeerId: connection.remotePeerId,
+            connectionId: connection.connectionId,
+          } satisfies LocalBridgePacket);
+          return true;
+        }
+      }
+
       for (const connection of connections.values()) {
         if (connection.peer === remotePeerId) {
           connection.close();

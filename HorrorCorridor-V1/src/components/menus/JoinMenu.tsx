@@ -29,8 +29,7 @@ export default function JoinMenu({
           Enter a room code.
         </h2>
         <p className="mt-4 max-w-2xl font-mono text-sm leading-7 text-[#d6ffd8]">
-          This is still a local slice, so the form just feeds the lobby shell and preserves the
-          host/client split for the next networking pass.
+          Enter the room code, choose a name, and join the lobby.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-[10px] text-[#a8ffb1]">

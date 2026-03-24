@@ -34,7 +34,7 @@ export default function CompleteScreen({
           {isVictory ? "Run complete" : "Run failed"}
         </h2>
         <p className="mt-4 font-mono text-sm leading-7 text-[#d6ffd8]">
-          {message ?? "The end state is visible, but the final renderer is still a future pass."}
+          {message ?? "The corridor has reached its end state."}
         </p>
 
         <div className="mt-6 grid gap-3">

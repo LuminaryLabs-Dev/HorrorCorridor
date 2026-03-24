@@ -16,6 +16,7 @@ export type UiOverlayKind =
   | "boot"
   | "loading"
   | "lobby"
+  | "settings"
   | "pause"
   | "objective"
   | "victory"
@@ -59,6 +60,7 @@ export type UiActions = Readonly<{
   setPaused: (isPaused: boolean, reason?: UiPauseState["reason"]) => void;
   setCompletion: (completion: Omit<UiCompletionState, "acknowledged">) => void;
   acknowledgeCompletion: () => void;
+  toggleSettingsOverlay: (visible?: boolean) => void;
   resetUi: () => void;
 }>;
 
@@ -145,6 +147,18 @@ export const useUiStore = create<UiStore>((set) => ({
         acknowledged: true,
       },
     })),
+  toggleSettingsOverlay: (visible) =>
+    set((state) => {
+      const nextVisible = visible ?? !state.overlay.visible;
+
+      return {
+        overlay: {
+          kind: nextVisible ? "settings" : "none",
+          message: nextVisible ? "Settings" : null,
+          visible: nextVisible,
+        },
+      };
+    }),
   resetUi: () =>
     set(() => ({
       ...initialState,

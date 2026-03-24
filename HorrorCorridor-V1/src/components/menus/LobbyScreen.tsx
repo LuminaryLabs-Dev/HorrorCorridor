@@ -24,8 +24,8 @@ export default function LobbyScreen({
   onSecondaryAction,
   onBackToTitle,
 }: LobbyScreenProps) {
-  const primaryLabel = mode === "host" ? "Start preview run" : "Enter preview run";
-  const secondaryLabel = mode === "host" ? "Add guest placeholder" : "Toggle ready";
+  const secondaryLabel = mode === "host" ? "Add guest" : "Toggle ready";
+  const roomCode = room?.joinCode ?? "----";
 
   return (
     <section className="mx-auto flex w-full max-w-5xl flex-1 items-center justify-center px-4 py-8">
@@ -38,11 +38,13 @@ export default function LobbyScreen({
             {mode === "host" ? "Host lobby" : "Client lobby"}
           </h2>
           <p className="mt-4 max-w-2xl font-mono text-sm leading-7 text-[#d6ffd8]">
-            This screen is visible proof of the room and player flow before the transport layer is
-            fully wired.
+            Share the room code, ready the players, and move into the run once everyone is in.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-[10px] text-[#a8ffb1]">
+            <span className="rounded-full border border-[#7aff86]/20 bg-black/35 px-3 py-1">
+              Room: {roomCode}
+            </span>
             <span className="rounded-full border border-[#7aff86]/20 bg-black/35 px-3 py-1">
               Mode: {mode}
             </span>
@@ -67,10 +69,10 @@ export default function LobbyScreen({
                 Primary
               </span>
               <span className="mt-2 block text-lg font-semibold uppercase tracking-[0.18em] text-white">
-                {primaryLabel}
+                {mode === "host" ? "Start run" : "Enter run"}
               </span>
               <span className="mt-1 block font-mono text-sm leading-6 text-[#d6ffd8]">
-                Move from the lobby into the visible gameplay shell.
+                Move from the lobby into the corridor once the room is ready.
               </span>
             </button>
 
@@ -86,7 +88,7 @@ export default function LobbyScreen({
                 {secondaryLabel}
               </span>
               <span className="mt-1 block font-mono text-sm leading-6 text-[#d6ffd8]">
-                Placeholder room action for the host/client branch.
+                Host adds a guest slot. Client toggles ready state.
               </span>
             </button>
           </div>

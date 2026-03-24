@@ -1,53 +1,48 @@
 import {
   MeshBasicMaterial,
-  MeshStandardMaterial,
+  MeshLambertMaterial,
   type Material,
 } from "three";
 
 export type CorridorMaterials = Readonly<{
-  floor: MeshStandardMaterial;
-  ceiling: MeshStandardMaterial;
-  wall: MeshStandardMaterial;
-  trim: MeshStandardMaterial;
-  endWall: MeshStandardMaterial;
+  floor: MeshLambertMaterial;
+  branchFloor: MeshLambertMaterial;
+  ceiling: MeshLambertMaterial;
+  wall: MeshLambertMaterial;
+  trim: MeshLambertMaterial;
+  endWall: MeshLambertMaterial;
   glow: MeshBasicMaterial;
-  pedestal: MeshStandardMaterial;
-  cube: MeshStandardMaterial;
-  player: MeshStandardMaterial;
+  pedestal: MeshLambertMaterial;
+  cube: MeshLambertMaterial;
+  player: MeshLambertMaterial;
   guide: MeshBasicMaterial;
   ooze: MeshBasicMaterial;
   dispose: () => void;
 }>;
 
 export const createMaterials = (): CorridorMaterials => {
-  const floor = new MeshStandardMaterial({
-    color: 0x18211b,
-    roughness: 1,
-    metalness: 0.01,
+  const floor = new MeshLambertMaterial({
+    color: 0x183020,
   });
 
-  const ceiling = new MeshStandardMaterial({
-    color: 0x101511,
-    roughness: 1,
-    metalness: 0.01,
+  const branchFloor = new MeshLambertMaterial({
+    color: 0x1a1a20,
   });
 
-  const wall = new MeshStandardMaterial({
-    color: 0x1b2a21,
-    roughness: 1,
-    metalness: 0.01,
+  const ceiling = new MeshLambertMaterial({
+    color: 0x0a0a0e,
   });
 
-  const trim = new MeshStandardMaterial({
+  const wall = new MeshLambertMaterial({
+    color: 0x2a2a35,
+  });
+
+  const trim = new MeshLambertMaterial({
     color: 0x355842,
-    roughness: 0.9,
-    metalness: 0.02,
   });
 
-  const endWall = new MeshStandardMaterial({
-    color: 0x070b08,
-    roughness: 1,
-    metalness: 0,
+  const endWall = new MeshLambertMaterial({
+    color: 0x11161a,
   });
 
   const glow = new MeshBasicMaterial({
@@ -57,24 +52,18 @@ export const createMaterials = (): CorridorMaterials => {
     toneMapped: false,
   });
 
-  const pedestal = new MeshStandardMaterial({
-    color: 0x101815,
-    roughness: 0.8,
-    metalness: 0.05,
+  const pedestal = new MeshLambertMaterial({
+    color: 0x333340,
   });
 
-  const cube = new MeshStandardMaterial({
+  const cube = new MeshLambertMaterial({
     color: 0x243526,
-    roughness: 0.65,
-    metalness: 0.1,
     emissive: 0x17361f,
     emissiveIntensity: 0.72,
   });
 
-  const player = new MeshStandardMaterial({
+  const player = new MeshLambertMaterial({
     color: 0x32473a,
-    roughness: 0.7,
-    metalness: 0.08,
     emissive: 0x1a3f24,
     emissiveIntensity: 0.38,
   });
@@ -96,6 +85,7 @@ export const createMaterials = (): CorridorMaterials => {
   const dispose = (): void => {
     const materials: readonly Material[] = [
       floor,
+      branchFloor,
       ceiling,
       wall,
       trim,
@@ -114,6 +104,7 @@ export const createMaterials = (): CorridorMaterials => {
 
   return {
     floor,
+    branchFloor,
     ceiling,
     wall,
     trim,

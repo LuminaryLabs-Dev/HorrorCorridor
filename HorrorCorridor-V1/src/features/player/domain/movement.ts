@@ -1,8 +1,4 @@
-import {
-  MOVE_SPEED,
-  PLAYER_RADIUS as PROTOTYPE_PLAYER_RADIUS,
-  TURN_SPEED,
-} from "@/lib/constants";
+import { MOVE_SPEED, PLAYER_RADIUS as PROTOTYPE_PLAYER_RADIUS } from "@/lib/constants";
 import type { WorldPosition } from "@/types/shared";
 
 import type { PlayerInputState } from "./input";
@@ -12,8 +8,6 @@ export type PlayerPose = Readonly<{
   position: WorldPosition;
   rotationY: number;
   velocity: WorldPosition;
-  grounded: boolean;
-  crouching: boolean;
   carryingCubeId: string | null;
 }>;
 
@@ -23,8 +17,7 @@ export type PlayerMovementResult = Readonly<{
   speed: number;
 }>;
 
-export const PLAYER_EYE_HEIGHT = 1.45;
-export const PLAYER_CROUCH_EYE_HEIGHT = 1.12;
+export const PLAYER_EYE_HEIGHT = 2;
 export const PLAYER_RADIUS = PROTOTYPE_PLAYER_RADIUS;
 export const PLAYER_START_POSITION = Object.freeze({
   x: 0,
@@ -32,7 +25,8 @@ export const PLAYER_START_POSITION = Object.freeze({
   z: 0,
 });
 
-const clampDt = (deltaMs: number): number => Math.max(0, Math.min(deltaMs, 50));
+const clampFrameScale = (deltaMs: number): number =>
+  Math.max(0, Math.min(deltaMs, 50)) / (1000 / 60);
 
 const toWorldForward = (yaw: number): Readonly<{ x: number; z: number }> => ({
   x: -Math.sin(yaw),
@@ -52,8 +46,6 @@ export const createPlayerPose = (position: WorldPosition = PLAYER_START_POSITION
     y: 0,
     z: 0,
   },
-  grounded: true,
-  crouching: false,
   carryingCubeId: null,
 });
 
@@ -63,9 +55,9 @@ export const advancePlayerMovement = (
   viewAngles: PlayerViewAngles,
   deltaMs: number,
 ): PlayerMovementResult => {
-  const dt = clampDt(deltaMs) / 1000;
+  const frameScale = clampFrameScale(deltaMs);
 
-  if (dt === 0) {
+  if (frameScale === 0) {
     return {
       pose,
       intendedVelocity: {
@@ -79,44 +71,39 @@ export const advancePlayerMovement = (
 
   const forwardInput = (input.buttons.forward ? 1 : 0) - (input.buttons.back ? 1 : 0);
   const strafeInput = (input.buttons.right ? 1 : 0) - (input.buttons.left ? 1 : 0);
-  const turnInput = (input.buttons.turnRight ? 1 : 0) - (input.buttons.turnLeft ? 1 : 0);
   const inputMagnitude = Math.hypot(forwardInput, strafeInput);
-  const crouching = input.buttons.crouch;
-  const speedMultiplier = input.buttons.sprint ? 1.5 : 1;
-  const speed = MOVE_SPEED * speedMultiplier * (crouching ? 0.55 : 1) * (dt * 60);
+  const speed = MOVE_SPEED * frameScale;
 
   const normalizedForward = inputMagnitude > 0 ? forwardInput / inputMagnitude : 0;
   const normalizedStrafe = inputMagnitude > 0 ? strafeInput / inputMagnitude : 0;
 
-  const nextYaw = viewAngles.yaw + turnInput * TURN_SPEED * (dt * 60);
-  const forward = toWorldForward(nextYaw);
-  const right = toWorldRight(nextYaw);
+  const forward = toWorldForward(viewAngles.yaw);
+  const right = toWorldRight(viewAngles.yaw);
 
   const intendedVelocity = {
-    x: (forward.x * normalizedForward + right.x * normalizedStrafe) * MOVE_SPEED * speedMultiplier,
+    x: (forward.x * normalizedForward + right.x * normalizedStrafe) * speed,
     y: 0,
-    z: (forward.z * normalizedForward + right.z * normalizedStrafe) * MOVE_SPEED * speedMultiplier,
+    z: (forward.z * normalizedForward + right.z * normalizedStrafe) * speed,
   };
 
+  const frameSeconds = frameScale / 60;
   const velocity = {
-    x: intendedVelocity.x / dt,
+    x: frameSeconds > 0 ? intendedVelocity.x / frameSeconds : 0,
     y: 0,
-    z: intendedVelocity.z / dt,
+    z: frameSeconds > 0 ? intendedVelocity.z / frameSeconds : 0,
   };
 
   const position = {
-    x: pose.position.x + intendedVelocity.x * (dt * 60),
-    y: crouching ? PLAYER_CROUCH_EYE_HEIGHT : PLAYER_EYE_HEIGHT,
-    z: pose.position.z + intendedVelocity.z * (dt * 60),
+    x: pose.position.x + intendedVelocity.x,
+    y: PLAYER_EYE_HEIGHT,
+    z: pose.position.z + intendedVelocity.z,
   };
 
   return {
     pose: {
       position,
-      rotationY: nextYaw,
+      rotationY: viewAngles.yaw,
       velocity,
-      grounded: true,
-      crouching,
       carryingCubeId: pose.carryingCubeId,
     },
     intendedVelocity,

@@ -87,6 +87,7 @@ export const useSessionStore = create<SessionStore>((set) => ({
         ? {
             ...state.room,
             players: lobbyPlayers,
+            updatedAt: Date.now(),
           }
         : state.room,
     })),
@@ -102,6 +103,7 @@ export const useSessionStore = create<SessionStore>((set) => ({
           ? {
               ...state.room,
               players: nextPlayers,
+              updatedAt: Date.now(),
             }
           : state.room,
       };
@@ -116,6 +118,7 @@ export const useSessionStore = create<SessionStore>((set) => ({
           ? {
               ...state.room,
               players: nextPlayers,
+              updatedAt: Date.now(),
             }
           : state.room,
       };

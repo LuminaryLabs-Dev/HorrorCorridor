@@ -1,6 +1,7 @@
 import type {
   AppScreenState,
-  CubeState,
+  CellGridPosition,
+  CubeStateId,
   GameScreenState,
   LobbyPlayer,
   MazeCellSnapshot,
@@ -9,16 +10,50 @@ import type {
   PlayerSnapshot,
   ReplicatedGameSnapshot,
   RoomState,
-  SequenceSlot,
   WorldPosition,
 } from "@/types/shared";
+import type { CubeColorKey } from "@/lib/colors";
 
 import type { MazeCellId, MazeRng } from "@/features/maze/domain/mazeTypes";
 
 export type GameCellLookup = Readonly<Record<MazeCellId, MazeCellSnapshot>>;
 
+export type SequenceSlotId = string;
+
+export type SequenceSlot = Readonly<{
+  id: SequenceSlotId;
+  index: number;
+  requiredColor: CubeColorKey;
+  occupiedCubeId: CubeStateId | null;
+  isUnlocked: boolean;
+  isSolved: boolean;
+}>;
+
+export type CubeState = Readonly<{
+  id: CubeStateId;
+  color: CubeColorKey;
+  cell: CellGridPosition | null;
+  position: WorldPosition;
+  visible: boolean;
+  active: boolean;
+  locked: boolean;
+  highlighted: boolean;
+  heldByPlayerId: PlayerId | null;
+  assignedSlotId: SequenceSlotId | null;
+}>;
+
+export type RuntimePlayerState = Readonly<
+  PlayerSnapshot & {
+    name: string;
+    velocity: WorldPosition;
+  }
+>;
+
 export type GameState = Readonly<
-  ReplicatedGameSnapshot & {
+  Omit<ReplicatedGameSnapshot, "players" | "cubes" | "anomaly"> & {
+    players: readonly RuntimePlayerState[];
+    cubes: readonly CubeState[];
+    sequenceSlots: readonly SequenceSlot[];
     mazeLookup: GameCellLookup;
     endAnomalyCellId: MazeCellId;
     oozeTrail: readonly OozeTrailItem[];
@@ -60,12 +95,10 @@ export type GameStateUpdateResult = Readonly<{
 
 export type {
   AppScreenState,
-  CubeState,
   GameScreenState,
   LobbyPlayer,
-  PlayerSnapshot,
+  RuntimePlayerState as PlayerSnapshot,
   RoomState,
-  SequenceSlot,
   WorldPosition,
   OozeTrailItem,
 };

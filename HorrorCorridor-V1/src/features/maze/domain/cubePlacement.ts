@@ -14,13 +14,6 @@ import type {
 import { CELL_SIZE } from "@/lib/constants";
 import { CUBE_COLORS } from "@/lib/colors";
 
-// Cube placement scaffold.
-// Candidate discovery and spawn selection live here; cube creation comes later.
-
-export type CubePlacementPlaceholder = Readonly<{
-  readonly stage: "cube-placement-scaffold";
-}>;
-
 export type CubeCandidateSelectionInput = Readonly<{
   grid: MazeGrid;
   start: MazeCoordinate;

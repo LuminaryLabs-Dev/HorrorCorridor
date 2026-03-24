@@ -10,13 +10,6 @@ import type {
   MazePathingResult,
 } from "./mazeTypes";
 
-// Maze pathing owns the BFS route from the end cell to each cube.
-// Keep this layer framework-free and deterministic.
-
-export type MazePathingPlaceholder = Readonly<{
-  readonly stage: "maze-pathing-scaffold";
-}>;
-
 const DIRECTIONS: readonly [number, number][] = [
   [1, 0],
   [-1, 0],

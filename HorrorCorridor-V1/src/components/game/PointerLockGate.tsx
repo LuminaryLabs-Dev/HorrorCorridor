@@ -48,7 +48,7 @@ export default function PointerLockGate({
 
               <div className="mt-4 flex flex-wrap items-center gap-2 font-mono text-[10px] uppercase tracking-[0.24em] text-[#a8ffb1]">
                 <span className="rounded-full border border-[#7aff86]/18 bg-black/35 px-3 py-1">
-                  Click to capture
+                  Capture for mouse look
                 </span>
                 <span className="rounded-full border border-[#7aff86]/18 bg-black/35 px-3 py-1">
                   WASD to move
@@ -67,7 +67,7 @@ export default function PointerLockGate({
                   onClick={onCapture}
                   className="w-full rounded-[1.15rem] border border-[#7aff86]/22 bg-[rgba(122,255,134,0.08)] px-4 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:border-[#9effac]/45 hover:bg-[rgba(122,255,134,0.14)]"
                 >
-                  Capture pointer
+                  Capture mouse look
                 </button>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default function PointerLockGate({
           <div className="pointer-events-none px-4 pb-4 sm:px-5 sm:pb-5">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#7aff86]/20 bg-[rgba(0,7,2,0.72)] px-3 py-2 font-mono text-[10px] uppercase tracking-[0.28em] text-[#d6ffd8] backdrop-blur-sm">
               <span className="text-[#91ff9d]">Active</span>
-              <span className="text-[#8cbf90]">Mouse input captured</span>
+              <span className="text-[#8cbf90]">Mouse look captured</span>
             </div>
           </div>
         )}

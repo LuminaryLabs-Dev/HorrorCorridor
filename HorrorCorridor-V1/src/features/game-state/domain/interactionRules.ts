@@ -1,9 +1,8 @@
 import { CELL_SIZE, INTERACTION_DISTANCE } from "@/lib/constants";
-import type { CubeState, MazeCellSnapshot, WorldPosition } from "@/types/shared";
+import type { MazeCellSnapshot, WorldPosition } from "@/types/shared";
 
 import { validateOrderedSequenceCompletion } from "./winRules";
-import type { CubeInteractionInput, EndAnomalyInteractionInput, GameState } from "./gameTypes";
-import { cellKey } from "@/features/maze/domain/mazePathing";
+import type { CubeInteractionInput, CubeState, EndAnomalyInteractionInput, GameState } from "./gameTypes";
 
 const INTERACTION_DISTANCE_SQUARED = INTERACTION_DISTANCE * INTERACTION_DISTANCE;
 const END_ANOMALY_DISTANCE = 6;
@@ -25,33 +24,6 @@ const cellCenter = (cell: MazeCellSnapshot): WorldPosition => ({
 });
 
 const cubePosition = (cube: CubeState): WorldPosition => cube.position;
-
-const updateMazeCell = (
-  state: GameState,
-  cellId: string,
-  updater: (cell: MazeCellSnapshot) => MazeCellSnapshot,
-): GameState => {
-  const currentCell = state.mazeLookup[cellId];
-
-  if (!currentCell) {
-    return state;
-  }
-
-  const nextCell = updater(currentCell);
-
-  if (nextCell === currentCell) {
-    return state;
-  }
-
-  return {
-    ...state,
-    mazeLookup: {
-      ...state.mazeLookup,
-      [cellId]: nextCell,
-    },
-    maze: state.maze.map((cell) => (cell.id === cellId ? nextCell : cell)),
-  };
-};
 
 const updateCube = (
   state: GameState,
@@ -155,16 +127,7 @@ export const pickUpCube = (state: GameState, input: CubeInteractionInput): GameS
     return state;
   }
 
-  let nextState = state;
-
-  if (cube.cell) {
-    nextState = updateMazeCell(nextState, cellKey(cube.cell), (cell) => ({
-      ...cell,
-      occupiedBy: null,
-    }));
-  }
-
-  nextState = updateCube(nextState, cube.id, (currentCube) => ({
+  const nextState = updateCube(state, cube.id, (currentCube) => ({
     ...currentCube,
     cell: null,
     position: player.position,
@@ -227,28 +190,20 @@ export const placeCubeAtEndAnomaly = (
   const nextSlot =
     input.slotId !== undefined
       ? state.sequenceSlots.find(
-          (slot) =>
-            slot.id === input.slotId &&
-            slot.isUnlocked &&
-            !slot.isSolved &&
-            slot.occupiedCubeId === null,
+          (slot) => slot.id === input.slotId && slot.occupiedCubeId === null,
         ) ?? null
       : state.sequenceSlots.find(
-          (slot) => slot.isUnlocked && !slot.isSolved && slot.occupiedCubeId === null,
+          (slot) => slot.occupiedCubeId === null,
         ) ?? null;
 
   if (!nextSlot) {
     return state;
   }
 
-  if (nextSlot.requiredColor !== null && nextSlot.requiredColor !== carriedCube.color) {
-    return state;
-  }
-
   let nextState = updateSequenceSlot(state, nextSlot.id, (slot) => ({
     ...slot,
     occupiedCubeId: carriedCube.id,
-    isSolved: true,
+    isSolved: carriedCube.color === slot.requiredColor,
     isUnlocked: true,
   }));
 

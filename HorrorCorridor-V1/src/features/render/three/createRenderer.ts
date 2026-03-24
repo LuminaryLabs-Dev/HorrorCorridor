@@ -1,5 +1,5 @@
 import {
-  ACESFilmicToneMapping,
+  NoToneMapping,
   SRGBColorSpace,
   type WebGLRenderer,
   WebGLRenderer as ThreeWebGLRenderer,
@@ -14,15 +14,14 @@ const DEFAULT_PIXEL_RATIO = 1;
 
 export const createRenderer = (surface?: RendererSurface): WebGLRenderer => {
   const renderer = new ThreeWebGLRenderer({
-    antialias: true,
+    antialias: false,
     alpha: false,
     powerPreference: "high-performance",
   });
 
   renderer.outputColorSpace = SRGBColorSpace;
-  renderer.toneMapping = ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1;
-  renderer.setClearColor(surface?.clearColor ?? 0x020203, 1);
+  renderer.toneMapping = NoToneMapping;
+  renderer.setClearColor(surface?.clearColor ?? 0x0f0f15, 1);
   renderer.setPixelRatio(surface?.pixelRatio ?? DEFAULT_PIXEL_RATIO);
   renderer.autoClear = true;
   renderer.domElement.style.display = "block";

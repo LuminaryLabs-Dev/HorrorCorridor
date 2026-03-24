@@ -1,16 +1,9 @@
-// Shared maze type definitions.
-// These types mirror the prototype maze snapshot shape and stay framework-free.
-
 import type {
   CubeColor,
   CubeColorHex,
   CubeColorName,
   CubePalette,
 } from "@/lib/colors";
-
-export type MazeTypesPlaceholder = Readonly<{
-  readonly stage: "maze-types-scaffold";
-}>;
 
 export type MazeCellId = string;
 

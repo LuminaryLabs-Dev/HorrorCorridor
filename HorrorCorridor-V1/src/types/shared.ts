@@ -11,55 +11,33 @@ export type WorldPosition = Readonly<{
   z: number;
 }>;
 
-export type MazeCellType =
-  | "void"
-  | "wall"
-  | "floor"
-  | "corridor"
-  | "door"
-  | "spawn"
-  | "exit"
-  | "blocked";
-
 export type MazeCellSnapshot = Readonly<{
   id: string;
   grid: CellGridPosition;
-  type: MazeCellType;
-  walkable: boolean;
-  occupiedBy?: "player" | "cube" | "enemy" | null;
+  value: 0 | 1 | 2 | 3 | 4;
 }>;
 
 export type CubeStateId = string;
+export type PlayerId = string;
 
-export type CubeState = Readonly<{
+export type ReplicatedCubeState = "ground" | "held" | "placed";
+
+export type ReplicatedCubeSnapshot = Readonly<{
   id: CubeStateId;
   color: CubeColorKey;
-  cell: CellGridPosition | null;
   position: WorldPosition;
-  visible: boolean;
-  active: boolean;
-  locked: boolean;
-  highlighted: boolean;
-  heldByPlayerId: PlayerId | null;
-  assignedSlotId: SequenceSlotId | null;
+  state: ReplicatedCubeState;
+  ownerId: PlayerId | null;
 }>;
-
-export type PlayerId = string;
 
 export type ConnectionState = "connecting" | "connected" | "reconnecting" | "disconnected";
 
 export type PlayerSnapshot = Readonly<{
   id: PlayerId;
-  name: string;
+  color: string;
   position: WorldPosition;
   rotationY: number;
-  velocity: WorldPosition;
-  health: number;
-  stamina: number;
-  isHost: boolean;
-  isAlive: boolean;
-  crouching: boolean;
-  connectionState: ConnectionState;
+  pitch: number;
 }>;
 
 export type LobbyPlayer = Readonly<{
@@ -83,15 +61,9 @@ export type RoomState = Readonly<{
   updatedAt: number;
 }>;
 
-export type SequenceSlotId = string;
-
-export type SequenceSlot = Readonly<{
-  id: SequenceSlotId;
-  index: number;
-  requiredColor: CubeColorKey | null;
-  occupiedCubeId: CubeStateId | null;
-  isUnlocked: boolean;
-  isSolved: boolean;
+export type ReplicatedAnomalySnapshot = Readonly<{
+  sequence: readonly CubeColorKey[];
+  slots: readonly (CubeStateId | null)[];
 }>;
 
 export type OozeTrailItem = Readonly<{
@@ -100,8 +72,6 @@ export type OozeTrailItem = Readonly<{
   y: number;
   rotY: number;
   scale: number;
-  createdAtMs: number;
-  lastUpdatedAtMs: number;
 }>;
 
 export type GameScreenState = "loading" | "lobby" | "playing" | "paused" | "victory" | "failure";
@@ -125,8 +95,8 @@ export type ReplicatedGameSnapshot = Readonly<{
   timestampMs: number;
   maze: readonly MazeCellSnapshot[];
   players: readonly PlayerSnapshot[];
-  cubes: readonly CubeState[];
-  sequenceSlots: readonly SequenceSlot[];
+  cubes: readonly ReplicatedCubeSnapshot[];
+  anomaly: ReplicatedAnomalySnapshot;
   oozeTrail: readonly OozeTrailItem[];
   oozeLevel: number;
 }>;

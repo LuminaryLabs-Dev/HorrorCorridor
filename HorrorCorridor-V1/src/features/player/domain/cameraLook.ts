@@ -1,16 +1,23 @@
 import { MAX_PITCH, MOUSE_SENSITIVITY } from "@/lib/constants";
 
 const TWO_PI = Math.PI * 2;
-const PITCH_RETURN_RATE = 0.0025;
+const PITCH_RETURN_DELAY_MS = 1000;
+const PITCH_RETURN_BLEND = 0.05;
 
 export type PlayerViewAngles = Readonly<{
   yaw: number;
   pitch: number;
+  lastPitchInputAtMs: number;
 }>;
 
-export const createPlayerViewAngles = (yaw = 0, pitch = 0): PlayerViewAngles => ({
+export const createPlayerViewAngles = (
+  yaw = 0,
+  pitch = 0,
+  lastPitchInputAtMs = 0,
+): PlayerViewAngles => ({
   yaw,
   pitch,
+  lastPitchInputAtMs,
 });
 
 const clamp = (value: number, min: number, max: number): number =>
@@ -34,26 +41,29 @@ export const applyPlayerLookDelta = (
   viewAngles: PlayerViewAngles,
   deltaX: number,
   deltaY: number,
-  deltaMs = 0,
+  nowMs = 0,
 ): PlayerViewAngles => {
   const nextYaw = wrapAngle(viewAngles.yaw - deltaX * MOUSE_SENSITIVITY);
-  const nextPitch = clamp(viewAngles.pitch + deltaY * MOUSE_SENSITIVITY, -MAX_PITCH, MAX_PITCH);
 
-  if (deltaX !== 0 || deltaY !== 0 || deltaMs <= 0) {
+  if (deltaY !== 0) {
     return {
       yaw: nextYaw,
-      pitch: nextPitch,
+      pitch: clamp(viewAngles.pitch - deltaY * MOUSE_SENSITIVITY, -MAX_PITCH, MAX_PITCH),
+      lastPitchInputAtMs: nowMs,
     };
   }
 
-  const settle = Math.min(Math.max(deltaMs, 0), 50) / 1000;
-  const pitch =
-    nextPitch < 0
-      ? Math.min(0, nextPitch + settle * PITCH_RETURN_RATE)
-      : Math.max(0, nextPitch - settle * PITCH_RETURN_RATE);
+  if (nowMs - viewAngles.lastPitchInputAtMs <= PITCH_RETURN_DELAY_MS) {
+    return {
+      yaw: nextYaw,
+      pitch: viewAngles.pitch,
+      lastPitchInputAtMs: viewAngles.lastPitchInputAtMs,
+    };
+  }
 
   return {
     yaw: nextYaw,
-    pitch,
+    pitch: viewAngles.pitch + (0 - viewAngles.pitch) * PITCH_RETURN_BLEND,
+    lastPitchInputAtMs: viewAngles.lastPitchInputAtMs,
   };
 };

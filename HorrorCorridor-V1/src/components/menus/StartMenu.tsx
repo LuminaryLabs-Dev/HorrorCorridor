@@ -25,8 +25,7 @@ export default function StartMenu({
           Enter the corridor.
         </h2>
         <p className="mt-4 max-w-2xl font-mono text-sm leading-7 text-[#d6ffd8] sm:text-base">
-          This is the first visible slice: host, join, lobby, play, pause, and complete. The
-          networking and renderer are still intentionally shallow.
+          Host a room or join one, then move into the corridor once the lobby is ready.
         </p>
 
         <div className="mt-6 flex flex-wrap items-center gap-2 font-mono text-[10px] text-[#a8ffb1]">
@@ -51,7 +50,7 @@ export default function StartMenu({
               Create a room
             </span>
             <span className="mt-1 block font-mono text-sm leading-6 text-[#d6ffd8]">
-              Build the lobby locally and preview the host-first flow.
+              Open a room, wait for players, then start the run.
             </span>
           </button>
 
@@ -67,7 +66,7 @@ export default function StartMenu({
               Join a room
             </span>
             <span className="mt-1 block font-mono text-sm leading-6 text-[#d6ffd8]">
-              Step through the client lobby form and enter the same slice.
+              Enter a room code and join the lobby.
             </span>
           </button>
         </div>

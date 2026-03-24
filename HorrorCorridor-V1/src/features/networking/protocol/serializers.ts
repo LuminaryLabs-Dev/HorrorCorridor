@@ -1,4 +1,13 @@
-import { NETWORK_PROTOCOL_VERSION, type FullSyncMessage, type HostStartMessage, type InteractionRequestMessage, type LobbyEventMessage, type PlayerUpdateMessage, type ProtocolMessage } from "./messageTypes";
+import {
+  NETWORK_PROTOCOL_VERSION,
+  PROTOCOL_MESSAGE_TYPES,
+  type FullSyncMessage,
+  type HostStartMessage,
+  type InteractionRequestMessage,
+  type LobbyEventMessage,
+  type PlayerUpdateMessage,
+  type ProtocolMessage,
+} from "./messageTypes";
 import type { LobbyPlayer, ReplicatedGameSnapshot, RoomState } from "@/types/shared";
 
 const isRecord = (value: unknown): value is Record<string, unknown> =>
@@ -29,19 +38,39 @@ const isLobbyPlayer = (value: unknown): value is LobbyPlayer =>
   isBoolean(value.ready) &&
   isString(value.connectionState);
 
+const isMazeCellSnapshot = (value: unknown): value is ReplicatedGameSnapshot["maze"][number] =>
+  isRecord(value) &&
+  isString(value.id) &&
+  isRecord(value.grid) &&
+  isNumber(value.grid.x) &&
+  isNumber(value.grid.y) &&
+  isNumber(value.value) &&
+  value.value >= 0 &&
+  value.value <= 4;
+
 const isPlayerSnapshot = (value: unknown): value is ReplicatedGameSnapshot["players"][number] =>
   isRecord(value) &&
   isString(value.id) &&
-  isString(value.name) &&
+  isString(value.color) &&
   isWorldPosition(value.position) &&
-  isWorldPosition(value.velocity) &&
   isNumber(value.rotationY) &&
-  isNumber(value.health) &&
-  isNumber(value.stamina) &&
-  isBoolean(value.isHost) &&
-  isBoolean(value.isAlive) &&
-  isBoolean(value.crouching) &&
-  isString(value.connectionState);
+  isNumber(value.pitch);
+
+const isCubeSnapshot = (value: unknown): value is ReplicatedGameSnapshot["cubes"][number] =>
+  isRecord(value) &&
+  isString(value.id) &&
+  isString(value.color) &&
+  isWorldPosition(value.position) &&
+  isString(value.state) &&
+  (value.state === "ground" || value.state === "held" || value.state === "placed") &&
+  (value.ownerId === null || isString(value.ownerId));
+
+const isAnomalySnapshot = (value: unknown): value is ReplicatedGameSnapshot["anomaly"] =>
+  isRecord(value) &&
+  Array.isArray(value.sequence) &&
+  value.sequence.every(isString) &&
+  Array.isArray(value.slots) &&
+  value.slots.every((slot) => slot === null || isString(slot));
 
 const isRoomState = (value: unknown): value is RoomState =>
   isRecord(value) &&
@@ -65,10 +94,12 @@ const isSnapshot = (value: unknown): value is ReplicatedGameSnapshot =>
   isNumber(value.tick) &&
   isNumber(value.timestampMs) &&
   Array.isArray(value.maze) &&
+  value.maze.every(isMazeCellSnapshot) &&
   Array.isArray(value.players) &&
   value.players.every(isPlayerSnapshot) &&
   Array.isArray(value.cubes) &&
-  Array.isArray(value.sequenceSlots) &&
+  value.cubes.every(isCubeSnapshot) &&
+  isAnomalySnapshot(value.anomaly) &&
   Array.isArray(value.oozeTrail) &&
   value.oozeTrail.every(isOozeTrailItem) &&
   isNumber(value.oozeLevel);
@@ -84,7 +115,7 @@ const isEnvelope = (value: unknown): value is ProtocolMessage =>
 
 const hasPlayerUpdateShape = (value: unknown): value is PlayerUpdateMessage =>
   isEnvelope(value) &&
-  value.type === "client/player-update" &&
+  value.type === PROTOCOL_MESSAGE_TYPES.PLAYER_UPDATE &&
   isRecord(value.payload) &&
   isString(value.payload.playerId) &&
   isRecord(value.payload.input) &&
@@ -93,20 +124,15 @@ const hasPlayerUpdateShape = (value: unknown): value is PlayerUpdateMessage =>
   isNumber(value.payload.input.moveForward) &&
   isNumber(value.payload.input.moveStrafe) &&
   isNumber(value.payload.input.lookYaw) &&
-  isBoolean(value.payload.input.sprint) &&
-  isBoolean(value.payload.input.crouch) &&
   isBoolean(value.payload.input.interact) &&
-  isBoolean(value.payload.input.primaryAction) &&
-  isBoolean(value.payload.input.secondaryAction) &&
   isNumber(value.payload.pose.rotationY) &&
-  isBoolean(value.payload.pose.grounded) &&
-  isBoolean(value.payload.pose.crouching) &&
+  isNumber(value.payload.pose.pitch) &&
   isWorldPosition(value.payload.pose.position) &&
   isWorldPosition(value.payload.pose.velocity);
 
 const hasInteractionRequestShape = (value: unknown): value is InteractionRequestMessage =>
   isEnvelope(value) &&
-  value.type === "client/interaction-request" &&
+  value.type === PROTOCOL_MESSAGE_TYPES.TRY_INTERACT &&
   isRecord(value.payload) &&
   isString(value.payload.playerId) &&
   isString(value.payload.action) &&
@@ -116,7 +142,7 @@ const hasInteractionRequestShape = (value: unknown): value is InteractionRequest
 
 const hasHostStartShape = (value: unknown): value is HostStartMessage =>
   isEnvelope(value) &&
-  value.type === "host/start" &&
+  value.type === PROTOCOL_MESSAGE_TYPES.START_GAME &&
   isRecord(value.payload) &&
   isString(value.payload.hostPeerId) &&
   isRoomState(value.payload.room) &&
@@ -127,7 +153,7 @@ const hasHostStartShape = (value: unknown): value is HostStartMessage =>
 
 const hasFullSyncShape = (value: unknown): value is FullSyncMessage =>
   isEnvelope(value) &&
-  value.type === "host/full-sync" &&
+  value.type === PROTOCOL_MESSAGE_TYPES.SYNC &&
   isRecord(value.payload) &&
   isSnapshot(value.payload.snapshot) &&
   isRoomState(value.payload.room) &&
@@ -136,7 +162,7 @@ const hasFullSyncShape = (value: unknown): value is FullSyncMessage =>
 
 const hasLobbyEventShape = (value: unknown): value is LobbyEventMessage =>
   isEnvelope(value) &&
-  value.type === "host/lobby-event" &&
+  value.type === PROTOCOL_MESSAGE_TYPES.LOBBY_EVENT &&
   isRecord(value.payload) &&
   isString(value.payload.event) &&
   isRoomState(value.payload.room) &&
@@ -163,23 +189,23 @@ export const deserializeProtocolMessage = (input: unknown): ProtocolMessage | nu
     return null;
   }
 
-  if (raw.type === "host/start" && hasHostStartShape(raw)) {
+  if (raw.type === PROTOCOL_MESSAGE_TYPES.START_GAME && hasHostStartShape(raw)) {
     return raw;
   }
 
-  if (raw.type === "client/player-update" && hasPlayerUpdateShape(raw)) {
+  if (raw.type === PROTOCOL_MESSAGE_TYPES.PLAYER_UPDATE && hasPlayerUpdateShape(raw)) {
     return raw;
   }
 
-  if (raw.type === "client/interaction-request" && hasInteractionRequestShape(raw)) {
+  if (raw.type === PROTOCOL_MESSAGE_TYPES.TRY_INTERACT && hasInteractionRequestShape(raw)) {
     return raw;
   }
 
-  if (raw.type === "host/full-sync" && hasFullSyncShape(raw)) {
+  if (raw.type === PROTOCOL_MESSAGE_TYPES.SYNC && hasFullSyncShape(raw)) {
     return raw;
   }
 
-  if (raw.type === "host/lobby-event" && hasLobbyEventShape(raw)) {
+  if (raw.type === PROTOCOL_MESSAGE_TYPES.LOBBY_EVENT && hasLobbyEventShape(raw)) {
     return raw;
   }
 

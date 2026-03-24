@@ -3,9 +3,12 @@
 import { useRuntimeStore } from "@/features/game-state/store/runtimeStore";
 import { useSessionStore } from "@/features/game-state/store/sessionStore";
 import { useUiStore } from "@/features/game-state/store/uiStore";
-import type { AppScreenState, CubeState } from "@/types/shared";
+import type { AppScreenState, ReplicatedCubeSnapshot } from "@/types/shared";
+import { CUBE_COLORS } from "@/lib/colors";
 
+import FrameDebugPanel from "./FrameDebugPanel";
 import Minimap from "./Minimap";
+import SettingsOverlay from "./SettingsOverlay";
 
 const objectiveByScreen: Record<AppScreenState, string> = {
   START: "AWAITING ENTRY",
@@ -25,7 +28,10 @@ const toColorLabel = (color: string | null): string => {
   return color.replaceAll("_", " ");
 };
 
-const cubeColorById = (cube: CubeState | null | undefined): string | null => cube?.color ?? null;
+const cubeColorById = (cube: ReplicatedCubeSnapshot | null | undefined): string | null => cube?.color ?? null;
+const cubeColorCss = new Map(
+  CUBE_COLORS.map((color) => [color.name, `#${color.hex.toString(16).padStart(6, "0")}`] as const),
+);
 
 export default function HUDOverlay() {
   const screen = useUiStore((state) => state.screen);
@@ -34,8 +40,8 @@ export default function HUDOverlay() {
   const peerIdentity = useSessionStore((state) => state.peerIdentity);
   const sessionMode = useSessionStore((state) => state.sessionMode);
   const authoritativeSnapshot = useRuntimeStore((state) => state.authoritativeSnapshot);
-  const localPlayerPose = useRuntimeStore((state) => state.localPlayerPose);
-  const viewAngles = useRuntimeStore((state) => state.viewAngles);
+  const overlay = useUiStore((state) => state.overlay);
+  const toggleSettingsOverlay = useUiStore((state) => state.toggleSettingsOverlay);
 
   if (screen !== "PLAYING" && screen !== "PAUSED" && screen !== "COMPLETED") {
     return null;
@@ -43,13 +49,14 @@ export default function HUDOverlay() {
 
   const snapshot = authoritativeSnapshot;
   const localPlayerId = peerIdentity.playerId;
-  const heldCube = snapshot?.cubes.find((cube) => cube.id === localPlayerPose.carryingCubeId) ?? null;
+  const heldCube =
+    snapshot?.cubes.find((cube) => cube.state === "held" && cube.ownerId === localPlayerId) ?? null;
   const heldLabel = toColorLabel(cubeColorById(heldCube));
   const objective = objectiveByScreen[screen];
   const screenLabel = screen.replaceAll("_", " ");
   const hint =
     screen === "PLAYING"
-      ? "WASD / ARROWS MOVE. MOUSE LOOK. E INTERACT. SPACE PLACE. P PAUSE."
+      ? "WASD / ARROWS MOVE. CAPTURE FOR MOUSE LOOK. E INTERACT. SPACE PLACE. P PAUSE."
       : screen === "PAUSED"
         ? "PAUSED. PRESS P TO RESUME OR ESC TO RELEASE POINTER."
         : "RUN COMPLETE. USE THE OVERLAY TO RETURN TO THE LOBBY OR TITLE.";
@@ -76,23 +83,36 @@ export default function HUDOverlay() {
           <p className="mt-3 text-[10px] tracking-[0.32em] text-[#b8ffbf]/75">{objective}</p>
 
           <div className="mt-3 flex flex-wrap gap-2">
-            {(snapshot?.sequenceSlots ?? []).map((slot) => (
-              <span
-                key={slot.id}
-                className={[
-                  "rounded-full border px-3 py-1 text-[10px] tracking-[0.28em]",
-                  slot.isSolved
-                    ? "border-[#91ff9e]/40 bg-[#63ff7a]/18 text-white"
-                    : slot.isUnlocked
-                      ? "border-[#91ff9e]/25 bg-[#91ff9e]/8 text-[#d8ffd9]"
-                      : "border-[#91ff9e]/12 bg-black/35 text-[#7d9f80]",
-                ].join(" ")}
-              >
-                {slot.requiredColor ?? "EMPTY"}
-              </span>
-            ))}
+            {(snapshot?.anomaly.sequence ?? []).map((color, index) => {
+              const isFilled = (snapshot?.anomaly.slots[index] ?? null) !== null;
+
+              return (
+                <span
+                  key={`${color}-${index}`}
+                  className={[
+                    "rounded-full border px-3 py-1 text-[10px] tracking-[0.28em]",
+                    isFilled
+                      ? "border-[#91ff9e]/28 bg-[#91ff9e]/10 text-white"
+                      : "border-[#91ff9e]/16 bg-black/35",
+                  ].join(" ")}
+                  style={{ color: isFilled ? "#ffffff" : cubeColorCss.get(color) ?? "#d8ffd9" }}
+                >
+                  [{isFilled ? "X" : color}]
+                </span>
+              );
+            })}
           </div>
         </div>
+      </div>
+
+      <div className="absolute right-4 bottom-28 z-30">
+        <button
+          type="button"
+          onClick={() => toggleSettingsOverlay(true)}
+          className="pointer-events-auto rounded-full border border-[#7aff86]/25 bg-[rgba(0,7,2,0.68)] px-4 py-2 font-mono text-[10px] uppercase tracking-[0.26em] text-[#d6ffd8] backdrop-blur-md transition hover:border-[#9effac]/45 hover:bg-[rgba(0,7,2,0.8)]"
+        >
+          Settings
+        </button>
       </div>
 
       <div className="absolute right-4 top-4 w-[min(18rem,calc(100vw-2rem))] text-right">
@@ -115,33 +135,15 @@ export default function HUDOverlay() {
       </div>
 
       <div className="absolute bottom-4 left-4">
-        <Minimap
-          snapshot={snapshot}
-          localPlayerId={localPlayerId}
-          localPosition={localPlayerPose.position}
-          viewAngles={viewAngles}
-        />
+        <Minimap />
       </div>
 
-      <div className="absolute bottom-4 left-1/2 w-[min(54rem,calc(100vw-2rem))] -translate-x-1/2">
-        <div className="border border-[#7aff86]/25 bg-[rgba(0,7,2,0.58)] px-4 py-3 text-center backdrop-blur-md">
-          <p className="text-[9px] leading-6 tracking-[0.42em] text-[#d6ffd8]">
-            WASD / ARROWS TO MOVE
-            <span className="px-2 text-[#7aff86]">•</span>
-            MOUSE TO LOOK
-            <span className="px-2 text-[#7aff86]">•</span>
-            E TO PICK UP / DROP
-            <span className="px-2 text-[#7aff86]">•</span>
-            SPACE TO PLACE
-            <span className="px-2 text-[#7aff86]">•</span>
-            P TO PAUSE
-          </p>
-          <p className="mt-1 text-[9px] tracking-[0.34em] text-[#8cbf90]">
-            END ANOMALY / SEQUENCE {snapshot?.sequenceSlots.length ?? 0} / CUBES{" "}
-            {snapshot?.cubes.length ?? 0}
-          </p>
-        </div>
-      </div>
+      <SettingsOverlay
+        isOpen={overlay.visible && overlay.kind === "settings"}
+        onClose={() => toggleSettingsOverlay(false)}
+      />
+
+      <FrameDebugPanel />
     </div>
   );
 }
