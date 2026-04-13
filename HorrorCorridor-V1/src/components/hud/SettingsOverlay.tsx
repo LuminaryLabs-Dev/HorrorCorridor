@@ -14,13 +14,16 @@ const controls = [
 ] as const;
 
 export default function SettingsOverlay({ isOpen, onClose }: SettingsOverlayProps) {
-  if (!isOpen) {
-    return null;
-  }
-
   return (
-    <div className="pointer-events-auto absolute inset-0 z-40 flex items-center justify-center bg-black/55 px-4 py-6 backdrop-blur-sm">
-      <div className="w-full max-w-md border border-[#7aff86]/25 bg-[rgba(0,7,2,0.92)] p-5 font-mono text-[10px] uppercase tracking-[0.26em] text-[#d6ffd8] shadow-[0_0_48px_rgba(0,255,120,0.08)]">
+    <div
+      data-testid="settings-overlay"
+      className={[
+        "pointer-events-none absolute inset-y-0 right-0 z-40 flex items-center justify-end px-4 py-6 transition-transform duration-300 ease-out",
+        isOpen ? "translate-x-0" : "translate-x-[calc(100%+1rem)]",
+      ].join(" ")}
+      aria-hidden={!isOpen}
+    >
+      <div className="pointer-events-auto w-full max-w-md border border-[#7aff86]/25 bg-[rgba(0,7,2,0.92)] p-5 font-mono text-[10px] uppercase tracking-[0.26em] text-[#d6ffd8] shadow-[0_0_48px_rgba(0,255,120,0.08)]">
         <div className="flex items-start justify-between gap-4">
           <div>
             <p className="text-[9px] tracking-[0.42em] text-[#8dff9a]">Settings</p>

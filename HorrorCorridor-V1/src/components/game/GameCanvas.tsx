@@ -357,6 +357,7 @@ export default function GameCanvas({ transport }: GameCanvasProps) {
   const setScreen = useUiStore((state) => state.setScreen);
   const setPaused = useUiStore((state) => state.setPaused);
   const setCompletion = useUiStore((state) => state.setCompletion);
+  const toggleSettingsOverlay = useUiStore((state) => state.toggleSettingsOverlay);
 
   const setLocalPlayerPose = useRuntimeStore((state) => state.setLocalPlayerPose);
   const setViewAngles = useRuntimeStore((state) => state.setViewAngles);
@@ -847,6 +848,11 @@ export default function GameCanvas({ transport }: GameCanvasProps) {
           applyInteraction();
         }
 
+        if (event.code === "KeyQ") {
+          toggleSettingsOverlay();
+          return;
+        }
+
         inputRef.current = setPlayerInputButton(inputRef.current, button, true);
         syncRuntimeStores(nowMs(), true);
       };
@@ -1114,7 +1120,7 @@ export default function GameCanvas({ transport }: GameCanvasProps) {
       unsubscribe?.();
       cleanupRuntime();
     };
-  }, [patchReadiness, setAuthoritativeSnapshot, setCompletion, setInputFlags, setLocalPlayerPose, setPaused, setScreen, setViewAngles, transport]);
+  }, [patchReadiness, setAuthoritativeSnapshot, setCompletion, setInputFlags, setLocalPlayerPose, setPaused, setScreen, setViewAngles, toggleSettingsOverlay, transport]);
 
   return (
     <PointerLockGate

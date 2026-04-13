@@ -56,7 +56,7 @@ export default function HUDOverlay() {
   const screenLabel = screen.replaceAll("_", " ");
   const hint =
     screen === "PLAYING"
-      ? "WASD / ARROWS MOVE. CAPTURE FOR MOUSE LOOK. E INTERACT. SPACE PLACE. P PAUSE."
+      ? "OPEN SETTINGS FOR CONTROLS."
       : screen === "PAUSED"
         ? "PAUSED. PRESS P TO RESUME OR ESC TO RELEASE POINTER."
         : "RUN COMPLETE. USE THE OVERLAY TO RETURN TO THE LOBBY OR TITLE.";
