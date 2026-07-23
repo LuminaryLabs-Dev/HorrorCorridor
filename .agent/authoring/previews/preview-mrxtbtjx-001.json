@@ -1,0 +1,18 @@
+{
+  "sessionId": "preview-mrxtbtjx-001",
+  "contentId": "set-piece:mortuary-bay",
+  "config": {
+    "setPieceId": "set-piece:mortuary-bay",
+    "districtId": "district:cold-delivery",
+    "monsterId": "monster:morgue-twin-hushed",
+    "phase": "repelling",
+    "cameraPreset": "look-left"
+  },
+  "ready": false,
+  "createdAt": "2026-07-23T17:56:17.373Z",
+  "updatedAt": "2026-07-23T17:56:18.971Z",
+  "captureRefs": [
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxtbtjx-001/look-left-1784829378652.png"
+  ],
+  "errors": []
+}

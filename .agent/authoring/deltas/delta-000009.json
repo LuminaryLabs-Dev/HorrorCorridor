@@ -1,0 +1,20 @@
+{
+  "schema": "horror-corridor.authoring-delta/1",
+  "deltaId": "delta-000009",
+  "packetId": "packet-000009",
+  "contentId": "offering:red-thread",
+  "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+  "touchedFiles": [
+    "HorrorCorridor-V2/src/content/offerings.ts"
+  ],
+  "impactedContent": [
+    "offering:red-thread"
+  ],
+  "evidenceRefs": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts"
+  ],
+  "crossDomainRisks": [],
+  "futureSuggestions": [],
+  "submittedAt": "2026-07-23T17:49:00.279Z",
+  "acceptedAt": null
+}

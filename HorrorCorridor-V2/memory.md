@@ -21,6 +21,12 @@
 - The `ticket-hall` presentation is a wall-aligned concourse built around distinct service wickets, one shutter, teller grilles and speaking rings, transaction trays and tools, a stopped clock, queue rail, explicit one-way doctrine, and contained cold/red light; it may not block the central route or own gameplay outcomes.
 - The `workers-dormitory` presentation is a recessed shift barracks built around stacked bunks, layered bedding, ladder and rails, worker storage and clothing, boots and personal effects, explicit sleep doctrine, and contained violet/red light; it may not block the central route or own gameplay outcomes.
 - The `mortuary-bay` presentation is a recessed cold-intake bay built around numbered body drawers, one attached open tray, a wheeled autopsy slab, instrument stand, floor drain, refrigeration lines, explicit counting doctrine, and contained cold/red light; it may not block the central route or own gameplay outcomes.
+- Runtime TypeScript is the content authority; the authoring catalog is a metadata overlay resolved through the stdio HorrorCorridor Authoring MCP.
+- External authoring work is packet-bound to one content target, natural neighbors, direct dependencies, three relevance-ranked accepted deltas, explicit evidence, an action plan, and an editable-file allowlist.
+- Authoring lifecycle advances only through adjacent evidence gates. Focused preview, cohesion, and milestone promotion retain separate authority.
+- The internal preview is Vite-development-only, starts no gameplay/network/persistence services, and uses the shared prefab registry with four clean player-view cameras.
+- Streamed Three.js segments are retained by index across overlapping windows; only departing segments and the small active overlay are rebuilt.
+- Read-only semantic queries log timing without rendering. Step-driven proofs use the snapshot returned by the step call instead of polling and rendering again.
 
 ## Proof Baseline
 

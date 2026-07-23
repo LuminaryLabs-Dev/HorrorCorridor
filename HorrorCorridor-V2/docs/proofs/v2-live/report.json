@@ -1,7 +1,7 @@
 {
   "status": "passed",
-  "createdAt": "2026-07-22T16:25:09.544Z",
-  "url": "http://127.0.0.1:4191/",
+  "createdAt": "2026-07-23T17:47:22.417Z",
+  "url": "http://127.0.0.1:4187/",
   "screenshots": {
     "title": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/00-title.png",
     "spawn": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/01-spawn.png",
@@ -36,49 +36,49 @@
     },
     "views": {
       "spawn": {
-        "average": 13.73494231719812,
+        "average": 13.734115114728718,
         "darkRatio": 0.7392040643522438,
         "lightRatio": 0.06851948819777282,
         "centerAverage": 26.088373104292618,
         "foregroundAverage": 17.20699058140367
       },
       "serviceNook": {
-        "average": 14.810347941435834,
+        "average": 14.810348938274595,
         "darkRatio": 0.7446981354532007,
         "lightRatio": 0.1164009766728272,
-        "centerAverage": 30.60311190704572,
+        "centerAverage": 30.603115276853025,
         "foregroundAverage": 12.47666496724375
       },
       "movement": {
-        "average": 19.448773017990266,
-        "darkRatio": 0.5887501589785955,
+        "average": 19.44742074525517,
+        "darkRatio": 0.5887753663955342,
         "lightRatio": 0.1328625657254752,
-        "centerAverage": 30.827607697879483,
+        "centerAverage": 30.823036348213574,
         "foregroundAverage": 25.535672416579683
       },
       "left": {
-        "average": 30.999156383391686,
-        "darkRatio": 0.2953484295206351,
+        "average": 31.01729700870506,
+        "darkRatio": 0.29435273655155664,
         "lightRatio": 0.23186354996052747,
         "centerAverage": 52.83102590104743,
         "foregroundAverage": 17.527585452195215
       },
       "right": {
-        "average": 27.439517351917146,
-        "darkRatio": 0.36758028275847054,
+        "average": 27.437911981362294,
+        "darkRatio": 0.3675814285501496,
         "lightRatio": 0.21344265713673535,
-        "centerAverage": 47.06998344456225,
+        "centerAverage": 47.06455649927318,
         "foregroundAverage": 12.85735783685675
       },
       "closedTavern": {
-        "average": 21.979992165112,
-        "darkRatio": 0.5874588517563267,
+        "average": 21.98003496913923,
+        "darkRatio": 0.5874393732977833,
         "lightRatio": 0.1508274334610127,
-        "centerAverage": 37.95959107816004,
+        "centerAverage": 37.95959111379479,
         "foregroundAverage": 21.925430900155188
       },
       "emptyPantry": {
-        "average": 8.759037941078203,
+        "average": 8.759033763980062,
         "darkRatio": 0.8304904332123759,
         "lightRatio": 0.03495466675221911,
         "centerAverage": 17.977688907149943,
@@ -106,42 +106,42 @@
         "foregroundAverage": 21.664539405406018
       },
       "pilgrimAlcove": {
-        "average": 31.001776632198595,
+        "average": 31.001895020894693,
         "darkRatio": 0.40988978629839395,
         "lightRatio": 0.24766974617276935,
-        "centerAverage": 44.38997982222091,
+        "centerAverage": 44.39038003447996,
         "foregroundAverage": 32.22992784476769
       },
       "boilerShrine": {
-        "average": 31.27127417419483,
+        "average": 31.271142102454583,
         "darkRatio": 0.4790096693359793,
         "lightRatio": 0.27349589061814317,
-        "centerAverage": 32.15547987526884,
+        "centerAverage": 32.15503340756289,
         "foregroundAverage": 30.666340471103855
       },
       "ticketHall": {
-        "average": 23.475143583270846,
+        "average": 23.475142846526797,
         "darkRatio": 0.5401147395787382,
         "lightRatio": 0.20913448042357627,
         "centerAverage": 29.35586947458591,
         "foregroundAverage": 12.567109211325391
       },
       "nightArchive": {
-        "average": 20.039469498646884,
-        "darkRatio": 0.5415022933020456,
+        "average": 20.03910342255936,
+        "darkRatio": 0.5415080222604407,
         "lightRatio": 0.16056895431613996,
-        "centerAverage": 30.57205094839037,
+        "centerAverage": 30.571273928152138,
         "foregroundAverage": 14.16724842182033
       },
       "workersDormitory": {
-        "average": 32.91559637590463,
+        "average": 32.909118763184665,
         "darkRatio": 0.5456981824306596,
-        "lightRatio": 0.27646349106683515,
-        "centerAverage": 39.1412196215677,
-        "foregroundAverage": 30.33760821735691
+        "lightRatio": 0.276421096774711,
+        "centerAverage": 39.11932209159828,
+        "foregroundAverage": 30.334466413896678
       },
       "mortuaryBay": {
-        "average": 50.568592557063695,
+        "average": 50.568600994215316,
         "darkRatio": 0.3840636418530201,
         "lightRatio": 0.4250955876708232,
         "centerAverage": 45.565310575376195,
@@ -159,7 +159,7 @@
     "savedReloadedIndex": true
   },
   "network": {
-    "roomCode": "PRWAMD5B",
+    "roomCode": "PRXT08FC",
     "replicatedTick": 6,
     "recoveredTick": 12,
     "peerCount": 2,
@@ -251,83 +251,83 @@
     "recentCallTiming": [
       {
         "call": "lookBy",
-        "sincePreviousMs": 76.39999999850988
+        "sincePreviousMs": 10.099999994039536
       },
       {
         "call": "step:2",
-        "sincePreviousMs": 190.5
+        "sincePreviousMs": 41.1000000089407
       },
       {
         "call": "status",
-        "sincePreviousMs": 224.10000000149012
+        "sincePreviousMs": 39.79999999701977
       },
       {
         "call": "step:2",
-        "sincePreviousMs": 87.79999999701977
+        "sincePreviousMs": 23.900000005960464
       },
       {
         "call": "status",
-        "sincePreviousMs": 40.600000001490116
+        "sincePreviousMs": 8.099999994039536
       },
       {
         "call": "step:2",
-        "sincePreviousMs": 86.19999999552965
+        "sincePreviousMs": 30.599999994039536
       },
       {
         "call": "status",
-        "sincePreviousMs": 62.900000005960464
+        "sincePreviousMs": 12.300000011920929
       },
       {
         "call": "step:2",
-        "sincePreviousMs": 155.69999999552965
+        "sincePreviousMs": 18.899999991059303
       },
       {
         "call": "status",
-        "sincePreviousMs": 73.30000000447035
+        "sincePreviousMs": 8.100000008940697
       },
       {
         "call": "step:2",
-        "sincePreviousMs": 135.5
+        "sincePreviousMs": 24.099999994039536
       },
       {
         "call": "status",
-        "sincePreviousMs": 120.69999999552965
+        "sincePreviousMs": 14.299999997019768
       },
       {
         "call": "step:2",
-        "sincePreviousMs": 62.600000001490116
+        "sincePreviousMs": 16.900000005960464
       },
       {
         "call": "status",
-        "sincePreviousMs": 52.100000001490116
+        "sincePreviousMs": 8
       },
       {
         "call": "step:2",
-        "sincePreviousMs": 66
+        "sincePreviousMs": 15.899999991059303
       },
       {
         "call": "status",
-        "sincePreviousMs": 68.79999999701977
+        "sincePreviousMs": 10.100000008940697
       },
       {
         "call": "setInput",
-        "sincePreviousMs": 22.5
+        "sincePreviousMs": 14.599999994039536
       },
       {
         "call": "lookBy",
-        "sincePreviousMs": 32.80000000447035
+        "sincePreviousMs": 12.900000005960464
       },
       {
         "call": "step:1",
-        "sincePreviousMs": 52.69999999552965
+        "sincePreviousMs": 14.599999994039536
       },
       {
         "call": "lookBy",
-        "sincePreviousMs": 1325.3999999985099
+        "sincePreviousMs": 459.70000000298023
       },
       {
         "call": "step:1",
-        "sincePreviousMs": 60.900000005960464
+        "sincePreviousMs": 32.599999994039536
       }
     ]
   },

@@ -1,0 +1,66 @@
+{
+  "schema": "horror-corridor.focused-visual-proof/1",
+  "runId": "proof-000009",
+  "level": "focused",
+  "contentIds": [
+    "set-piece:mortuary-bay"
+  ],
+  "cameras": [
+    "initial",
+    "approach",
+    "look-left",
+    "look-right"
+  ],
+  "metrics": [
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000009/set-piece-mortuary-bay-initial.png",
+      "width": 1440,
+      "height": 900,
+      "average": 10.425926047664205,
+      "darkRatio": 0.8408603395061729,
+      "lightRatio": 0.047107253086419755,
+      "centerAverage": 29.83932117129949,
+      "foregroundAverage": 12.318270341203068,
+      "captureElapsedMs": 330.8334159999995,
+      "passed": true
+    },
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000009/set-piece-mortuary-bay-approach.png",
+      "width": 1440,
+      "height": 900,
+      "average": 10.170991562201513,
+      "darkRatio": 0.8666566358024691,
+      "lightRatio": 0.06813117283950618,
+      "centerAverage": 36.87807676110889,
+      "foregroundAverage": 9.695864229345185,
+      "captureElapsedMs": 321.28891699999986,
+      "passed": true
+    },
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000009/set-piece-mortuary-bay-look-left.png",
+      "width": 1440,
+      "height": 900,
+      "average": 12.153090931808762,
+      "darkRatio": 0.8056697530864197,
+      "lightRatio": 0.08284567901234569,
+      "centerAverage": 36.191459173048514,
+      "foregroundAverage": 11.11817521752387,
+      "captureElapsedMs": 330.3537919999999,
+      "passed": true
+    },
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000009/set-piece-mortuary-bay-look-right.png",
+      "width": 1440,
+      "height": 900,
+      "average": 12.417091396936446,
+      "darkRatio": 0.7817052469135802,
+      "lightRatio": 0.07549151234567901,
+      "centerAverage": 23.25951508008012,
+      "foregroundAverage": 12.23091683431066,
+      "captureElapsedMs": 344.72462499999983,
+      "passed": true
+    }
+  ],
+  "elapsedMs": 2555,
+  "passed": true
+}

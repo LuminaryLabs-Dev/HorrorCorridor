@@ -1,0 +1,15 @@
+{
+  "schema": "horror-corridor.authoring-review/1",
+  "reviewId": "review-000001",
+  "packetId": "packet-000001",
+  "contentId": "audio-motif:metal",
+  "gate": "specification",
+  "outcome": "accepted",
+  "notes": "Intent, dependencies, variation, pacing, acceptance, and runtime source are complete.",
+  "evidenceRefs": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts"
+  ],
+  "lifecycleBefore": "mapped",
+  "lifecycleAfter": "specified",
+  "createdAt": "2026-07-23T14:22:28.482Z"
+}

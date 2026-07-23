@@ -93,6 +93,12 @@ export function installSemanticControl(options: SemanticControlOptions): () => v
     return result;
   };
 
+  const query = <T>(call: string, task: () => T): T => {
+    const result = task();
+    record(call);
+    return result;
+  };
+
   const tools = Object.freeze([
     "status",
     "encounterContract",
@@ -117,14 +123,14 @@ export function installSemanticControl(options: SemanticControlOptions): () => v
   const control: HorrorCorridorSemanticControl = Object.freeze({
     version: "horror-corridor-v2.control/1",
     tools,
-    status: () => invoke("status", () => ({
+    status: () => query("status", () => ({
       readiness: options.readiness(),
       manual: options.getManual(),
       diagnostics: options.runtime.diagnostics(),
       snapshot: options.runtime.snapshot(),
       recentCalls: [...records.slice(-8)],
     })),
-    encounterContract: () => invoke("encounterContract", () => {
+    encounterContract: () => query("encounterContract", () => {
       const snapshot = options.runtime.snapshot();
       const profile = snapshot.dread.monsterId ? MONSTERS_BY_ID[snapshot.dread.monsterId] : null;
       if (!profile) return null;
@@ -138,7 +144,7 @@ export function installSemanticControl(options: SemanticControlOptions): () => v
         failureConsequence: profile.failureConsequence,
       };
     }),
-    audioStatus: () => invoke("audioStatus", options.audioStatus),
+    audioStatus: () => query("audioStatus", options.audioStatus),
     unlockAudio: async () => {
       const result = await options.unlockAudio();
       options.renderNow();

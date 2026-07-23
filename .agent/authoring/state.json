@@ -1,0 +1,13 @@
+{
+  "schema": "horror-corridor.authoring-state/1",
+  "revision": 173,
+  "counters": {
+    "packet": 19,
+    "delta": 19,
+    "review": 19,
+    "proof": 11
+  },
+  "acceptedDeltaCount": 6,
+  "cohesionDue": true,
+  "updatedAt": "2026-07-23T17:59:36.657Z"
+}

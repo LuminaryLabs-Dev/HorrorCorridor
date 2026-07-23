@@ -1,0 +1,26 @@
+{
+  "schema": "horror-corridor.authoring-delta/1",
+  "deltaId": "delta-000011",
+  "packetId": "packet-000011",
+  "contentId": "set-piece:mortuary-bay",
+  "summary": "Accept the clean initial, approach, left, and right focused player views.",
+  "touchedFiles": [
+    "HorrorCorridor-V2/src/authoring/AuthoringPreviewHost.tsx",
+    "HorrorCorridor-V2/src/authoring/previewSnapshot.ts",
+    "HorrorCorridor-V2/src/presentation/prefabRegistry.ts",
+    "HorrorCorridor-V2/src/hosts/browser/threeScene.ts"
+  ],
+  "impactedContent": [
+    "set-piece:mortuary-bay"
+  ],
+  "evidenceRefs": [
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png"
+  ],
+  "crossDomainRisks": [],
+  "futureSuggestions": [],
+  "submittedAt": "2026-07-23T17:55:15.499Z",
+  "acceptedAt": "2026-07-23T17:55:15.502Z"
+}

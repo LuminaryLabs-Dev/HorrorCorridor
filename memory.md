@@ -37,6 +37,12 @@ Flashlight ownership stays split: Party intent and pose → Corridor beam/contac
 - Timeline reviews restart the same deterministic route and therefore replay earlier prefixes. Report recorded simulated time, unique contiguous horizon, replayed time, and new tail separately in `feed.json`; raw run videos remain separate rather than implying a concatenated unique feed.
 - The invariant live proof refreshes generated captures and its report, but preserves `*-decision.json` records and explicit `*-before.png` visual baselines.
 - Public snapshots retain the complete Monster Index; runtime digests use a compact semantic Index projection and Expedition caches immutable snapshots between mutations.
+- The stdio HorrorCorridor Authoring MCP is the sole external content-authoring interface. It exposes resolved catalog metadata, bounded context packets, a private development preview, evidence reviews, and allowlisted proofs; it exposes no arbitrary shell or unrestricted filesystem operation.
+- Runtime TypeScript remains content authority. `.agent/authoring/` stores the metadata overlay, packets, deltas, reviews, proof state, append-only events, and accepted focused evidence.
+- Authoring contexts preserve global intent while limiting implementation to one target, its natural neighborhood and dependencies, up to three relevance-ranked accepted deltas, evidence, and one action plan. Broader discoveries remain risks or future suggestions.
+- Lifecycle advances only through adjacent evidence gates: `mapped → specified → previewed → playable → integrated → promoted`. Three accepted deltas in one related slice, or any cross-domain risk, makes cohesion review due.
+- The internal authoring preview never starts gameplay, persistence, or networking. It reuses runtime content descriptors and the Three.js presentation adapter; normal `BrowserGame` and the public runtime API remain unchanged.
+- Corridor rendering retains segment groups that overlap the streamed window and disposes only segments that leave it. Read-only semantic queries do not trigger presentation redraws, and proof loops reuse snapshots returned by `step`.
 
 ## Product Rules
 

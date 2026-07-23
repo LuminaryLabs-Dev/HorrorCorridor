@@ -62,9 +62,9 @@ async function screenshot(page, name) {
 async function stepUntil(page, predicate, maximumFrames, chunk = 30, input) {
   let frames = 0;
   while (frames < maximumFrames) {
-    await call(page, "step", Math.min(chunk, maximumFrames - frames), input);
-    frames += Math.min(chunk, maximumFrames - frames);
-    const snapshot = await state(page);
+    const frameCount = Math.min(chunk, maximumFrames - frames);
+    const snapshot = await call(page, "step", frameCount, input);
+    frames += frameCount;
     if (predicate(snapshot)) return { frames, snapshot };
   }
   throw new Error(`Live proof timed out after ${maximumFrames} frames. State: ${JSON.stringify(await state(page))}`);

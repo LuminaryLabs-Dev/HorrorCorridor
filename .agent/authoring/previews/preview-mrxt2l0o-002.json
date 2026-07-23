@@ -1,0 +1,21 @@
+{
+  "sessionId": "preview-mrxt2l0o-002",
+  "contentId": "set-piece:mortuary-bay",
+  "config": {
+    "setPieceId": "set-piece:mortuary-bay",
+    "districtId": "district:provision-tombs",
+    "monsterId": "monster:morgue-twin-hushed",
+    "phase": "approaching",
+    "cameraPreset": "look-right"
+  },
+  "ready": false,
+  "createdAt": "2026-07-23T17:49:06.408Z",
+  "updatedAt": "2026-07-23T17:49:08.993Z",
+  "captureRefs": [
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxt2l0o-002/initial-1784828947265.png",
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxt2l0o-002/approach-1784828947848.png",
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxt2l0o-002/look-left-1784828948230.png",
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxt2l0o-002/look-right-1784828948597.png"
+  ],
+  "errors": []
+}

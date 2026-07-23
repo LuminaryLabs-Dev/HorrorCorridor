@@ -35,6 +35,8 @@ src/
 ├── adapters/             input, IndexedDB, WebAudio, PeerJS
 ├── hosts/browser/        fixed-step host, React UI, Three.js realization
 ├── content/              monsters, offerings, chamber descriptors
+├── authoring/            catalog contracts and development preview fixture
+├── presentation/         shared set-piece prefab registry
 └── proofs/               semantic control and legacy-harness bridge
 ```
 
@@ -86,12 +88,22 @@ Contracts: `horror-corridor-v2.snapshot/1`, `horror-corridor-v2.network/1`, `hor
 
 The bridge also exposes the V1 live-player debug/control vocabulary so the existing repository harness can validate the V2 URL without modifying V1.
 
+Content authoring uses a separate stdio-only MCP surface. It resolves the runtime TypeScript catalog, creates bounded context packets, controls a development-only focused preview, records evidence-gated lifecycle transitions, and runs allowlisted proofs. It cannot open an authoring HTTP endpoint, run arbitrary shell, edit unrestricted paths, or decide gameplay outcomes.
+
+```bash
+npm run --silent authoring:mcp
+npm run proof:authoring-mcp
+```
+
+Setup, tools, lifecycle, and durable-state contracts: [docs/authoring-mcp.md](docs/authoring-mcp.md).
+
 ## Proofs
 
 ```bash
 npm run lint
 npm run build
 npm run proof:runtime
+npm run proof:authoring-mcp
 npm run proof:live
 npm run proof:legacy  # requires the V2 dev server
 npm run review:timeline

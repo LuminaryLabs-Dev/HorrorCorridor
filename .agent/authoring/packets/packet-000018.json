@@ -1,0 +1,320 @@
+{
+  "schema": "horror-corridor.authoring-packet/1",
+  "packetId": "packet-000018",
+  "contentId": "offering:red-thread",
+  "goal": "Validate the resolved specification contract for offering:red-thread.",
+  "domainBoundary": "expedition",
+  "context": {
+    "schema": "horror-corridor.authoring-context/1",
+    "globalIntent": "Preserve the full HorrorCorridor content universe while changing and proving one bounded content target at a time.",
+    "globalIntentRefs": [
+      "goal.md",
+      "memory.md",
+      "HorrorCorridor-V2/goal.md",
+      "HorrorCorridor-V2/memory.md"
+    ],
+    "target": {
+      "id": "offering:red-thread",
+      "kind": "offering",
+      "domain": "expedition",
+      "title": "Red Thread",
+      "intent": "The next threshold is easier to find in the dark.",
+      "playerExperience": "Surviving an encounter produces Red Thread before the next building.",
+      "sourceRefs": [
+        "HorrorCorridor-V2/src/content/offerings.ts"
+      ],
+      "dependencies": [
+        "progression-beat:offering",
+        "progression-beat:resolution"
+      ],
+      "neighbors": [
+        "offering:fresh-cell",
+        "offering:silver-bell",
+        "offering:salt-chalk"
+      ],
+      "pacingRole": "A short reward and breath between encounters.",
+      "variationAxes": [
+        "building-number",
+        "reward-description"
+      ],
+      "acceptance": [
+        "Exactly one offering opens.",
+        "Claiming does not teleport the party.",
+        "Next building advances once."
+      ],
+      "runtime": {
+        "id": "red-thread",
+        "name": "Red Thread",
+        "description": "The next threshold is easier to find in the dark."
+      },
+      "lifecycle": "specified",
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "version": 2
+    },
+    "neighborhood": [
+      {
+        "id": "offering:fresh-cell",
+        "kind": "offering",
+        "domain": "expedition",
+        "title": "Fresh Cell",
+        "intent": "The beam steadies sooner after a blackout.",
+        "playerExperience": "Surviving an encounter produces Fresh Cell before the next building.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/content/offerings.ts"
+        ],
+        "dependencies": [
+          "progression-beat:offering",
+          "progression-beat:resolution"
+        ],
+        "neighbors": [
+          "offering:silver-bell",
+          "offering:red-thread",
+          "offering:salt-chalk"
+        ],
+        "pacingRole": "A short reward and breath between encounters.",
+        "variationAxes": [
+          "building-number",
+          "reward-description"
+        ],
+        "acceptance": [
+          "Exactly one offering opens.",
+          "Claiming does not teleport the party.",
+          "Next building advances once."
+        ],
+        "runtime": {
+          "id": "fresh-cell",
+          "name": "Fresh Cell",
+          "description": "The beam steadies sooner after a blackout."
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "offering:silver-bell",
+        "kind": "offering",
+        "domain": "expedition",
+        "title": "Silver Bell",
+        "intent": "A clear chime reveals which side is unsafe.",
+        "playerExperience": "Surviving an encounter produces Silver Bell before the next building.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/content/offerings.ts"
+        ],
+        "dependencies": [
+          "progression-beat:offering",
+          "progression-beat:resolution"
+        ],
+        "neighbors": [
+          "offering:fresh-cell",
+          "offering:red-thread",
+          "offering:salt-chalk"
+        ],
+        "pacingRole": "A short reward and breath between encounters.",
+        "variationAxes": [
+          "building-number",
+          "reward-description"
+        ],
+        "acceptance": [
+          "Exactly one offering opens.",
+          "Claiming does not teleport the party.",
+          "Next building advances once."
+        ],
+        "runtime": {
+          "id": "silver-bell",
+          "name": "Silver Bell",
+          "description": "A clear chime reveals which side is unsafe."
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "offering:salt-chalk",
+        "kind": "offering",
+        "domain": "expedition",
+        "title": "Salt Chalk",
+        "intent": "A captured encounter leaves more Chronicle score.",
+        "playerExperience": "Surviving an encounter produces Salt Chalk before the next building.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/content/offerings.ts"
+        ],
+        "dependencies": [
+          "progression-beat:offering",
+          "progression-beat:resolution"
+        ],
+        "neighbors": [
+          "offering:fresh-cell",
+          "offering:silver-bell",
+          "offering:red-thread"
+        ],
+        "pacingRole": "A short reward and breath between encounters.",
+        "variationAxes": [
+          "building-number",
+          "reward-description"
+        ],
+        "acceptance": [
+          "Exactly one offering opens.",
+          "Claiming does not teleport the party.",
+          "Next building advances once."
+        ],
+        "runtime": {
+          "id": "salt-chalk",
+          "name": "Salt Chalk",
+          "description": "A captured encounter leaves more Chronicle score."
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      }
+    ],
+    "dependencies": [
+      {
+        "id": "progression-beat:offering",
+        "kind": "progression-beat",
+        "domain": "expedition",
+        "title": "Offering",
+        "intent": "Reward survival and open the next building without teleporting the player.",
+        "playerExperience": "Reward survival and open the next building without teleporting the player.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/composition/createHorrorCorridorV2.ts"
+        ],
+        "dependencies": [
+          "progression-beat:resolution"
+        ],
+        "neighbors": [
+          "progression-beat:resolution",
+          "progression-beat:caught"
+        ],
+        "pacingRole": "Ordered expedition beat 7 of 10.",
+        "variationAxes": [
+          "timing",
+          "encounter",
+          "building",
+          "authority-mode"
+        ],
+        "acceptance": [
+          "Domain ownership remains explicit.",
+          "Snapshot remains deterministic.",
+          "Player-visible transition is readable."
+        ],
+        "runtime": {
+          "beat": "offering",
+          "order": 6
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "progression-beat:resolution",
+        "kind": "progression-beat",
+        "domain": "expedition",
+        "title": "Resolution",
+        "intent": "Record whether the monster was studied or collected.",
+        "playerExperience": "Record whether the monster was studied or collected.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/composition/createHorrorCorridorV2.ts"
+        ],
+        "dependencies": [
+          "progression-beat:last-chance"
+        ],
+        "neighbors": [
+          "progression-beat:last-chance",
+          "progression-beat:offering"
+        ],
+        "pacingRole": "Ordered expedition beat 6 of 10.",
+        "variationAxes": [
+          "timing",
+          "encounter",
+          "building",
+          "authority-mode"
+        ],
+        "acceptance": [
+          "Domain ownership remains explicit.",
+          "Snapshot remains deterministic.",
+          "Player-visible transition is readable."
+        ],
+        "runtime": {
+          "beat": "resolution",
+          "order": 5
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      }
+    ],
+    "relevantDeltas": [
+      {
+        "schema": "horror-corridor.authoring-delta/1",
+        "deltaId": "delta-000003",
+        "packetId": "packet-000003",
+        "contentId": "offering:red-thread",
+        "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+        "touchedFiles": [
+          "HorrorCorridor-V2/src/content/offerings.ts"
+        ],
+        "impactedContent": [
+          "offering:red-thread"
+        ],
+        "evidenceRefs": [
+          "HorrorCorridor-V2/src/authoring/catalog.ts"
+        ],
+        "crossDomainRisks": [],
+        "futureSuggestions": [],
+        "submittedAt": "2026-07-23T14:22:28.498Z",
+        "acceptedAt": "2026-07-23T14:22:28.501Z"
+      }
+    ],
+    "evidenceRefs": [
+      "HorrorCorridor-V2/src/authoring/catalog.ts"
+    ]
+  },
+  "neighborhood": [
+    "offering:fresh-cell",
+    "offering:silver-bell",
+    "offering:salt-chalk"
+  ],
+  "relevantDeltas": [
+    {
+      "schema": "horror-corridor.authoring-delta/1",
+      "deltaId": "delta-000003",
+      "packetId": "packet-000003",
+      "contentId": "offering:red-thread",
+      "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+      "touchedFiles": [
+        "HorrorCorridor-V2/src/content/offerings.ts"
+      ],
+      "impactedContent": [
+        "offering:red-thread"
+      ],
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "crossDomainRisks": [],
+      "futureSuggestions": [],
+      "submittedAt": "2026-07-23T14:22:28.498Z",
+      "acceptedAt": "2026-07-23T14:22:28.501Z"
+    }
+  ],
+  "evidenceRefs": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts"
+  ],
+  "fixPlan": [
+    "Confirm intent, source, dependency, pacing, variation, and acceptance metadata resolve together."
+  ],
+  "allowedFiles": [
+    "HorrorCorridor-V2/src/content/offerings.ts"
+  ],
+  "acceptance": [
+    "Exactly one offering opens.",
+    "Claiming does not teleport the party.",
+    "Next building advances once."
+  ],
+  "worker": "mcp-contract-proof",
+  "status": "revision",
+  "createdAt": "2026-07-23T17:59:29.406Z",
+  "updatedAt": "2026-07-23T17:59:29.414Z",
+  "submittedDeltaId": "delta-000018"
+}

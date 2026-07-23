@@ -23,8 +23,9 @@ Validation:
 ```bash
 cd HorrorCorridor-V2
 npm run validate
+npm run proof:authoring-mcp
 npm run proof:live
 npm run proof:legacy  # run while the V2 dev server is live
 ```
 
-See [HorrorCorridor-V2/README.md](HorrorCorridor-V2/README.md) for architecture, runtime contracts, multiplayer URLs, and proof details.
+See [HorrorCorridor-V2/README.md](HorrorCorridor-V2/README.md) for architecture, runtime contracts, multiplayer URLs, authoring MCP setup, and proof details.

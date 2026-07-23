@@ -1,6 +1,7 @@
 node_modules/
 dist/
 artifacts/
+.playwright-cli/
 .vite/
 *.log
 docs/proofs/timeline-review/runs/*/video/

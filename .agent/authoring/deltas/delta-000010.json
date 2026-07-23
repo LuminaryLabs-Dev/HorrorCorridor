@@ -1,0 +1,20 @@
+{
+  "schema": "horror-corridor.authoring-delta/1",
+  "deltaId": "delta-000010",
+  "packetId": "packet-000010",
+  "contentId": "set-piece:mortuary-bay",
+  "summary": "Resolve the golden mortuary slice intent, dependencies, variation, and acceptance contract.",
+  "touchedFiles": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts"
+  ],
+  "impactedContent": [
+    "set-piece:mortuary-bay"
+  ],
+  "evidenceRefs": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts"
+  ],
+  "crossDomainRisks": [],
+  "futureSuggestions": [],
+  "submittedAt": "2026-07-23T17:55:15.487Z",
+  "acceptedAt": "2026-07-23T17:55:15.490Z"
+}

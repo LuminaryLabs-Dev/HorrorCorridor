@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "horror-corridor-authoring": {
+      "command": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/node_modules/.bin/tsx",
+      "args": [
+        "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/tools/authoring-mcp/server.ts"
+      ],
+      "cwd": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2"
+    }
+  }
+}

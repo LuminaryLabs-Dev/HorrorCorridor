@@ -1,0 +1,1227 @@
+{
+  "district:service-mouth": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:shuttered-market": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:charity-ward": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:flood-line": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:pilgrim-mile": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:records-below": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:boiler-parish": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:last-platform": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:provision-tombs": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:sleeping-shift": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:cold-delivery": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "district:unmarked-return": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:service-nook": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:closed-tavern": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:empty-pantry": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:abandoned-clinic": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:sealed-nursery": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:flooded-laundry": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:pilgrim-alcove": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:boiler-shrine": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:night-archive": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:ticket-hall": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:workers-dormitory": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "set-piece:mortuary-bay": {
+    "lifecycle": "playable",
+    "evidenceRefs": [
+      "HorrorCorridor-V2/src/authoring/catalog.ts",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png",
+      ".agent/authoring/evidence/proof-000005/report.json"
+    ],
+    "version": 4,
+    "updatedAt": "2026-07-23T17:55:15.511Z"
+  },
+  "monster-family:still-guest": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:wall-knocker": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:rust-mother": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:breath-thief": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:bellhop": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:chalk-child": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:drain-singer": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:switchman": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:velvet-nurse": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:receipt-man": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:mop-bride": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:wire-saint": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:shift-foreman": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:window-widow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:choir-mouth": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:pocket-doctor": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:under-cook": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:bed-counter": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:salt-clerk": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:blue-porter": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:ash-boarder": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:laundry-king": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:tin-priest": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:platform-daughter": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:mildew-judge": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:button-collector": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:radiator-wife": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:ticket-eater": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:ceiling-lodger": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:green-caller": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:bone-usher": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:furnace-boy": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:key-sleeper": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster-family:morgue-twin": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:still-guest": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:wall-knocker": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:rust-mother": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:breath-thief": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bellhop-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bellhop-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bellhop-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bellhop-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:chalk-child-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:chalk-child-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:chalk-child-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:chalk-child-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:drain-singer-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:drain-singer-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:drain-singer-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:drain-singer-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:switchman-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:switchman-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:switchman-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:switchman-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:velvet-nurse-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:velvet-nurse-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:velvet-nurse-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:velvet-nurse-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:receipt-man-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:receipt-man-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:receipt-man-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:receipt-man-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mop-bride-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mop-bride-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mop-bride-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mop-bride-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:wire-saint-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:wire-saint-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:wire-saint-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:wire-saint-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:shift-foreman-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:shift-foreman-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:shift-foreman-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:shift-foreman-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:window-widow-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:window-widow-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:window-widow-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:window-widow-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:choir-mouth-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:choir-mouth-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:choir-mouth-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:choir-mouth-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:pocket-doctor-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:pocket-doctor-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:pocket-doctor-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:pocket-doctor-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:under-cook-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:under-cook-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:under-cook-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:under-cook-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bed-counter-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bed-counter-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bed-counter-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bed-counter-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:salt-clerk-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:salt-clerk-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:salt-clerk-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:salt-clerk-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:blue-porter-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:blue-porter-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:blue-porter-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:blue-porter-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ash-boarder-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ash-boarder-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ash-boarder-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ash-boarder-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:laundry-king-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:laundry-king-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:laundry-king-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:laundry-king-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:tin-priest-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:tin-priest-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:tin-priest-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:tin-priest-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:platform-daughter-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:platform-daughter-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:platform-daughter-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:platform-daughter-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mildew-judge-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mildew-judge-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mildew-judge-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:mildew-judge-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:button-collector-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:button-collector-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:button-collector-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:button-collector-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:radiator-wife-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:radiator-wife-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:radiator-wife-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:radiator-wife-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ticket-eater-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ticket-eater-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ticket-eater-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ticket-eater-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ceiling-lodger-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ceiling-lodger-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ceiling-lodger-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:ceiling-lodger-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:green-caller-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:green-caller-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:green-caller-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:green-caller-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bone-usher-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bone-usher-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bone-usher-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:bone-usher-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:furnace-boy-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:furnace-boy-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:furnace-boy-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:furnace-boy-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:key-sleeper-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:key-sleeper-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:key-sleeper-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:key-sleeper-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:morgue-twin-hushed": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:morgue-twin-echoing": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:morgue-twin-fevered": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "monster:morgue-twin-hollow": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "audio-motif:footstep": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "audio-motif:voice": {
+    "lifecycle": "specified",
+    "evidenceRefs": [
+      "HorrorCorridor-V2/src/authoring/catalog.ts"
+    ],
+    "version": 2,
+    "updatedAt": "2026-07-23T14:22:28.492Z"
+  },
+  "audio-motif:metal": {
+    "lifecycle": "specified",
+    "evidenceRefs": [
+      "HorrorCorridor-V2/src/authoring/catalog.ts"
+    ],
+    "version": 2,
+    "updatedAt": "2026-07-23T14:22:28.482Z"
+  },
+  "audio-motif:breath": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "audio-motif:water": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "audio-motif:electrical": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "offering:fresh-cell": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "offering:silver-bell": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "offering:red-thread": {
+    "lifecycle": "specified",
+    "evidenceRefs": [
+      "HorrorCorridor-V2/src/authoring/catalog.ts"
+    ],
+    "version": 2,
+    "updatedAt": "2026-07-23T14:22:28.501Z"
+  },
+  "offering:salt-chalk": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:safe-traversal": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:warning": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:pursuit": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:blackout": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:last-chance": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:resolution": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:offering": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:caught": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:restart": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  },
+  "progression-beat:shared-recovery": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-23T14:22:28.388Z"
+  }
+}

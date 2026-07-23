@@ -1,0 +1,415 @@
+{
+  "schema": "horror-corridor.authoring-packet/1",
+  "packetId": "packet-000014",
+  "contentId": "audio-motif:voice",
+  "goal": "Validate the resolved specification contract for audio-motif:voice.",
+  "domainBoundary": "corridor",
+  "context": {
+    "schema": "horror-corridor.authoring-context/1",
+    "globalIntent": "Preserve the full HorrorCorridor content universe while changing and proving one bounded content target at a time.",
+    "globalIntentRefs": [
+      "goal.md",
+      "memory.md",
+      "HorrorCorridor-V2/goal.md",
+      "HorrorCorridor-V2/memory.md"
+    ],
+    "target": {
+      "id": "audio-motif:voice",
+      "kind": "audio-motif",
+      "domain": "corridor",
+      "title": "Voice Warning",
+      "intent": "Give voice monsters a recognizable directional pattern before pursuit.",
+      "playerExperience": "The player hears a repeated voice motif whose pan and cadence reveal danger.",
+      "sourceRefs": [
+        "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+      ],
+      "dependencies": [],
+      "neighbors": [
+        "audio-motif:footstep",
+        "audio-motif:metal",
+        "audio-motif:breath",
+        "audio-motif:water",
+        "audio-motif:electrical"
+      ],
+      "pacingRole": "Hidden sign-phase language that tightens before visible pursuit.",
+      "variationAxes": [
+        "pulse-count",
+        "frequency",
+        "cadence",
+        "pan",
+        "threat"
+      ],
+      "acceptance": [
+        "Pattern has at least two pulses.",
+        "Pan matches acoustics.",
+        "Audio cannot decide outcomes."
+      ],
+      "runtime": {
+        "channel": "voice",
+        "monsterCount": 24
+      },
+      "lifecycle": "specified",
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "version": 2
+    },
+    "neighborhood": [
+      {
+        "id": "audio-motif:footstep",
+        "kind": "audio-motif",
+        "domain": "corridor",
+        "title": "Footstep Warning",
+        "intent": "Give footstep monsters a recognizable directional pattern before pursuit.",
+        "playerExperience": "The player hears a repeated footstep motif whose pan and cadence reveal danger.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "dependencies": [],
+        "neighbors": [
+          "audio-motif:voice",
+          "audio-motif:metal",
+          "audio-motif:breath",
+          "audio-motif:water",
+          "audio-motif:electrical"
+        ],
+        "pacingRole": "Hidden sign-phase language that tightens before visible pursuit.",
+        "variationAxes": [
+          "pulse-count",
+          "frequency",
+          "cadence",
+          "pan",
+          "threat"
+        ],
+        "acceptance": [
+          "Pattern has at least two pulses.",
+          "Pan matches acoustics.",
+          "Audio cannot decide outcomes."
+        ],
+        "runtime": {
+          "channel": "footstep",
+          "monsterCount": 21
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "audio-motif:metal",
+        "kind": "audio-motif",
+        "domain": "corridor",
+        "title": "Metal Warning",
+        "intent": "Give metal monsters a recognizable directional pattern before pursuit.",
+        "playerExperience": "The player hears a repeated metal motif whose pan and cadence reveal danger.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "dependencies": [],
+        "neighbors": [
+          "audio-motif:footstep",
+          "audio-motif:voice",
+          "audio-motif:breath",
+          "audio-motif:water",
+          "audio-motif:electrical"
+        ],
+        "pacingRole": "Hidden sign-phase language that tightens before visible pursuit.",
+        "variationAxes": [
+          "pulse-count",
+          "frequency",
+          "cadence",
+          "pan",
+          "threat"
+        ],
+        "acceptance": [
+          "Pattern has at least two pulses.",
+          "Pan matches acoustics.",
+          "Audio cannot decide outcomes."
+        ],
+        "runtime": {
+          "channel": "metal",
+          "monsterCount": 41
+        },
+        "lifecycle": "specified",
+        "evidenceRefs": [
+          "HorrorCorridor-V2/src/authoring/catalog.ts"
+        ],
+        "version": 2
+      },
+      {
+        "id": "audio-motif:breath",
+        "kind": "audio-motif",
+        "domain": "corridor",
+        "title": "Breath Warning",
+        "intent": "Give breath monsters a recognizable directional pattern before pursuit.",
+        "playerExperience": "The player hears a repeated breath motif whose pan and cadence reveal danger.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "dependencies": [],
+        "neighbors": [
+          "audio-motif:footstep",
+          "audio-motif:voice",
+          "audio-motif:metal",
+          "audio-motif:water",
+          "audio-motif:electrical"
+        ],
+        "pacingRole": "Hidden sign-phase language that tightens before visible pursuit.",
+        "variationAxes": [
+          "pulse-count",
+          "frequency",
+          "cadence",
+          "pan",
+          "threat"
+        ],
+        "acceptance": [
+          "Pattern has at least two pulses.",
+          "Pan matches acoustics.",
+          "Audio cannot decide outcomes."
+        ],
+        "runtime": {
+          "channel": "breath",
+          "monsterCount": 10
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "audio-motif:water",
+        "kind": "audio-motif",
+        "domain": "corridor",
+        "title": "Water Warning",
+        "intent": "Give water monsters a recognizable directional pattern before pursuit.",
+        "playerExperience": "The player hears a repeated water motif whose pan and cadence reveal danger.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "dependencies": [],
+        "neighbors": [
+          "audio-motif:footstep",
+          "audio-motif:voice",
+          "audio-motif:metal",
+          "audio-motif:breath",
+          "audio-motif:electrical"
+        ],
+        "pacingRole": "Hidden sign-phase language that tightens before visible pursuit.",
+        "variationAxes": [
+          "pulse-count",
+          "frequency",
+          "cadence",
+          "pan",
+          "threat"
+        ],
+        "acceptance": [
+          "Pattern has at least two pulses.",
+          "Pan matches acoustics.",
+          "Audio cannot decide outcomes."
+        ],
+        "runtime": {
+          "channel": "water",
+          "monsterCount": 16
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "audio-motif:electrical",
+        "kind": "audio-motif",
+        "domain": "corridor",
+        "title": "Electrical Warning",
+        "intent": "Give electrical monsters a recognizable directional pattern before pursuit.",
+        "playerExperience": "The player hears a repeated electrical motif whose pan and cadence reveal danger.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "dependencies": [],
+        "neighbors": [
+          "audio-motif:footstep",
+          "audio-motif:voice",
+          "audio-motif:metal",
+          "audio-motif:breath",
+          "audio-motif:water"
+        ],
+        "pacingRole": "Hidden sign-phase language that tightens before visible pursuit.",
+        "variationAxes": [
+          "pulse-count",
+          "frequency",
+          "cadence",
+          "pan",
+          "threat"
+        ],
+        "acceptance": [
+          "Pattern has at least two pulses.",
+          "Pan matches acoustics.",
+          "Audio cannot decide outcomes."
+        ],
+        "runtime": {
+          "channel": "electrical",
+          "monsterCount": 12
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      }
+    ],
+    "dependencies": [],
+    "relevantDeltas": [
+      {
+        "schema": "horror-corridor.authoring-delta/1",
+        "deltaId": "delta-000002",
+        "packetId": "packet-000002",
+        "contentId": "audio-motif:voice",
+        "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+        "touchedFiles": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "impactedContent": [
+          "audio-motif:voice"
+        ],
+        "evidenceRefs": [
+          "HorrorCorridor-V2/src/authoring/catalog.ts"
+        ],
+        "crossDomainRisks": [],
+        "futureSuggestions": [],
+        "submittedAt": "2026-07-23T14:22:28.490Z",
+        "acceptedAt": "2026-07-23T14:22:28.492Z"
+      },
+      {
+        "schema": "horror-corridor.authoring-delta/1",
+        "deltaId": "delta-000001",
+        "packetId": "packet-000001",
+        "contentId": "audio-motif:metal",
+        "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+        "touchedFiles": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "impactedContent": [
+          "audio-motif:metal"
+        ],
+        "evidenceRefs": [
+          "HorrorCorridor-V2/src/authoring/catalog.ts"
+        ],
+        "crossDomainRisks": [],
+        "futureSuggestions": [],
+        "submittedAt": "2026-07-23T14:22:28.478Z",
+        "acceptedAt": "2026-07-23T14:22:28.482Z"
+      },
+      {
+        "schema": "horror-corridor.authoring-delta/1",
+        "deltaId": "delta-000012",
+        "packetId": "packet-000012",
+        "contentId": "set-piece:mortuary-bay",
+        "summary": "Accept the passing sub-thirty-second focused semantic and visual proof.",
+        "touchedFiles": [
+          "HorrorCorridor-V2/tools/authoring-mcp/proof-manager.ts",
+          "HorrorCorridor-V2/scripts/prove-authoring-mcp.ts"
+        ],
+        "impactedContent": [
+          "set-piece:mortuary-bay"
+        ],
+        "evidenceRefs": [
+          ".agent/authoring/evidence/proof-000005/report.json"
+        ],
+        "crossDomainRisks": [],
+        "futureSuggestions": [],
+        "submittedAt": "2026-07-23T17:55:15.508Z",
+        "acceptedAt": "2026-07-23T17:55:15.511Z"
+      }
+    ],
+    "evidenceRefs": [
+      "HorrorCorridor-V2/src/authoring/catalog.ts",
+      ".agent/authoring/evidence/proof-000005/report.json"
+    ]
+  },
+  "neighborhood": [
+    "audio-motif:footstep",
+    "audio-motif:metal",
+    "audio-motif:breath",
+    "audio-motif:water",
+    "audio-motif:electrical"
+  ],
+  "relevantDeltas": [
+    {
+      "schema": "horror-corridor.authoring-delta/1",
+      "deltaId": "delta-000002",
+      "packetId": "packet-000002",
+      "contentId": "audio-motif:voice",
+      "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+      "touchedFiles": [
+        "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+      ],
+      "impactedContent": [
+        "audio-motif:voice"
+      ],
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "crossDomainRisks": [],
+      "futureSuggestions": [],
+      "submittedAt": "2026-07-23T14:22:28.490Z",
+      "acceptedAt": "2026-07-23T14:22:28.492Z"
+    },
+    {
+      "schema": "horror-corridor.authoring-delta/1",
+      "deltaId": "delta-000001",
+      "packetId": "packet-000001",
+      "contentId": "audio-motif:metal",
+      "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+      "touchedFiles": [
+        "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+      ],
+      "impactedContent": [
+        "audio-motif:metal"
+      ],
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "crossDomainRisks": [],
+      "futureSuggestions": [],
+      "submittedAt": "2026-07-23T14:22:28.478Z",
+      "acceptedAt": "2026-07-23T14:22:28.482Z"
+    },
+    {
+      "schema": "horror-corridor.authoring-delta/1",
+      "deltaId": "delta-000012",
+      "packetId": "packet-000012",
+      "contentId": "set-piece:mortuary-bay",
+      "summary": "Accept the passing sub-thirty-second focused semantic and visual proof.",
+      "touchedFiles": [
+        "HorrorCorridor-V2/tools/authoring-mcp/proof-manager.ts",
+        "HorrorCorridor-V2/scripts/prove-authoring-mcp.ts"
+      ],
+      "impactedContent": [
+        "set-piece:mortuary-bay"
+      ],
+      "evidenceRefs": [
+        ".agent/authoring/evidence/proof-000005/report.json"
+      ],
+      "crossDomainRisks": [],
+      "futureSuggestions": [],
+      "submittedAt": "2026-07-23T17:55:15.508Z",
+      "acceptedAt": "2026-07-23T17:55:15.511Z"
+    }
+  ],
+  "evidenceRefs": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts",
+    ".agent/authoring/evidence/proof-000005/report.json"
+  ],
+  "fixPlan": [
+    "Confirm intent, source, dependency, pacing, variation, and acceptance metadata resolve together."
+  ],
+  "allowedFiles": [
+    "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+  ],
+  "acceptance": [
+    "Pattern has at least two pulses.",
+    "Pan matches acoustics.",
+    "Audio cannot decide outcomes."
+  ],
+  "worker": "mcp-contract-proof",
+  "status": "revision",
+  "createdAt": "2026-07-23T17:56:14.138Z",
+  "updatedAt": "2026-07-23T17:56:14.143Z",
+  "submittedDeltaId": "delta-000014"
+}

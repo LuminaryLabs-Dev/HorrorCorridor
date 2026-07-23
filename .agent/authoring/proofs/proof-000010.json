@@ -1,0 +1,23 @@
+{
+  "schema": "horror-corridor.authoring-proof/1",
+  "runId": "proof-000010",
+  "level": "promotion",
+  "contentIds": [
+    "set-piece:mortuary-bay"
+  ],
+  "status": "cancelled",
+  "startedAt": "2026-07-23T17:59:36.652Z",
+  "finishedAt": "2026-07-23T17:59:36.655Z",
+  "elapsedMs": 3,
+  "artifactRefs": [],
+  "command": [
+    "npm run lint",
+    "npm run build",
+    "npm run proof:runtime",
+    "npm run proof:live -- --url $PREVIEW_URL",
+    "npm run proof:legacy",
+    "npm run review:timeline -- --url $PREVIEW_URL --seconds 600"
+  ],
+  "exitCode": null,
+  "error": "Cancelled by MCP host."
+}

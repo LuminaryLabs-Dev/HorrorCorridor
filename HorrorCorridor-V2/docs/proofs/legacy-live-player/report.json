@@ -4,7 +4,7 @@
     "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/movement-scene.png",
     "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/report.json"
   ],
-  "createdAt": "2026-07-19T07:25:04.402Z",
+  "createdAt": "2026-07-23T17:54:20.523Z",
   "harness": "horror-corridor-live-player-harness",
   "nexusSimulator": {
     "commandVocabulary": [
@@ -35,7 +35,7 @@
     "sessionId": "",
     "skipBrowser": false,
     "startServer": false,
-    "url": "http://127.0.0.1:4173/",
+    "url": "http://127.0.0.1:4188/",
     "thresholds": {
       "centerCropRatio": 0.82,
       "maxDarkRatio": 0.9,
@@ -82,10 +82,10 @@
         "phase": "delving",
         "runId": "7926ad47-1",
         "seed": 2032577863,
-        "elapsedMs": 1450.000000000001,
-        "distanceMeters": 2.7449999999999974,
-        "distanceSinceEncounter": 2.7449999999999974,
-        "score": 5.489999999999995,
+        "elapsedMs": 1666.6666666666686,
+        "distanceMeters": 2.7958333333333307,
+        "distanceSinceEncounter": 2.7958333333333307,
+        "score": 5.5916666666666615,
         "fate": "alive",
         "buildingNumber": 1,
         "chronicle": [
@@ -123,6 +123,966 @@
             "survivals": 0,
             "captures": 0,
             "firstBuilding": null
+          },
+          "bellhop-hushed": {
+            "monsterId": "bellhop-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bellhop-echoing": {
+            "monsterId": "bellhop-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bellhop-fevered": {
+            "monsterId": "bellhop-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bellhop-hollow": {
+            "monsterId": "bellhop-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-hushed": {
+            "monsterId": "chalk-child-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-echoing": {
+            "monsterId": "chalk-child-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-fevered": {
+            "monsterId": "chalk-child-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-hollow": {
+            "monsterId": "chalk-child-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-hushed": {
+            "monsterId": "drain-singer-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-echoing": {
+            "monsterId": "drain-singer-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-fevered": {
+            "monsterId": "drain-singer-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-hollow": {
+            "monsterId": "drain-singer-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-hushed": {
+            "monsterId": "switchman-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-echoing": {
+            "monsterId": "switchman-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-fevered": {
+            "monsterId": "switchman-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-hollow": {
+            "monsterId": "switchman-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-hushed": {
+            "monsterId": "velvet-nurse-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-echoing": {
+            "monsterId": "velvet-nurse-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-fevered": {
+            "monsterId": "velvet-nurse-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-hollow": {
+            "monsterId": "velvet-nurse-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-hushed": {
+            "monsterId": "receipt-man-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-echoing": {
+            "monsterId": "receipt-man-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-fevered": {
+            "monsterId": "receipt-man-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-hollow": {
+            "monsterId": "receipt-man-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-hushed": {
+            "monsterId": "mop-bride-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-echoing": {
+            "monsterId": "mop-bride-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-fevered": {
+            "monsterId": "mop-bride-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-hollow": {
+            "monsterId": "mop-bride-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-hushed": {
+            "monsterId": "wire-saint-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-echoing": {
+            "monsterId": "wire-saint-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-fevered": {
+            "monsterId": "wire-saint-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-hollow": {
+            "monsterId": "wire-saint-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-hushed": {
+            "monsterId": "shift-foreman-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-echoing": {
+            "monsterId": "shift-foreman-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-fevered": {
+            "monsterId": "shift-foreman-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-hollow": {
+            "monsterId": "shift-foreman-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-hushed": {
+            "monsterId": "window-widow-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-echoing": {
+            "monsterId": "window-widow-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-fevered": {
+            "monsterId": "window-widow-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-hollow": {
+            "monsterId": "window-widow-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-hushed": {
+            "monsterId": "choir-mouth-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-echoing": {
+            "monsterId": "choir-mouth-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-fevered": {
+            "monsterId": "choir-mouth-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-hollow": {
+            "monsterId": "choir-mouth-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-hushed": {
+            "monsterId": "pocket-doctor-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-echoing": {
+            "monsterId": "pocket-doctor-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-fevered": {
+            "monsterId": "pocket-doctor-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-hollow": {
+            "monsterId": "pocket-doctor-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-hushed": {
+            "monsterId": "under-cook-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-echoing": {
+            "monsterId": "under-cook-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-fevered": {
+            "monsterId": "under-cook-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-hollow": {
+            "monsterId": "under-cook-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-hushed": {
+            "monsterId": "bed-counter-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-echoing": {
+            "monsterId": "bed-counter-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-fevered": {
+            "monsterId": "bed-counter-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-hollow": {
+            "monsterId": "bed-counter-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-hushed": {
+            "monsterId": "salt-clerk-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-echoing": {
+            "monsterId": "salt-clerk-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-fevered": {
+            "monsterId": "salt-clerk-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-hollow": {
+            "monsterId": "salt-clerk-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-hushed": {
+            "monsterId": "blue-porter-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-echoing": {
+            "monsterId": "blue-porter-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-fevered": {
+            "monsterId": "blue-porter-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-hollow": {
+            "monsterId": "blue-porter-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-hushed": {
+            "monsterId": "ash-boarder-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-echoing": {
+            "monsterId": "ash-boarder-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-fevered": {
+            "monsterId": "ash-boarder-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-hollow": {
+            "monsterId": "ash-boarder-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-hushed": {
+            "monsterId": "laundry-king-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-echoing": {
+            "monsterId": "laundry-king-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-fevered": {
+            "monsterId": "laundry-king-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-hollow": {
+            "monsterId": "laundry-king-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-hushed": {
+            "monsterId": "tin-priest-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-echoing": {
+            "monsterId": "tin-priest-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-fevered": {
+            "monsterId": "tin-priest-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-hollow": {
+            "monsterId": "tin-priest-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-hushed": {
+            "monsterId": "platform-daughter-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-echoing": {
+            "monsterId": "platform-daughter-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-fevered": {
+            "monsterId": "platform-daughter-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-hollow": {
+            "monsterId": "platform-daughter-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-hushed": {
+            "monsterId": "mildew-judge-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-echoing": {
+            "monsterId": "mildew-judge-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-fevered": {
+            "monsterId": "mildew-judge-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-hollow": {
+            "monsterId": "mildew-judge-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-hushed": {
+            "monsterId": "button-collector-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-echoing": {
+            "monsterId": "button-collector-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-fevered": {
+            "monsterId": "button-collector-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-hollow": {
+            "monsterId": "button-collector-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-hushed": {
+            "monsterId": "radiator-wife-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-echoing": {
+            "monsterId": "radiator-wife-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-fevered": {
+            "monsterId": "radiator-wife-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-hollow": {
+            "monsterId": "radiator-wife-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-hushed": {
+            "monsterId": "ticket-eater-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-echoing": {
+            "monsterId": "ticket-eater-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-fevered": {
+            "monsterId": "ticket-eater-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-hollow": {
+            "monsterId": "ticket-eater-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-hushed": {
+            "monsterId": "ceiling-lodger-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-echoing": {
+            "monsterId": "ceiling-lodger-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-fevered": {
+            "monsterId": "ceiling-lodger-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-hollow": {
+            "monsterId": "ceiling-lodger-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-hushed": {
+            "monsterId": "green-caller-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-echoing": {
+            "monsterId": "green-caller-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-fevered": {
+            "monsterId": "green-caller-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-hollow": {
+            "monsterId": "green-caller-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-hushed": {
+            "monsterId": "bone-usher-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-echoing": {
+            "monsterId": "bone-usher-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-fevered": {
+            "monsterId": "bone-usher-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-hollow": {
+            "monsterId": "bone-usher-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-hushed": {
+            "monsterId": "furnace-boy-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-echoing": {
+            "monsterId": "furnace-boy-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-fevered": {
+            "monsterId": "furnace-boy-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-hollow": {
+            "monsterId": "furnace-boy-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-hushed": {
+            "monsterId": "key-sleeper-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-echoing": {
+            "monsterId": "key-sleeper-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-fevered": {
+            "monsterId": "key-sleeper-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-hollow": {
+            "monsterId": "key-sleeper-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-hushed": {
+            "monsterId": "morgue-twin-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-echoing": {
+            "monsterId": "morgue-twin-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-fevered": {
+            "monsterId": "morgue-twin-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-hollow": {
+            "monsterId": "morgue-twin-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
           }
         },
         "activeEncounter": null
@@ -131,7 +1091,7 @@
         "position": {
           "x": 0,
           "y": 1.68,
-          "z": 4.755000000000003
+          "z": 1.2041666666666693
         },
         "rotationY": 0,
         "pitch": -0.03
@@ -164,7 +1124,7 @@
         "phase": "delving",
         "runId": "7926ad47-1",
         "seed": 2032577863,
-        "elapsedMs": 400.0000000000001,
+        "elapsedMs": 516.6666666666669,
         "distanceMeters": 0,
         "distanceSinceEncounter": 0,
         "score": 0,
@@ -205,6 +1165,966 @@
             "survivals": 0,
             "captures": 0,
             "firstBuilding": null
+          },
+          "bellhop-hushed": {
+            "monsterId": "bellhop-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bellhop-echoing": {
+            "monsterId": "bellhop-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bellhop-fevered": {
+            "monsterId": "bellhop-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bellhop-hollow": {
+            "monsterId": "bellhop-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-hushed": {
+            "monsterId": "chalk-child-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-echoing": {
+            "monsterId": "chalk-child-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-fevered": {
+            "monsterId": "chalk-child-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "chalk-child-hollow": {
+            "monsterId": "chalk-child-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-hushed": {
+            "monsterId": "drain-singer-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-echoing": {
+            "monsterId": "drain-singer-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-fevered": {
+            "monsterId": "drain-singer-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "drain-singer-hollow": {
+            "monsterId": "drain-singer-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-hushed": {
+            "monsterId": "switchman-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-echoing": {
+            "monsterId": "switchman-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-fevered": {
+            "monsterId": "switchman-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "switchman-hollow": {
+            "monsterId": "switchman-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-hushed": {
+            "monsterId": "velvet-nurse-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-echoing": {
+            "monsterId": "velvet-nurse-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-fevered": {
+            "monsterId": "velvet-nurse-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "velvet-nurse-hollow": {
+            "monsterId": "velvet-nurse-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-hushed": {
+            "monsterId": "receipt-man-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-echoing": {
+            "monsterId": "receipt-man-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-fevered": {
+            "monsterId": "receipt-man-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "receipt-man-hollow": {
+            "monsterId": "receipt-man-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-hushed": {
+            "monsterId": "mop-bride-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-echoing": {
+            "monsterId": "mop-bride-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-fevered": {
+            "monsterId": "mop-bride-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mop-bride-hollow": {
+            "monsterId": "mop-bride-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-hushed": {
+            "monsterId": "wire-saint-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-echoing": {
+            "monsterId": "wire-saint-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-fevered": {
+            "monsterId": "wire-saint-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wire-saint-hollow": {
+            "monsterId": "wire-saint-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-hushed": {
+            "monsterId": "shift-foreman-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-echoing": {
+            "monsterId": "shift-foreman-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-fevered": {
+            "monsterId": "shift-foreman-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "shift-foreman-hollow": {
+            "monsterId": "shift-foreman-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-hushed": {
+            "monsterId": "window-widow-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-echoing": {
+            "monsterId": "window-widow-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-fevered": {
+            "monsterId": "window-widow-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "window-widow-hollow": {
+            "monsterId": "window-widow-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-hushed": {
+            "monsterId": "choir-mouth-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-echoing": {
+            "monsterId": "choir-mouth-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-fevered": {
+            "monsterId": "choir-mouth-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "choir-mouth-hollow": {
+            "monsterId": "choir-mouth-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-hushed": {
+            "monsterId": "pocket-doctor-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-echoing": {
+            "monsterId": "pocket-doctor-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-fevered": {
+            "monsterId": "pocket-doctor-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "pocket-doctor-hollow": {
+            "monsterId": "pocket-doctor-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-hushed": {
+            "monsterId": "under-cook-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-echoing": {
+            "monsterId": "under-cook-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-fevered": {
+            "monsterId": "under-cook-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "under-cook-hollow": {
+            "monsterId": "under-cook-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-hushed": {
+            "monsterId": "bed-counter-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-echoing": {
+            "monsterId": "bed-counter-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-fevered": {
+            "monsterId": "bed-counter-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bed-counter-hollow": {
+            "monsterId": "bed-counter-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-hushed": {
+            "monsterId": "salt-clerk-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-echoing": {
+            "monsterId": "salt-clerk-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-fevered": {
+            "monsterId": "salt-clerk-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "salt-clerk-hollow": {
+            "monsterId": "salt-clerk-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-hushed": {
+            "monsterId": "blue-porter-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-echoing": {
+            "monsterId": "blue-porter-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-fevered": {
+            "monsterId": "blue-porter-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "blue-porter-hollow": {
+            "monsterId": "blue-porter-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-hushed": {
+            "monsterId": "ash-boarder-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-echoing": {
+            "monsterId": "ash-boarder-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-fevered": {
+            "monsterId": "ash-boarder-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ash-boarder-hollow": {
+            "monsterId": "ash-boarder-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-hushed": {
+            "monsterId": "laundry-king-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-echoing": {
+            "monsterId": "laundry-king-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-fevered": {
+            "monsterId": "laundry-king-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "laundry-king-hollow": {
+            "monsterId": "laundry-king-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-hushed": {
+            "monsterId": "tin-priest-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-echoing": {
+            "monsterId": "tin-priest-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-fevered": {
+            "monsterId": "tin-priest-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "tin-priest-hollow": {
+            "monsterId": "tin-priest-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-hushed": {
+            "monsterId": "platform-daughter-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-echoing": {
+            "monsterId": "platform-daughter-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-fevered": {
+            "monsterId": "platform-daughter-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "platform-daughter-hollow": {
+            "monsterId": "platform-daughter-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-hushed": {
+            "monsterId": "mildew-judge-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-echoing": {
+            "monsterId": "mildew-judge-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-fevered": {
+            "monsterId": "mildew-judge-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "mildew-judge-hollow": {
+            "monsterId": "mildew-judge-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-hushed": {
+            "monsterId": "button-collector-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-echoing": {
+            "monsterId": "button-collector-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-fevered": {
+            "monsterId": "button-collector-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "button-collector-hollow": {
+            "monsterId": "button-collector-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-hushed": {
+            "monsterId": "radiator-wife-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-echoing": {
+            "monsterId": "radiator-wife-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-fevered": {
+            "monsterId": "radiator-wife-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "radiator-wife-hollow": {
+            "monsterId": "radiator-wife-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-hushed": {
+            "monsterId": "ticket-eater-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-echoing": {
+            "monsterId": "ticket-eater-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-fevered": {
+            "monsterId": "ticket-eater-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ticket-eater-hollow": {
+            "monsterId": "ticket-eater-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-hushed": {
+            "monsterId": "ceiling-lodger-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-echoing": {
+            "monsterId": "ceiling-lodger-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-fevered": {
+            "monsterId": "ceiling-lodger-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "ceiling-lodger-hollow": {
+            "monsterId": "ceiling-lodger-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-hushed": {
+            "monsterId": "green-caller-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-echoing": {
+            "monsterId": "green-caller-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-fevered": {
+            "monsterId": "green-caller-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "green-caller-hollow": {
+            "monsterId": "green-caller-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-hushed": {
+            "monsterId": "bone-usher-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-echoing": {
+            "monsterId": "bone-usher-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-fevered": {
+            "monsterId": "bone-usher-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "bone-usher-hollow": {
+            "monsterId": "bone-usher-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-hushed": {
+            "monsterId": "furnace-boy-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-echoing": {
+            "monsterId": "furnace-boy-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-fevered": {
+            "monsterId": "furnace-boy-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "furnace-boy-hollow": {
+            "monsterId": "furnace-boy-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-hushed": {
+            "monsterId": "key-sleeper-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-echoing": {
+            "monsterId": "key-sleeper-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-fevered": {
+            "monsterId": "key-sleeper-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "key-sleeper-hollow": {
+            "monsterId": "key-sleeper-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-hushed": {
+            "monsterId": "morgue-twin-hushed",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-echoing": {
+            "monsterId": "morgue-twin-echoing",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-fevered": {
+            "monsterId": "morgue-twin-fevered",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "morgue-twin-hollow": {
+            "monsterId": "morgue-twin-hollow",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
           }
         },
         "activeEncounter": null
@@ -213,7 +2133,7 @@
         "position": {
           "x": 0,
           "y": 1.68,
-          "z": 7.5
+          "z": 4
         },
         "rotationY": 0,
         "pitch": -0.03
@@ -241,7 +2161,7 @@
     }
   },
   "luminance": {
-    "average": 6.952935215507854,
+    "average": 13.965656937970135,
     "crop": {
       "left": 126,
       "top": 81,
@@ -249,9 +2169,9 @@
       "bottom": 819,
       "centerCropRatio": 0.82
     },
-    "darkRatio": 0.8614911758873687,
+    "darkRatio": 0.7315208256612182,
     "height": 900,
-    "lightRatio": 0.03204701472101829,
+    "lightRatio": 0.070584638773217,
     "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/starting-scene.png",
     "width": 1400
   },
@@ -269,7 +2189,7 @@
         }
       },
       "luminance": {
-        "average": 6.952935215507854,
+        "average": 13.965656937970135,
         "crop": {
           "left": 126,
           "top": 81,
@@ -277,9 +2197,9 @@
           "bottom": 819,
           "centerCropRatio": 0.82
         },
-        "darkRatio": 0.8614911758873687,
+        "darkRatio": 0.7315208256612182,
         "height": 900,
-        "lightRatio": 0.03204701472101829,
+        "lightRatio": 0.070584638773217,
         "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/starting-scene.png",
         "width": 1400
       }
@@ -297,7 +2217,7 @@
         }
       },
       "luminance": {
-        "average": 6.867126034481707,
+        "average": 18.569301756098703,
         "crop": {
           "left": 126,
           "top": 81,
@@ -305,9 +2225,9 @@
           "bottom": 819,
           "centerCropRatio": 0.82
         },
-        "darkRatio": 0.8403739742972343,
+        "darkRatio": 0.6208629595006752,
         "height": 900,
-        "lightRatio": 0.041750469769506054,
+        "lightRatio": 0.12309377449175189,
         "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/movement-scene.png",
         "width": 1400
       }
@@ -330,10 +2250,10 @@
     "phase": "delving",
     "runId": "7926ad47-1",
     "seed": 2032577863,
-    "elapsedMs": 1450.000000000001,
-    "distanceMeters": 2.7449999999999974,
-    "distanceSinceEncounter": 2.7449999999999974,
-    "score": 5.489999999999995,
+    "elapsedMs": 1666.6666666666686,
+    "distanceMeters": 2.7958333333333307,
+    "distanceSinceEncounter": 2.7958333333333307,
+    "score": 5.5916666666666615,
     "fate": "alive",
     "buildingNumber": 1,
     "chronicle": [
@@ -366,6 +2286,966 @@
       },
       "breath-thief": {
         "monsterId": "breath-thief",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bellhop-hushed": {
+        "monsterId": "bellhop-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bellhop-echoing": {
+        "monsterId": "bellhop-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bellhop-fevered": {
+        "monsterId": "bellhop-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bellhop-hollow": {
+        "monsterId": "bellhop-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "chalk-child-hushed": {
+        "monsterId": "chalk-child-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "chalk-child-echoing": {
+        "monsterId": "chalk-child-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "chalk-child-fevered": {
+        "monsterId": "chalk-child-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "chalk-child-hollow": {
+        "monsterId": "chalk-child-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "drain-singer-hushed": {
+        "monsterId": "drain-singer-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "drain-singer-echoing": {
+        "monsterId": "drain-singer-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "drain-singer-fevered": {
+        "monsterId": "drain-singer-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "drain-singer-hollow": {
+        "monsterId": "drain-singer-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "switchman-hushed": {
+        "monsterId": "switchman-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "switchman-echoing": {
+        "monsterId": "switchman-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "switchman-fevered": {
+        "monsterId": "switchman-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "switchman-hollow": {
+        "monsterId": "switchman-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "velvet-nurse-hushed": {
+        "monsterId": "velvet-nurse-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "velvet-nurse-echoing": {
+        "monsterId": "velvet-nurse-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "velvet-nurse-fevered": {
+        "monsterId": "velvet-nurse-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "velvet-nurse-hollow": {
+        "monsterId": "velvet-nurse-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "receipt-man-hushed": {
+        "monsterId": "receipt-man-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "receipt-man-echoing": {
+        "monsterId": "receipt-man-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "receipt-man-fevered": {
+        "monsterId": "receipt-man-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "receipt-man-hollow": {
+        "monsterId": "receipt-man-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mop-bride-hushed": {
+        "monsterId": "mop-bride-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mop-bride-echoing": {
+        "monsterId": "mop-bride-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mop-bride-fevered": {
+        "monsterId": "mop-bride-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mop-bride-hollow": {
+        "monsterId": "mop-bride-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "wire-saint-hushed": {
+        "monsterId": "wire-saint-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "wire-saint-echoing": {
+        "monsterId": "wire-saint-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "wire-saint-fevered": {
+        "monsterId": "wire-saint-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "wire-saint-hollow": {
+        "monsterId": "wire-saint-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "shift-foreman-hushed": {
+        "monsterId": "shift-foreman-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "shift-foreman-echoing": {
+        "monsterId": "shift-foreman-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "shift-foreman-fevered": {
+        "monsterId": "shift-foreman-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "shift-foreman-hollow": {
+        "monsterId": "shift-foreman-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "window-widow-hushed": {
+        "monsterId": "window-widow-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "window-widow-echoing": {
+        "monsterId": "window-widow-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "window-widow-fevered": {
+        "monsterId": "window-widow-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "window-widow-hollow": {
+        "monsterId": "window-widow-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "choir-mouth-hushed": {
+        "monsterId": "choir-mouth-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "choir-mouth-echoing": {
+        "monsterId": "choir-mouth-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "choir-mouth-fevered": {
+        "monsterId": "choir-mouth-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "choir-mouth-hollow": {
+        "monsterId": "choir-mouth-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "pocket-doctor-hushed": {
+        "monsterId": "pocket-doctor-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "pocket-doctor-echoing": {
+        "monsterId": "pocket-doctor-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "pocket-doctor-fevered": {
+        "monsterId": "pocket-doctor-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "pocket-doctor-hollow": {
+        "monsterId": "pocket-doctor-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "under-cook-hushed": {
+        "monsterId": "under-cook-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "under-cook-echoing": {
+        "monsterId": "under-cook-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "under-cook-fevered": {
+        "monsterId": "under-cook-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "under-cook-hollow": {
+        "monsterId": "under-cook-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bed-counter-hushed": {
+        "monsterId": "bed-counter-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bed-counter-echoing": {
+        "monsterId": "bed-counter-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bed-counter-fevered": {
+        "monsterId": "bed-counter-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bed-counter-hollow": {
+        "monsterId": "bed-counter-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "salt-clerk-hushed": {
+        "monsterId": "salt-clerk-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "salt-clerk-echoing": {
+        "monsterId": "salt-clerk-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "salt-clerk-fevered": {
+        "monsterId": "salt-clerk-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "salt-clerk-hollow": {
+        "monsterId": "salt-clerk-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "blue-porter-hushed": {
+        "monsterId": "blue-porter-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "blue-porter-echoing": {
+        "monsterId": "blue-porter-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "blue-porter-fevered": {
+        "monsterId": "blue-porter-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "blue-porter-hollow": {
+        "monsterId": "blue-porter-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ash-boarder-hushed": {
+        "monsterId": "ash-boarder-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ash-boarder-echoing": {
+        "monsterId": "ash-boarder-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ash-boarder-fevered": {
+        "monsterId": "ash-boarder-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ash-boarder-hollow": {
+        "monsterId": "ash-boarder-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "laundry-king-hushed": {
+        "monsterId": "laundry-king-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "laundry-king-echoing": {
+        "monsterId": "laundry-king-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "laundry-king-fevered": {
+        "monsterId": "laundry-king-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "laundry-king-hollow": {
+        "monsterId": "laundry-king-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "tin-priest-hushed": {
+        "monsterId": "tin-priest-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "tin-priest-echoing": {
+        "monsterId": "tin-priest-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "tin-priest-fevered": {
+        "monsterId": "tin-priest-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "tin-priest-hollow": {
+        "monsterId": "tin-priest-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "platform-daughter-hushed": {
+        "monsterId": "platform-daughter-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "platform-daughter-echoing": {
+        "monsterId": "platform-daughter-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "platform-daughter-fevered": {
+        "monsterId": "platform-daughter-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "platform-daughter-hollow": {
+        "monsterId": "platform-daughter-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mildew-judge-hushed": {
+        "monsterId": "mildew-judge-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mildew-judge-echoing": {
+        "monsterId": "mildew-judge-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mildew-judge-fevered": {
+        "monsterId": "mildew-judge-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "mildew-judge-hollow": {
+        "monsterId": "mildew-judge-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "button-collector-hushed": {
+        "monsterId": "button-collector-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "button-collector-echoing": {
+        "monsterId": "button-collector-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "button-collector-fevered": {
+        "monsterId": "button-collector-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "button-collector-hollow": {
+        "monsterId": "button-collector-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "radiator-wife-hushed": {
+        "monsterId": "radiator-wife-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "radiator-wife-echoing": {
+        "monsterId": "radiator-wife-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "radiator-wife-fevered": {
+        "monsterId": "radiator-wife-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "radiator-wife-hollow": {
+        "monsterId": "radiator-wife-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ticket-eater-hushed": {
+        "monsterId": "ticket-eater-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ticket-eater-echoing": {
+        "monsterId": "ticket-eater-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ticket-eater-fevered": {
+        "monsterId": "ticket-eater-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ticket-eater-hollow": {
+        "monsterId": "ticket-eater-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ceiling-lodger-hushed": {
+        "monsterId": "ceiling-lodger-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ceiling-lodger-echoing": {
+        "monsterId": "ceiling-lodger-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ceiling-lodger-fevered": {
+        "monsterId": "ceiling-lodger-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "ceiling-lodger-hollow": {
+        "monsterId": "ceiling-lodger-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "green-caller-hushed": {
+        "monsterId": "green-caller-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "green-caller-echoing": {
+        "monsterId": "green-caller-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "green-caller-fevered": {
+        "monsterId": "green-caller-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "green-caller-hollow": {
+        "monsterId": "green-caller-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bone-usher-hushed": {
+        "monsterId": "bone-usher-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bone-usher-echoing": {
+        "monsterId": "bone-usher-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bone-usher-fevered": {
+        "monsterId": "bone-usher-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "bone-usher-hollow": {
+        "monsterId": "bone-usher-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "furnace-boy-hushed": {
+        "monsterId": "furnace-boy-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "furnace-boy-echoing": {
+        "monsterId": "furnace-boy-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "furnace-boy-fevered": {
+        "monsterId": "furnace-boy-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "furnace-boy-hollow": {
+        "monsterId": "furnace-boy-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "key-sleeper-hushed": {
+        "monsterId": "key-sleeper-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "key-sleeper-echoing": {
+        "monsterId": "key-sleeper-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "key-sleeper-fevered": {
+        "monsterId": "key-sleeper-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "key-sleeper-hollow": {
+        "monsterId": "key-sleeper-hollow",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "morgue-twin-hushed": {
+        "monsterId": "morgue-twin-hushed",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "morgue-twin-echoing": {
+        "monsterId": "morgue-twin-echoing",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "morgue-twin-fevered": {
+        "monsterId": "morgue-twin-fevered",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "morgue-twin-hollow": {
+        "monsterId": "morgue-twin-hollow",
         "status": "unseen",
         "encounters": 0,
         "survivals": 0,
@@ -408,8 +3288,8 @@
       "industrialShelvingViewsHudFree": true,
       "industrialShelvingViewsReadable": true
     },
-    "expeditionElapsedDelta": 1050.000000000001,
-    "movementDelta": 2.7449999999999974,
+    "expeditionElapsedDelta": 1150.0000000000018,
+    "movementDelta": 2.7958333333333307,
     "pitchAfter": -0.03,
     "yawDelta": 0,
     "passed": true

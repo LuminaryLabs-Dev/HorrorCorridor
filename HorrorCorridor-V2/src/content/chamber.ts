@@ -103,6 +103,28 @@ export function createCorridorSetPiece(routeSeed: number, segmentIndex: number, 
   });
 }
 
+export function createAuthoredCorridorSetPiece(
+  kind: SetPieceKind,
+  districtId: string,
+  segmentIndex: number,
+  centerZ: number,
+  side: -1 | 1 = -1,
+): ChamberDescriptor {
+  const district = CORRIDOR_DISTRICTS.find((value) => value.id === districtId);
+  if (!district) throw new Error(`Unknown authored corridor district: ${districtId}`);
+  const x = side * 2.72;
+  const facing = side < 0 ? Math.PI / 2 : -Math.PI / 2;
+  const id = `authoring-${kind}-${segmentIndex}`;
+  return Object.freeze({
+    id,
+    title: `${district.name}: ${kind.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")}`,
+    materials: [district.material, "oxidized-steel"],
+    props: propsFor(kind, id, x, centerZ, side, facing),
+    district,
+    kind,
+  });
+}
+
 export type ChamberDescriptor = Readonly<{
   id: string;
   title: string;

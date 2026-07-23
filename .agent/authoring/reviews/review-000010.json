@@ -1,0 +1,15 @@
+{
+  "schema": "horror-corridor.authoring-review/1",
+  "reviewId": "review-000010",
+  "packetId": "packet-000010",
+  "contentId": "set-piece:mortuary-bay",
+  "gate": "specification",
+  "outcome": "accepted",
+  "notes": "Resolve the golden mortuary slice intent, dependencies, variation, and acceptance contract. Evidence gate passed.",
+  "evidenceRefs": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts"
+  ],
+  "lifecycleBefore": "mapped",
+  "lifecycleAfter": "specified",
+  "createdAt": "2026-07-23T17:55:15.490Z"
+}

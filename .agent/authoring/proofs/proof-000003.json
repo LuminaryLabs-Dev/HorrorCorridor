@@ -1,0 +1,24 @@
+{
+  "schema": "horror-corridor.authoring-proof/1",
+  "runId": "proof-000003",
+  "level": "focused",
+  "contentIds": [
+    "set-piece:mortuary-bay"
+  ],
+  "status": "passed",
+  "startedAt": "2026-07-23T17:40:44.488Z",
+  "finishedAt": "2026-07-23T17:40:47.048Z",
+  "elapsedMs": 2560,
+  "artifactRefs": [
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxsrttz-002/initial-1784828445411.png",
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxsrttz-002/approach-1784828445845.png",
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxsrttz-002/look-left-1784828446229.png",
+    "HorrorCorridor-V2/artifacts/authoring/previews/preview-mrxsrttz-002/look-right-1784828446695.png",
+    "HorrorCorridor-V2/artifacts/authoring/proofs/proof-000003/report.json"
+  ],
+  "command": [
+    "focused-browser-preview"
+  ],
+  "exitCode": 0,
+  "error": null
+}

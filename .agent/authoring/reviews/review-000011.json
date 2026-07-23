@@ -1,0 +1,18 @@
+{
+  "schema": "horror-corridor.authoring-review/1",
+  "reviewId": "review-000011",
+  "packetId": "packet-000011",
+  "contentId": "set-piece:mortuary-bay",
+  "gate": "preview",
+  "outcome": "accepted",
+  "notes": "Accept the clean initial, approach, left, and right focused player views. Evidence gate passed.",
+  "evidenceRefs": [
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png"
+  ],
+  "lifecycleBefore": "specified",
+  "lifecycleAfter": "previewed",
+  "createdAt": "2026-07-23T17:55:15.502Z"
+}

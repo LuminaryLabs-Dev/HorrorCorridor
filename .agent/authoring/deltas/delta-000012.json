@@ -1,0 +1,21 @@
+{
+  "schema": "horror-corridor.authoring-delta/1",
+  "deltaId": "delta-000012",
+  "packetId": "packet-000012",
+  "contentId": "set-piece:mortuary-bay",
+  "summary": "Accept the passing sub-thirty-second focused semantic and visual proof.",
+  "touchedFiles": [
+    "HorrorCorridor-V2/tools/authoring-mcp/proof-manager.ts",
+    "HorrorCorridor-V2/scripts/prove-authoring-mcp.ts"
+  ],
+  "impactedContent": [
+    "set-piece:mortuary-bay"
+  ],
+  "evidenceRefs": [
+    ".agent/authoring/evidence/proof-000005/report.json"
+  ],
+  "crossDomainRisks": [],
+  "futureSuggestions": [],
+  "submittedAt": "2026-07-23T17:55:15.508Z",
+  "acceptedAt": "2026-07-23T17:55:15.511Z"
+}

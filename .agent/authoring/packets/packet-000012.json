@@ -1,0 +1,419 @@
+{
+  "schema": "horror-corridor.authoring-packet/1",
+  "packetId": "packet-000012",
+  "contentId": "set-piece:mortuary-bay",
+  "goal": "Accept the passing sub-thirty-second focused semantic and visual proof.",
+  "domainBoundary": "corridor",
+  "context": {
+    "schema": "horror-corridor.authoring-context/1",
+    "globalIntent": "Preserve the full HorrorCorridor content universe while changing and proving one bounded content target at a time.",
+    "globalIntentRefs": [
+      "goal.md",
+      "memory.md",
+      "HorrorCorridor-V2/goal.md",
+      "HorrorCorridor-V2/memory.md"
+    ],
+    "target": {
+      "id": "set-piece:mortuary-bay",
+      "kind": "set-piece",
+      "domain": "corridor",
+      "title": "Mortuary Bay",
+      "intent": "Make Mortuary Bay read as a grounded location rather than a floating generic prop cluster.",
+      "playerExperience": "The player notices a distinct Mortuary Bay silhouette while the central corridor remains traversable.",
+      "sourceRefs": [
+        "HorrorCorridor-V2/src/content/chamber.ts",
+        "HorrorCorridor-V2/src/hosts/browser/threeScene.ts"
+      ],
+      "dependencies": [
+        "district:provision-tombs",
+        "district:cold-delivery"
+      ],
+      "neighbors": [
+        "set-piece:empty-pantry",
+        "set-piece:abandoned-clinic"
+      ],
+      "pacingRole": "A side-space landmark that interrupts corridor repetition without blocking motion.",
+      "variationAxes": [
+        "district",
+        "side",
+        "camera-distance",
+        "local-light",
+        "prop-composition"
+      ],
+      "acceptance": [
+        "Named silhouette is visible at normal brightness.",
+        "The route remains open.",
+        "Presentation owns no gameplay outcome."
+      ],
+      "runtime": {
+        "kind": "mortuary-bay",
+        "districtIds": [
+          "provision-tombs",
+          "cold-delivery"
+        ]
+      },
+      "lifecycle": "previewed",
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts",
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png"
+      ],
+      "version": 3
+    },
+    "neighborhood": [
+      {
+        "id": "set-piece:empty-pantry",
+        "kind": "set-piece",
+        "domain": "corridor",
+        "title": "Empty Pantry",
+        "intent": "Make Empty Pantry read as a grounded location rather than a floating generic prop cluster.",
+        "playerExperience": "The player notices a distinct Empty Pantry silhouette while the central corridor remains traversable.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/content/chamber.ts",
+          "HorrorCorridor-V2/src/hosts/browser/threeScene.ts"
+        ],
+        "dependencies": [
+          "district:shuttered-market",
+          "district:provision-tombs"
+        ],
+        "neighbors": [
+          "set-piece:closed-tavern",
+          "set-piece:mortuary-bay"
+        ],
+        "pacingRole": "A side-space landmark that interrupts corridor repetition without blocking motion.",
+        "variationAxes": [
+          "district",
+          "side",
+          "camera-distance",
+          "local-light",
+          "prop-composition"
+        ],
+        "acceptance": [
+          "Named silhouette is visible at normal brightness.",
+          "The route remains open.",
+          "Presentation owns no gameplay outcome."
+        ],
+        "runtime": {
+          "kind": "empty-pantry",
+          "districtIds": [
+            "shuttered-market",
+            "provision-tombs"
+          ]
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "set-piece:abandoned-clinic",
+        "kind": "set-piece",
+        "domain": "corridor",
+        "title": "Abandoned Clinic",
+        "intent": "Make Abandoned Clinic read as a grounded location rather than a floating generic prop cluster.",
+        "playerExperience": "The player notices a distinct Abandoned Clinic silhouette while the central corridor remains traversable.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/content/chamber.ts",
+          "HorrorCorridor-V2/src/hosts/browser/threeScene.ts"
+        ],
+        "dependencies": [
+          "district:charity-ward",
+          "district:cold-delivery"
+        ],
+        "neighbors": [
+          "set-piece:sealed-nursery",
+          "set-piece:mortuary-bay"
+        ],
+        "pacingRole": "A side-space landmark that interrupts corridor repetition without blocking motion.",
+        "variationAxes": [
+          "district",
+          "side",
+          "camera-distance",
+          "local-light",
+          "prop-composition"
+        ],
+        "acceptance": [
+          "Named silhouette is visible at normal brightness.",
+          "The route remains open.",
+          "Presentation owns no gameplay outcome."
+        ],
+        "runtime": {
+          "kind": "abandoned-clinic",
+          "districtIds": [
+            "charity-ward",
+            "cold-delivery"
+          ]
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      }
+    ],
+    "dependencies": [
+      {
+        "id": "district:provision-tombs",
+        "kind": "district",
+        "domain": "corridor",
+        "title": "Provision Tombs",
+        "intent": "Give this route span a natural place identity through painted-brick surfaces, concrete acoustics, and grounded side-room landmarks.",
+        "playerExperience": "The player should recognize Provision Tombs from its material, light, sound, and set-piece rhythm without reading debug text.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/content/chamber.ts"
+        ],
+        "dependencies": [],
+        "neighbors": [
+          "district:last-platform",
+          "district:sleeping-shift",
+          "set-piece:empty-pantry",
+          "set-piece:mortuary-bay"
+        ],
+        "pacingRole": "Twenty-segment district chapter using 2 recurring landmark identities.",
+        "variationAxes": [
+          "material",
+          "room-tone",
+          "light-color",
+          "set-piece-order"
+        ],
+        "acceptance": [
+          "Route remains open.",
+          "Foreground and midground remain readable.",
+          "District identity differs from both neighbors."
+        ],
+        "runtime": {
+          "id": "provision-tombs",
+          "name": "Provision Tombs",
+          "material": "painted-brick",
+          "roomTone": "concrete",
+          "lightColor": 11768930,
+          "wallColor": 4537649,
+          "floorColor": 3156772,
+          "setPieces": [
+            "empty-pantry",
+            "mortuary-bay"
+          ]
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      },
+      {
+        "id": "district:cold-delivery",
+        "kind": "district",
+        "domain": "corridor",
+        "title": "Cold Delivery",
+        "intent": "Give this route span a natural place identity through oxidized-steel surfaces, flooded acoustics, and grounded side-room landmarks.",
+        "playerExperience": "The player should recognize Cold Delivery from its material, light, sound, and set-piece rhythm without reading debug text.",
+        "sourceRefs": [
+          "HorrorCorridor-V2/src/content/chamber.ts"
+        ],
+        "dependencies": [],
+        "neighbors": [
+          "district:sleeping-shift",
+          "district:unmarked-return",
+          "set-piece:mortuary-bay",
+          "set-piece:abandoned-clinic"
+        ],
+        "pacingRole": "Twenty-segment district chapter using 2 recurring landmark identities.",
+        "variationAxes": [
+          "material",
+          "room-tone",
+          "light-color",
+          "set-piece-order"
+        ],
+        "acceptance": [
+          "Route remains open.",
+          "Foreground and midground remain readable.",
+          "District identity differs from both neighbors."
+        ],
+        "runtime": {
+          "id": "cold-delivery",
+          "name": "Cold Delivery",
+          "material": "oxidized-steel",
+          "roomTone": "flooded",
+          "lightColor": 7845808,
+          "wallColor": 2965825,
+          "floorColor": 2241331,
+          "setPieces": [
+            "mortuary-bay",
+            "abandoned-clinic"
+          ]
+        },
+        "lifecycle": "mapped",
+        "evidenceRefs": [],
+        "version": 1
+      }
+    ],
+    "relevantDeltas": [
+      {
+        "schema": "horror-corridor.authoring-delta/1",
+        "deltaId": "delta-000011",
+        "packetId": "packet-000011",
+        "contentId": "set-piece:mortuary-bay",
+        "summary": "Accept the clean initial, approach, left, and right focused player views.",
+        "touchedFiles": [
+          "HorrorCorridor-V2/src/authoring/AuthoringPreviewHost.tsx",
+          "HorrorCorridor-V2/src/authoring/previewSnapshot.ts",
+          "HorrorCorridor-V2/src/presentation/prefabRegistry.ts",
+          "HorrorCorridor-V2/src/hosts/browser/threeScene.ts"
+        ],
+        "impactedContent": [
+          "set-piece:mortuary-bay"
+        ],
+        "evidenceRefs": [
+          ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+          ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+          ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+          ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png"
+        ],
+        "crossDomainRisks": [],
+        "futureSuggestions": [],
+        "submittedAt": "2026-07-23T17:55:15.499Z",
+        "acceptedAt": "2026-07-23T17:55:15.502Z"
+      },
+      {
+        "schema": "horror-corridor.authoring-delta/1",
+        "deltaId": "delta-000010",
+        "packetId": "packet-000010",
+        "contentId": "set-piece:mortuary-bay",
+        "summary": "Resolve the golden mortuary slice intent, dependencies, variation, and acceptance contract.",
+        "touchedFiles": [
+          "HorrorCorridor-V2/src/authoring/catalog.ts"
+        ],
+        "impactedContent": [
+          "set-piece:mortuary-bay"
+        ],
+        "evidenceRefs": [
+          "HorrorCorridor-V2/src/authoring/catalog.ts"
+        ],
+        "crossDomainRisks": [],
+        "futureSuggestions": [],
+        "submittedAt": "2026-07-23T17:55:15.487Z",
+        "acceptedAt": "2026-07-23T17:55:15.490Z"
+      },
+      {
+        "schema": "horror-corridor.authoring-delta/1",
+        "deltaId": "delta-000002",
+        "packetId": "packet-000002",
+        "contentId": "audio-motif:voice",
+        "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+        "touchedFiles": [
+          "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+        ],
+        "impactedContent": [
+          "audio-motif:voice"
+        ],
+        "evidenceRefs": [
+          "HorrorCorridor-V2/src/authoring/catalog.ts"
+        ],
+        "crossDomainRisks": [],
+        "futureSuggestions": [],
+        "submittedAt": "2026-07-23T14:22:28.490Z",
+        "acceptedAt": "2026-07-23T14:22:28.492Z"
+      }
+    ],
+    "evidenceRefs": [
+      "HorrorCorridor-V2/src/authoring/catalog.ts",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+      ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png"
+    ]
+  },
+  "fixPlan": [
+    "Accept the passing sub-thirty-second focused semantic and visual proof."
+  ],
+  "allowedFiles": [
+    "HorrorCorridor-V2/tools/authoring-mcp/proof-manager.ts",
+    "HorrorCorridor-V2/scripts/prove-authoring-mcp.ts"
+  ],
+  "acceptance": [
+    "Named silhouette is visible at normal brightness.",
+    "The route remains open.",
+    "Presentation owns no gameplay outcome."
+  ],
+  "worker": "golden-slice-reviewer",
+  "status": "accepted",
+  "createdAt": "2026-07-23T17:55:15.506Z",
+  "updatedAt": "2026-07-23T17:55:15.511Z",
+  "submittedDeltaId": "delta-000012",
+  "neighborhood": [
+    "set-piece:empty-pantry",
+    "set-piece:abandoned-clinic"
+  ],
+  "relevantDeltas": [
+    {
+      "schema": "horror-corridor.authoring-delta/1",
+      "deltaId": "delta-000011",
+      "packetId": "packet-000011",
+      "contentId": "set-piece:mortuary-bay",
+      "summary": "Accept the clean initial, approach, left, and right focused player views.",
+      "touchedFiles": [
+        "HorrorCorridor-V2/src/authoring/AuthoringPreviewHost.tsx",
+        "HorrorCorridor-V2/src/authoring/previewSnapshot.ts",
+        "HorrorCorridor-V2/src/presentation/prefabRegistry.ts",
+        "HorrorCorridor-V2/src/hosts/browser/threeScene.ts"
+      ],
+      "impactedContent": [
+        "set-piece:mortuary-bay"
+      ],
+      "evidenceRefs": [
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+        ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png"
+      ],
+      "crossDomainRisks": [],
+      "futureSuggestions": [],
+      "submittedAt": "2026-07-23T17:55:15.499Z",
+      "acceptedAt": "2026-07-23T17:55:15.502Z"
+    },
+    {
+      "schema": "horror-corridor.authoring-delta/1",
+      "deltaId": "delta-000010",
+      "packetId": "packet-000010",
+      "contentId": "set-piece:mortuary-bay",
+      "summary": "Resolve the golden mortuary slice intent, dependencies, variation, and acceptance contract.",
+      "touchedFiles": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "impactedContent": [
+        "set-piece:mortuary-bay"
+      ],
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "crossDomainRisks": [],
+      "futureSuggestions": [],
+      "submittedAt": "2026-07-23T17:55:15.487Z",
+      "acceptedAt": "2026-07-23T17:55:15.490Z"
+    },
+    {
+      "schema": "horror-corridor.authoring-delta/1",
+      "deltaId": "delta-000002",
+      "packetId": "packet-000002",
+      "contentId": "audio-motif:voice",
+      "summary": "Resolved authoring metadata was validated against the authoritative TypeScript source.",
+      "touchedFiles": [
+        "HorrorCorridor-V2/src/adapters/spatialAudio.ts"
+      ],
+      "impactedContent": [
+        "audio-motif:voice"
+      ],
+      "evidenceRefs": [
+        "HorrorCorridor-V2/src/authoring/catalog.ts"
+      ],
+      "crossDomainRisks": [],
+      "futureSuggestions": [],
+      "submittedAt": "2026-07-23T14:22:28.490Z",
+      "acceptedAt": "2026-07-23T14:22:28.492Z"
+    }
+  ],
+  "evidenceRefs": [
+    "HorrorCorridor-V2/src/authoring/catalog.ts",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-initial.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-approach.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-left.png",
+    ".agent/authoring/evidence/proof-000005/set-piece-mortuary-bay-look-right.png"
+  ]
+}

@@ -1,7 +1,17 @@
 import * as THREE from "three";
 import type { HorrorCorridorV2Snapshot } from "../../contracts";
-import { createCorridorSetPiece, districtForSegment, type ChamberDescriptor, type ChamberPropDescriptor, type CorridorDistrict } from "../../content/chamber";
+import {
+  CORRIDOR_DISTRICTS,
+  createAuthoredCorridorSetPiece,
+  createCorridorSetPiece,
+  districtForSegment,
+  type ChamberDescriptor,
+  type ChamberPropDescriptor,
+  type CorridorDistrict,
+  type SetPieceKind,
+} from "../../content/chamber";
 import { MONSTERS_BY_ID, type MonsterProfile } from "../../content/monsters";
+import { bindCorridorPrefabBuilders } from "../../presentation/prefabRegistry";
 
 const CORRIDOR_START_Z = 8;
 const CORRIDOR_SEGMENT_LENGTH = 8;
@@ -106,7 +116,16 @@ function disposeMaterial(material: DisposableMaterial): void {
 
 export type ThreeSceneAdapter = ReturnType<typeof createThreeSceneAdapter>;
 
-export function createThreeSceneAdapter(canvas: HTMLCanvasElement) {
+export type ThreeSceneAuthoringTarget = Readonly<{
+  setPieceKind: SetPieceKind;
+  districtId: string;
+  side?: -1 | 1;
+}>;
+
+export function createThreeSceneAdapter(
+  canvas: HTMLCanvasElement,
+  options: Readonly<{ authoringTarget?: ThreeSceneAuthoringTarget | null }> = {},
+) {
   const renderer = new THREE.WebGLRenderer({
     canvas,
     antialias: true,
@@ -179,19 +198,50 @@ export function createThreeSceneAdapter(canvas: HTMLCanvasElement) {
   let ticketSignTexture: THREE.CanvasTexture | null = null;
   let dormitorySignTexture: THREE.CanvasTexture | null = null;
   let mortuarySignTexture: THREE.CanvasTexture | null = null;
+  const segmentGroups = new Map<number, THREE.Group>();
+  let overlayGroup: THREE.Group | null = null;
+  let builtWorldIdentity = "";
   let builtWindowKey = "";
+  let authoringTarget = options.authoringTarget ?? null;
   let disposed = false;
+
+  function disposeWorldObject(child: THREE.Object3D): void {
+    child.traverse((object) => {
+      if (!(object instanceof THREE.Mesh)) return;
+      object.geometry.dispose();
+      disposeMaterial(object.material);
+    });
+  }
+
+  function removeWorldGroup(group: THREE.Group): void {
+    for (let index = fanRotors.length - 1; index >= 0; index -= 1) {
+      if (group.getObjectById(fanRotors[index].id)) fanRotors.splice(index, 1);
+    }
+    world.remove(group);
+    disposeWorldObject(group);
+  }
+
+  function captureWorldGroup(name: string, existing: ReadonlySet<THREE.Object3D>): THREE.Group {
+    const group = new THREE.Group();
+    group.name = name;
+    const additions = world.children.filter((child) => !existing.has(child));
+    for (const child of additions) {
+      world.remove(child);
+      group.add(child);
+    }
+    world.add(group);
+    return group;
+  }
 
   function clearWorld(): void {
     fanRotors.length = 0;
     for (const child of [...world.children]) {
       world.remove(child);
-      child.traverse((object) => {
-        if (!(object instanceof THREE.Mesh)) return;
-        object.geometry.dispose();
-        disposeMaterial(object.material);
-      });
+      disposeWorldObject(child);
     }
+    segmentGroups.clear();
+    overlayGroup = null;
+    builtWorldIdentity = "";
   }
 
   function addBox(
@@ -2113,16 +2163,49 @@ export function createThreeSceneAdapter(canvas: HTMLCanvasElement) {
     }
   }
 
+  const prefabRegistry = bindCorridorPrefabBuilders<ReturnType<typeof createMaterials>>({
+    "closed-tavern": buildClosedTavernFacade,
+    "service-nook": buildServiceNookFacade,
+    "empty-pantry": buildEmptyPantryFacade,
+    "sealed-nursery": buildSealedNurseryFacade,
+    "abandoned-clinic": buildAbandonedClinicFacade,
+    "flooded-laundry": buildFloodedLaundryFacade,
+    "pilgrim-alcove": buildPilgrimAlcoveFacade,
+    "boiler-shrine": buildBoilerShrineFacade,
+    "night-archive": buildNightArchiveFacade,
+    "ticket-hall": buildTicketHallFacade,
+    "workers-dormitory": buildWorkersDormitoryFacade,
+    "mortuary-bay": buildMortuaryBayFacade,
+  });
+
   function buildCorridorWindow(snapshot: HorrorCorridorV2Snapshot, activeSegment: number): void {
-    clearWorld();
-    const activeDistrict = districtForSegment(activeSegment);
-    const materials = createMaterials(activeDistrict);
+    const activeDistrict = authoringTarget
+      ? CORRIDOR_DISTRICTS.find((district) => district.id === authoringTarget?.districtId) ?? districtForSegment(activeSegment)
+      : districtForSegment(activeSegment);
     const firstSegment = activeSegment - SEGMENTS_BEHIND;
     const lastSegment = activeSegment + SEGMENTS_AHEAD;
-    builtWindowKey = `${snapshot.corridor.chamberId}:${activeSegment}`;
+    const authoredSegment = authoringTarget ? 2 : activeSegment + 2;
+    const worldIdentity = `${snapshot.corridor.chamberId}:${snapshot.corridor.routeSeed}:${authoringTarget?.districtId ?? ""}:${authoringTarget?.setPieceKind ?? ""}`;
+    if (worldIdentity !== builtWorldIdentity) {
+      clearWorld();
+      builtWorldIdentity = worldIdentity;
+    }
+    builtWindowKey = `${snapshot.corridor.chamberId}:${activeSegment}:${authoringTarget?.districtId ?? ""}:${authoringTarget?.setPieceKind ?? ""}`;
+
+    for (const [segment, group] of [...segmentGroups]) {
+      if (segment >= firstSegment && segment <= lastSegment) continue;
+      removeWorldGroup(group);
+      segmentGroups.delete(segment);
+    }
 
     for (let segment = firstSegment; segment <= lastSegment; segment += 1) {
+      if (segmentGroups.has(segment)) continue;
+      const existing = new Set(world.children);
       const z = corridorSegmentCenter(segment);
+      const segmentDistrict = authoringTarget
+        ? activeDistrict
+        : districtForSegment(segment);
+      const materials = createMaterials(segmentDistrict);
       addBox(`wet-floor-${segment}`, [0, -0.16, z], [7.6, 0.32, CORRIDOR_SEGMENT_LENGTH + 0.12], materials.floor, { cast: false });
       addBox(`ceiling-${segment}`, [0, 3.8, z], [7.6, 0.28, CORRIDOR_SEGMENT_LENGTH + 0.12], materials.wallDark, { cast: false });
       addBox(`left-wall-${segment}`, [-3.72, 1.8, z], [0.42, 3.6, CORRIDOR_SEGMENT_LENGTH + 0.08], segment % 3 === 0 ? materials.concrete : materials.wall, { cast: false });
@@ -2140,40 +2223,34 @@ export function createThreeSceneAdapter(canvas: HTMLCanvasElement) {
       puddle.receiveShadow = true;
       world.add(puddle);
 
-      if (segment > 0 && segment % 3 === 2) {
-        const descriptor = createCorridorSetPiece(snapshot.corridor.routeSeed, segment, z);
-        if (descriptor.kind === "closed-tavern") buildClosedTavernFacade(descriptor, materials);
-        if (descriptor.kind === "service-nook") buildServiceNookFacade(descriptor, materials);
-        if (descriptor.kind === "empty-pantry") buildEmptyPantryFacade(descriptor, materials);
-        if (descriptor.kind === "sealed-nursery") buildSealedNurseryFacade(descriptor, materials);
-        if (descriptor.kind === "abandoned-clinic") buildAbandonedClinicFacade(descriptor, materials);
-        if (descriptor.kind === "flooded-laundry") buildFloodedLaundryFacade(descriptor, materials);
-        if (descriptor.kind === "pilgrim-alcove") buildPilgrimAlcoveFacade(descriptor, materials);
-        if (descriptor.kind === "boiler-shrine") buildBoilerShrineFacade(descriptor, materials);
-        if (descriptor.kind === "night-archive") buildNightArchiveFacade(descriptor, materials);
-        if (descriptor.kind === "ticket-hall") buildTicketHallFacade(descriptor, materials);
-        if (descriptor.kind === "workers-dormitory") buildWorkersDormitoryFacade(descriptor, materials);
-        if (descriptor.kind === "mortuary-bay") buildMortuaryBayFacade(descriptor, materials);
+      if ((segment > 0 && segment % 3 === 2) || (authoringTarget && segment === authoredSegment)) {
+        const descriptor = authoringTarget && segment === authoredSegment
+          ? createAuthoredCorridorSetPiece(
+              authoringTarget.setPieceKind,
+              authoringTarget.districtId,
+              segment,
+              z,
+              authoringTarget.side ?? -1,
+            )
+          : createCorridorSetPiece(snapshot.corridor.routeSeed, segment, z);
+        const prefab = prefabRegistry[descriptor.kind];
+        prefab.build(descriptor, materials);
         for (const prop of descriptor.props) {
-          if (descriptor.kind === "closed-tavern" && prop.kind === "sign") continue;
-          if (descriptor.kind === "sealed-nursery" && ["table", "sign", "rubble"].includes(prop.kind)) continue;
-          if (descriptor.kind === "abandoned-clinic" && ["table", "shelf", "sign"].includes(prop.kind)) continue;
-          if (descriptor.kind === "flooded-laundry" && ["table", "generator"].includes(prop.kind)) continue;
-          if (descriptor.kind === "pilgrim-alcove" && ["table", "sign", "altar"].includes(prop.kind)) continue;
-          if (descriptor.kind === "boiler-shrine" && ["generator", "altar", "pipe"].includes(prop.kind)) continue;
-          if (descriptor.kind === "night-archive" && ["shelf", "sign"].includes(prop.kind)) continue;
-          if (descriptor.kind === "ticket-hall" && ["counter", "sign"].includes(prop.kind)) continue;
-          if (descriptor.kind === "workers-dormitory" && ["table", "sign"].includes(prop.kind)) continue;
-          if (descriptor.kind === "mortuary-bay" && ["table", "shelf", "lamp"].includes(prop.kind)) continue;
+          if (prefab.consumedPropKinds.includes(prop.kind)) continue;
           buildProp(prop, materials);
         }
       }
+      segmentGroups.set(segment, captureWorldGroup(`corridor-segment-${segment}`, existing));
     }
 
+    if (overlayGroup) removeWorldGroup(overlayGroup);
+    const overlayExisting = new Set(world.children);
+    const overlayMaterials = createMaterials(activeDistrict);
     const routeMarkerZ = corridorSegmentCenter(activeSegment + 2);
-    const warning = addBox(`route-stripe-${activeSegment}`, [0, 0.018, routeMarkerZ], [5.1, 0.025, 0.22], materials.paper, { cast: false });
+    const warning = addBox(`route-stripe-${activeSegment}`, [0, 0.018, routeMarkerZ], [5.1, 0.025, 0.22], overlayMaterials.paper, { cast: false });
     warning.rotation.y = -0.04;
-    buildProp({ id: "offering-altar", kind: "altar", position: { x: 2.68, y: 0, z: routeMarkerZ + 1.5 } }, materials);
+    buildProp({ id: "offering-altar", kind: "altar", position: { x: 2.68, y: 0, z: routeMarkerZ + 1.5 } }, overlayMaterials);
+    overlayGroup = captureWorldGroup(`corridor-overlay-${activeSegment}`, overlayExisting);
     routeLight.color.setHex(activeDistrict.lightColor);
   }
 
@@ -2197,7 +2274,7 @@ export function createThreeSceneAdapter(canvas: HTMLCanvasElement) {
 
     const party = snapshot.party;
     const activeSegment = corridorSegmentIndex(party.position.z);
-    const windowKey = `${snapshot.corridor.chamberId}:${activeSegment}`;
+    const windowKey = `${snapshot.corridor.chamberId}:${activeSegment}:${authoringTarget?.districtId ?? ""}:${authoringTarget?.setPieceKind ?? ""}`;
     if (windowKey !== builtWindowKey) buildCorridorWindow(snapshot, activeSegment);
     const dread = snapshot.dread;
     const illumination = snapshot.corridor.illumination;
@@ -2277,6 +2354,10 @@ export function createThreeSceneAdapter(canvas: HTMLCanvasElement) {
   return Object.freeze({
     ready: true,
     render,
+    configureAuthoring(target: ThreeSceneAuthoringTarget | null) {
+      authoringTarget = target;
+      builtWindowKey = "";
+    },
     dispose() {
       if (disposed) return;
       disposed = true;

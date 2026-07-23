@@ -1,0 +1,66 @@
+{
+  "schema": "horror-corridor.focused-visual-proof/1",
+  "runId": "proof-000007",
+  "level": "focused",
+  "contentIds": [
+    "set-piece:mortuary-bay"
+  ],
+  "cameras": [
+    "initial",
+    "approach",
+    "look-left",
+    "look-right"
+  ],
+  "metrics": [
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000007/set-piece-mortuary-bay-initial.png",
+      "width": 1440,
+      "height": 900,
+      "average": 10.425866649053102,
+      "darkRatio": 0.8408603395061729,
+      "lightRatio": 0.047107253086419755,
+      "centerAverage": 29.839022999129455,
+      "foregroundAverage": 12.318270341203068,
+      "captureElapsedMs": 291.50066700000025,
+      "passed": true
+    },
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000007/set-piece-mortuary-bay-approach.png",
+      "width": 1440,
+      "height": 900,
+      "average": 10.171142483497812,
+      "darkRatio": 0.8666581790123457,
+      "lightRatio": 0.06813194444444444,
+      "centerAverage": 36.87883436351039,
+      "foregroundAverage": 9.695864229345185,
+      "captureElapsedMs": 314.640042,
+      "passed": true
+    },
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000007/set-piece-mortuary-bay-look-left.png",
+      "width": 1440,
+      "height": 900,
+      "average": 12.153443819463078,
+      "darkRatio": 0.8056674382716049,
+      "lightRatio": 0.08284876543209876,
+      "centerAverage": 36.19323061644935,
+      "foregroundAverage": 11.11817521752387,
+      "captureElapsedMs": 332.4792499999994,
+      "passed": true
+    },
+    {
+      "artifactRef": ".agent/authoring/evidence/proof-000007/set-piece-mortuary-bay-look-right.png",
+      "width": 1440,
+      "height": 900,
+      "average": 12.416946398171,
+      "darkRatio": 0.7817075617283951,
+      "lightRatio": 0.07548611111111111,
+      "centerAverage": 23.25878720790049,
+      "foregroundAverage": 12.23091683431066,
+      "captureElapsedMs": 331.37175000000025,
+      "passed": true
+    }
+  ],
+  "elapsedMs": 2560,
+  "passed": true
+}
