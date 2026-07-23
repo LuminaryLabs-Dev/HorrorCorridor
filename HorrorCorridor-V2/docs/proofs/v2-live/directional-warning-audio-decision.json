@@ -1,0 +1,42 @@
+{
+  "schema": "horror-corridor-v2.experience-decision/1",
+  "scope": "hidden-directional-warning-audio",
+  "status": "partially-fixed",
+  "experienceProblem": "The game promised that the player would hear and locate a monster before pursuit, but the browser adapter emitted no sound during the hidden sign phase and automated play deliberately created no AudioContext.",
+  "technicalCause": "Spatial audio only handled approaching and later phase transitions with one generic sawtooth cue timed from wall-clock performance, while the semantic harness exposed no way to unlock or inspect WebAudio.",
+  "change": "The browser adapter now maps footstep, metal, breath, water, electrical, and voice channels to six distinct multi-pulse procedural motifs. Hidden warning cues repeat from authoritative expedition time, pan from Corridor acoustics, tighten before pursuit, pass through a bounded compressor, and retain only 64 diagnostic records. The semantic harness can unlock and inspect audio, and the existing live proof requires a running context plus repeated same-channel directional cues before approaching begins.",
+  "boundary": "Dread still owns encounter selection, sign duration, bearing, pursuit, blackout, response, collection, and capture. Corridor still owns acoustic pan. The audio adapter reads snapshots and schedules presentation only; no audio state enters snapshots, saves, network payloads, or gameplay outcomes.",
+  "apprehensionCurve": {
+    "safeBaseline": "The first encounter still waits for 90 meters of traversal; later encounters still wait for 55 meters.",
+    "ambiguousCue": "The first live encounter entered its hidden sign phase at 29.90 seconds with a paired-footfall motif and no visible monster.",
+    "repetition": "Four same-channel motifs occurred at 29.90, 31.40, 32.65, and 33.90 seconds.",
+    "escalation": "The planned interval tightened from 1425ms to 1025ms while the warning threat rose from 0.084 to 0.148.",
+    "confrontation": "Visible pursuit began afterward at 34.65 seconds and retained the learned footstep motif at a 902ms interval.",
+    "release": "Resolved encounters use a separate release chime; blackout and capture retain distinct low-frequency transitions."
+  },
+  "proof": {
+    "baseline": {
+      "webdriver": true,
+      "audioContexts": 0,
+      "semanticAudioTools": 0
+    },
+    "focusedBrowser": {
+      "contextState": "running",
+      "monsterId": "still-guest",
+      "sensoryChannel": "footstep",
+      "motif": "paired-footfall",
+      "cueCount": 4,
+      "pan": 0.15136043117342576
+    },
+    "fullLive": "passed gameplay, caught/restart, persistence, 18-building traversal, all landmark captures, host/client replication, disconnect, and recovery with zero console or network errors",
+    "runtime": "passed 36 shipping cores, 38 development cores, 49 explicit kits, six distinct sensory motifs, 124 manifestations, 1920 meters, and 10.49 authored minutes",
+    "report": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  },
+  "humanExperience": {
+    "result": "partially-passed",
+    "visibleStates": "Spawn, movement, directional response, blackout, last chance, resolution, caught/restart, and late-route landmark frames remained readable after the audio change.",
+    "functionalAudio": "A real running AudioContext and timestamped WebAudio schedule prove that the hidden directional warning is emitted before pursuit and follows the active monster contract.",
+    "remainingCaveat": "This environment cannot perform a subjective headphone judgment of timbre, loudness, fatigue, or fear response. Those mix qualities remain unverified until a human listening pass.",
+    "nextBlocker": "Run one headphone playtest and tune only the mix if needed; after that, the next broader quality slice is encounter behavioral variation or long-route pacing."
+  }
+}

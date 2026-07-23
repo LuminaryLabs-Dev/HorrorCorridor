@@ -1,0 +1,30 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "pilgrim-mile-boiler-shrine",
+  "status": "fixed",
+  "visibleProblem": "The Pilgrim Mile boiler shrine was a dark rectangular generator, a ceiling pipe, and an altar hidden behind the machinery, so it read as neither a boiler nor a shrine.",
+  "technicalCause": "The boiler-shrine descriptor had no specialized renderer realization and therefore fell through to generic generator, altar, and pipe geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed pressure-vessel chapel with a glowing grated furnace, pressure gauge and needle, valve wheel, tank bands, pipe network, ritual pressure tokens and oil cup, hanging chain reliquary, chalk floor traces, a bracketed BOILER SAINT KEEP PRESSURE DO NOT DRAIN plate, and contained furnace and warning light.",
+  "boundary": "Content owns the boiler-shrine identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned. The live proof selects the actual descriptor from the active route seed and reaches it through normal response-aware Party movement.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "A generic box fills the near right edge beneath one pipe while its altar disappears, leaving no coherent landmark or focal machinery.",
+    "targetFrame": "A worshipped pressure vessel dominates the right-hand bay while the dark expedition route remains visibly open on the left.",
+    "visibleDelta": "The cylindrical tank, furnace hatch, gauge, valve, bands, and pipes establish boiler use immediately; the complete doctrine plate, chalk traces, pressure offerings, and reliquary turn the machine into one industrial saint.",
+    "remainingCaveat": "The ritual tray and chain sit near the lower and outer capture edges, but the boiler-saint identity, doctrine, heat state, foreground separation, and open route remain clear at normal brightness.",
+    "nextBlocker": "The night-archive descriptor remains generic and is the first unresolved identity in Records Below."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "genericGate": "PASS dark=47.80% readable=27.42% mean=31.19 edge=7.04",
+    "darkRatio": 0.4790096693359793,
+    "lightRatio": 0.27349589061814317,
+    "centerAverage": 32.15547987526884,
+    "foregroundAverage": 30.666340471103855
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/16-boiler-shrine-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/16-boiler-shrine.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

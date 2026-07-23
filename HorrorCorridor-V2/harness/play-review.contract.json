@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "harness-it.contract.v2",
+  "name": "horror-corridor-cumulative-play-review",
+  "goal": "Accumulate increasingly long player-visible reviews while recovering stalled gameplay on the same live page.",
+  "authorityClass": "orchestrator",
+  "layers": ["workflow", "stage", "chain"],
+  "actors": [
+    {
+      "id": "timeline-player",
+      "kind": "deterministic",
+      "authority": "bounded-browser-actions",
+      "allowedActions": ["start", "step", "move", "look", "flashlight", "claim-offering", "open-index"]
+    },
+    {
+      "id": "recovery-agent",
+      "kind": "state-aware-agent",
+      "authority": "bounded-browser-recovery",
+      "allowedActions": ["inspect-encounter", "aim", "move", "look", "flashlight", "claim-offering", "restart"]
+    }
+  ],
+  "inputs": [
+    { "id": "cumulative-review-state", "schema": "horror-corridor.timeline-state/1" },
+    { "id": "live-game-control", "schema": "horror-corridor-v2.control/1" }
+  ],
+  "outputs": [
+    { "id": "timeline-review", "schema": "horror-corridor.timeline-report/1", "lifecycle": "validated" },
+    { "id": "stall-handoffs", "schema": "horror-corridor.handoff-decision/1", "lifecycle": "validated" }
+  ],
+  "states": ["pending", "running", "timeline", "handoff", "validated", "promoted", "retry", "hold", "rejected", "blocked"],
+  "gates": [
+    { "id": "game-ready", "owner": "orchestrator", "onPass": "timeline", "onFail": "blocked" },
+    { "id": "meaningful-progress", "owner": "timeline-player", "onPass": "timeline", "onFail": "handoff" },
+    { "id": "recovery-progress", "owner": "recovery-agent", "onPass": "timeline", "onFail": "retry" },
+    { "id": "review-complete", "owner": "orchestrator", "onPass": "validated", "onFail": "blocked" }
+  ],
+  "retryPolicy": {
+    "maxAttempts": 3,
+    "timeoutMs": 30000,
+    "mutationPolicy": "no-automatic-mutation-retry",
+    "onExhausted": "blocked"
+  },
+  "memoryPolicy": {
+    "runState": "docs/proofs/timeline-review/state.json",
+    "carryForward": ["review-count", "total-simulated-seconds", "last-duration", "accepted-decisions"],
+    "discard": ["browser-process-state", "unvalidated-handoff-attempts"]
+  },
+  "artifacts": {
+    "runRoot": "docs/proofs/timeline-review/runs/{runId}",
+    "manifest": "manifest.json",
+    "events": "events.jsonl",
+    "decisions": "decisions/",
+    "validationReport": "validation-report.json",
+    "finalReport": "final-report.json"
+  },
+  "provider": { "required": false, "profile": null, "liveProofRequired": true },
+  "approvals": [],
+  "promotion": { "owner": "orchestrator", "requires": ["game-ready", "meaningful-progress", "review-complete"] },
+  "tests": {
+    "smoke": "Launch the game, load semantic control, and initialize timeline state.",
+    "happy": "Traverse the mapped timeline and increase cumulative simulated play time.",
+    "failure": "Detect six seconds without meaningful domain progress.",
+    "retry": "Hand the same page to the recovery agent for at most three attempts.",
+    "resume": "Read cumulative state and schedule a review 120 seconds longer than the prior review.",
+    "artifactInspection": "Reconstruct timeline, handoffs, screenshots, video, and final state from the run directory."
+  }
+}

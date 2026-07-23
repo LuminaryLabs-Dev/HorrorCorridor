@@ -1,0 +1,59 @@
+{
+  "schema": "horror-corridor.timeline-manifest/1",
+  "runId": "review-003-2026-07-22T06-53-40-848Z",
+  "goal": "Play an increasingly long mapped timeline and recover stalls on the same live page.",
+  "authorityClass": "orchestrator",
+  "layers": [
+    "workflow",
+    "stage",
+    "chain"
+  ],
+  "contract": "harness/play-review.contract.json",
+  "sourceState": {
+    "schema": "horror-corridor.timeline-state/1",
+    "reviewCount": 2,
+    "totalSimulatedSeconds": 480,
+    "lastReviewDurationSeconds": 300,
+    "nextReviewDurationSeconds": 420,
+    "lastRunId": "review-002-2026-07-22T06-35-16-200Z",
+    "updatedAt": "2026-07-22T06:37:59.632Z"
+  },
+  "reviewDurationSeconds": 420,
+  "projectedTotalSimulatedSeconds": 900,
+  "durationGrowthSeconds": 120,
+  "forceHandoff": false,
+  "url": "http://127.0.0.1:4175/",
+  "timeline": [
+    {
+      "id": "departure",
+      "startSecond": 0,
+      "endSecond": 50
+    },
+    {
+      "id": "read-left",
+      "startSecond": 50,
+      "endSecond": 75
+    },
+    {
+      "id": "read-right",
+      "startSecond": 75,
+      "endSecond": 100
+    },
+    {
+      "id": "deep-delve",
+      "startSecond": 100,
+      "endSecond": 294
+    },
+    {
+      "id": "field-index",
+      "startSecond": 294,
+      "endSecond": 319
+    },
+    {
+      "id": "long-delve",
+      "startSecond": 319,
+      "endSecond": 420
+    }
+  ],
+  "startedAt": "2026-07-22T06:53:40.853Z"
+}

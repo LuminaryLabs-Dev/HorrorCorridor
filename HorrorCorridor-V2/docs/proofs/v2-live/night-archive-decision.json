@@ -1,0 +1,31 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "records-below-night-archive",
+  "status": "fixed",
+  "visibleProblem": "The Records Below night archive was three repeated shelf silhouettes and an unreadable red panel, so the bay carried no archival story, focal object, or distinct district identity.",
+  "technicalCause": "The night-archive descriptor had no specialized renderer realization and therefore fell through to generic shelf and sign geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed records bay with labeled filing drawers, one open void and exposed files, a chained and locked cabinet, sorting cart, discarded accession cards, cold desk light, missing-file accent, and a complete RECORDS BELOW / NIGHT FILES / NO NAMES plate.",
+  "boundary": "Content owns the night-archive identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned. The live proof selects the actual descriptor from the active route seed and reaches it through normal response-aware Party movement.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "Three interchangeable open shelves crowd the near wall around a blank red rectangle, leaving no readable archive or Records Below identity.",
+    "targetFrame": "A forbidden filing bay presents one disturbed drawer and clear records doctrine while the expedition route remains visibly open beside it.",
+    "visibleDelta": "Drawer banks, paper labels, handles, an open file, chain and lock, accession cards, and explicit NIGHT FILES wording establish records work immediately; the cold pool and red missing-file accent turn the bay into one ominous place rather than a prop row.",
+    "remainingCaveat": "The open drawer deliberately dominates the near foreground and the sorting cart sits partly below the capture edge, but the filing identity, disturbed record, complete warning, floor separation, and open route remain clear at normal brightness.",
+    "nextBlocker": "The ticket-hall descriptor remains generic and is the other unresolved identity in Records Below."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "baselineGenericGate": "FAIL dark=71.90% readable=11.68% mean=15.56 edge=3.55",
+    "genericGate": "PASS dark=52.88% readable=19.61% mean=22.38 edge=6.71",
+    "darkRatio": 0.5293740883794954,
+    "lightRatio": 0.19454855234950313,
+    "centerAverage": 32.4078093928547,
+    "foregroundAverage": 18.708156061598164
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/17-night-archive-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/17-night-archive.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

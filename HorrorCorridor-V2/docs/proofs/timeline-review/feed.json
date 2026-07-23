@@ -1,0 +1,69 @@
+{
+  "schema": "horror-corridor.timeline-feed/1",
+  "accumulationMode": "deterministic-replay-with-growing-tail",
+  "rawVideosConcatenated": false,
+  "interpretation": "Recorded time sums every run. Unique contiguous time counts only the longest deterministic horizon; shorter prefixes replay on later runs.",
+  "recordedSimulatedSeconds": 1440,
+  "uniqueContiguousSeconds": 540,
+  "replayedSimulatedSeconds": 900,
+  "nextTargetSeconds": 660,
+  "runs": [
+    {
+      "runId": "review-001-2026-07-22T06-22-03-764Z",
+      "rawVideo": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-001-2026-07-22T06-22-03-764Z/video/page@e3903d0b6dac2f0677f38c5d9e59018d.webm",
+      "simulatedSeconds": 180,
+      "replayedPrefixSeconds": 0,
+      "newCoverageSeconds": 180,
+      "newCoverageIntervalSeconds": [0, 180],
+      "cumulativeRecordedSeconds": 180,
+      "uniqueContiguousSeconds": 180,
+      "distanceMeters": 405.3860617186697,
+      "buildingNumber": 6,
+      "encounteredMonsters": ["still-guest", "wall-knocker", "rust-mother", "breath-thief", "bellhop-hushed"],
+      "newlyEncounteredMonsters": ["still-guest", "wall-knocker", "rust-mother", "breath-thief", "bellhop-hushed"]
+    },
+    {
+      "runId": "review-002-2026-07-22T06-35-16-200Z",
+      "rawVideo": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-002-2026-07-22T06-35-16-200Z/video/page@b1f7a816598d3db202fd01e5a5b66f29.webm",
+      "simulatedSeconds": 300,
+      "replayedPrefixSeconds": 180,
+      "newCoverageSeconds": 120,
+      "newCoverageIntervalSeconds": [180, 300],
+      "cumulativeRecordedSeconds": 480,
+      "uniqueContiguousSeconds": 300,
+      "distanceMeters": 775.0433681582325,
+      "buildingNumber": 11,
+      "encounteredMonsters": ["still-guest", "wall-knocker", "rust-mother", "breath-thief", "bellhop-hushed", "bellhop-echoing", "bellhop-fevered", "bellhop-hollow", "chalk-child-hushed", "chalk-child-echoing"],
+      "newlyEncounteredMonsters": ["bellhop-echoing", "bellhop-fevered", "bellhop-hollow", "chalk-child-hushed", "chalk-child-echoing"]
+    },
+    {
+      "runId": "review-003-2026-07-22T06-53-40-848Z",
+      "rawVideo": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-003-2026-07-22T06-53-40-848Z/video/page@21184b29625f4f8b43e7258820439e07.webm",
+      "simulatedSeconds": 420,
+      "replayedPrefixSeconds": 300,
+      "newCoverageSeconds": 120,
+      "newCoverageIntervalSeconds": [300, 420],
+      "cumulativeRecordedSeconds": 900,
+      "uniqueContiguousSeconds": 420,
+      "distanceMeters": 1082.2398991939394,
+      "buildingNumber": 15,
+      "encounteredMonsters": ["still-guest", "wall-knocker", "rust-mother", "breath-thief", "bellhop-hushed", "bellhop-echoing", "bellhop-fevered", "bellhop-hollow", "chalk-child-hushed", "chalk-child-echoing", "chalk-child-fevered", "chalk-child-hollow", "drain-singer-hushed", "drain-singer-echoing"],
+      "newlyEncounteredMonsters": ["chalk-child-fevered", "chalk-child-hollow", "drain-singer-hushed", "drain-singer-echoing"]
+    },
+    {
+      "runId": "review-004-2026-07-22T07-06-45-509Z",
+      "rawVideo": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-004-2026-07-22T07-06-45-509Z/video/page@35b38f9309e2d8e55fc1bd1733b05ef7.webm",
+      "simulatedSeconds": 540,
+      "replayedPrefixSeconds": 420,
+      "newCoverageSeconds": 120,
+      "newCoverageIntervalSeconds": [420, 540],
+      "cumulativeRecordedSeconds": 1440,
+      "uniqueContiguousSeconds": 540,
+      "distanceMeters": 1411.0354833195352,
+      "buildingNumber": 19,
+      "encounteredMonsters": ["still-guest", "wall-knocker", "rust-mother", "breath-thief", "bellhop-hushed", "bellhop-echoing", "bellhop-fevered", "bellhop-hollow", "chalk-child-hushed", "chalk-child-echoing", "chalk-child-fevered", "chalk-child-hollow", "drain-singer-hushed", "drain-singer-echoing", "drain-singer-fevered", "drain-singer-hollow", "switchman-hushed", "switchman-echoing", "switchman-fevered"],
+      "newlyEncounteredMonsters": ["drain-singer-fevered", "drain-singer-hollow", "switchman-hushed", "switchman-echoing", "switchman-fevered"]
+    }
+  ],
+  "updatedAt": "2026-07-22T07:35:14.086Z"
+}

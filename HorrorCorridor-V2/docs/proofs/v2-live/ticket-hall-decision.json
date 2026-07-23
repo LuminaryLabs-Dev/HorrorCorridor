@@ -1,0 +1,32 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "records-below-ticket-hall",
+  "status": "fixed",
+  "visibleProblem": "The Records Below ticket hall was a bar-like counter projecting into the foreground, two bottles, and blank red panels, so it communicated neither tickets nor a hall and visually narrowed the expedition route.",
+  "technicalCause": "The ticket-hall descriptor had no specialized renderer realization and therefore fell through to generic counter and sign geometry whose facing rotation turned the counter's long axis into the corridor.",
+  "change": "The renderer now realizes the descriptor as a wall-aligned three-wicket concourse with one shuttered window, teller grilles and speaking rings, ticket trays and roll, loose stubs, punch and service bell, stopped clock, queue rail, detailed counter front, complete NIGHT TICKETS / ONE WAY / NO RETURN board, and contained cold/red light.",
+  "boundary": "Content owns the ticket-hall identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned. The live proof selects the actual descriptor from the active route seed and reaches it through normal response-aware Party movement.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "A deep generic slab with bottles fills the near right foreground beneath a blank red panel, reading as another bar while the intended ticket service disappears.",
+    "targetFrame": "An abandoned one-way ticket concourse presents distinct service wickets, stopped time, and explicit no-return doctrine while the expedition route remains visibly open beside it.",
+    "visibleDelta": "A shutter, grilles, speaking ring, transaction trays, ticket stubs, counter tools, clock, queue rail, and complete doctrine establish ticketing immediately; the wall-aligned counter and subdued rope restore the open centerline.",
+    "corrections": "The first implementation frame was rejected because the large high board clipped its wording and the emissive queue rope competed with the booth. The second frame was rejected because a window post still crossed NO RETURN. The accepted frame moves the complete board to its own far-side bracket, relocates the clock between wickets, and subdues the rail.",
+    "remainingCaveat": "The nearest wicket continues beyond the right capture edge because of corridor perspective, but the shuttered and grilled windows, speaking ring, transaction surface, clock, complete warning, foreground separation, and open route remain clear at normal brightness.",
+    "nextBlocker": "The workers-dormitory descriptor remains generic and is the next unresolved landmark after Records Below."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "baselineGenericGate": "FAIL dark=66.32% readable=17.50% mean=18.52 edge=4.69",
+    "genericGate": "PASS dark=54.11% readable=20.84% mean=23.43 edge=7.05",
+    "darkRatio": 0.5401147395787382,
+    "lightRatio": 0.20913448042357627,
+    "centerAverage": 29.35586947458591,
+    "foregroundAverage": 12.567109211325391
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/16a-ticket-hall-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/16a-ticket-hall.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

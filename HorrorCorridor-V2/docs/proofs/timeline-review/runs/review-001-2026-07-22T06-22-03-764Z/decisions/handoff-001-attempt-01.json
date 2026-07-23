@@ -1,0 +1,13 @@
+{
+  "schema": "horror-corridor.handoff-decision/1",
+  "runId": "review-001-2026-07-22T06-22-03-764Z",
+  "decisionId": "handoff-001-attempt-01",
+  "handoffId": "handoff-001",
+  "reason": "injected-stall-proof",
+  "attempt": 1,
+  "action": "forward-wiggle",
+  "beforeSignature": "delving:1:182:dormant:4995:0:0",
+  "afterSignature": "delving:1:221:dormant:4995:0:0",
+  "outcome": "PASS",
+  "next": "timeline"
+}

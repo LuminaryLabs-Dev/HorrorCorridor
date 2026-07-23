@@ -1,0 +1,7 @@
+node_modules/
+dist/
+artifacts/
+.vite/
+*.log
+docs/proofs/timeline-review/runs/*/video/
+docs/proofs/timeline-review/runs/*/screenshots/

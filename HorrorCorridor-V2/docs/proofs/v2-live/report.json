@@ -1,0 +1,335 @@
+{
+  "status": "passed",
+  "createdAt": "2026-07-22T16:25:09.544Z",
+  "url": "http://127.0.0.1:4191/",
+  "screenshots": {
+    "title": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/00-title.png",
+    "spawn": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/01-spawn.png",
+    "serviceNook": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/01a-service-nook.png",
+    "movement": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/02-movement.png",
+    "left": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/03-look-left.png",
+    "right": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/04-look-right.png",
+    "closedTavern": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/04a-closed-tavern.png",
+    "studied": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/05-studied-offering.png",
+    "blackout": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/06-blackout.png",
+    "lastChance": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/07-last-chance.png",
+    "collected": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/08-collected-offering.png",
+    "index": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/09-monster-index.png",
+    "emptyPantry": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/09a-empty-pantry.png",
+    "caught": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/10-caught.png",
+    "restart": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/11-restart.png",
+    "sealedNursery": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/12-sealed-nursery.png",
+    "abandonedClinic": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/13-abandoned-clinic.png",
+    "floodedLaundry": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/14-flooded-laundry.png",
+    "pilgrimAlcove": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/15-pilgrim-alcove.png",
+    "boilerShrine": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/16-boiler-shrine.png",
+    "ticketHall": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/16a-ticket-hall.png",
+    "nightArchive": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/17-night-archive.png",
+    "workersDormitory": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/18-workers-dormitory.png",
+    "mortuaryBay": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/19-mortuary-bay.png"
+  },
+  "lighting": {
+    "thresholds": {
+      "maxDarkRatio": 0.9,
+      "minLightRatio": 0.025,
+      "minSideCenterAverage": 12
+    },
+    "views": {
+      "spawn": {
+        "average": 13.73494231719812,
+        "darkRatio": 0.7392040643522438,
+        "lightRatio": 0.06851948819777282,
+        "centerAverage": 26.088373104292618,
+        "foregroundAverage": 17.20699058140367
+      },
+      "serviceNook": {
+        "average": 14.810347941435834,
+        "darkRatio": 0.7446981354532007,
+        "lightRatio": 0.1164009766728272,
+        "centerAverage": 30.60311190704572,
+        "foregroundAverage": 12.47666496724375
+      },
+      "movement": {
+        "average": 19.448773017990266,
+        "darkRatio": 0.5887501589785955,
+        "lightRatio": 0.1328625657254752,
+        "centerAverage": 30.827607697879483,
+        "foregroundAverage": 25.535672416579683
+      },
+      "left": {
+        "average": 30.999156383391686,
+        "darkRatio": 0.2953484295206351,
+        "lightRatio": 0.23186354996052747,
+        "centerAverage": 52.83102590104743,
+        "foregroundAverage": 17.527585452195215
+      },
+      "right": {
+        "average": 27.439517351917146,
+        "darkRatio": 0.36758028275847054,
+        "lightRatio": 0.21344265713673535,
+        "centerAverage": 47.06998344456225,
+        "foregroundAverage": 12.85735783685675
+      },
+      "closedTavern": {
+        "average": 21.979992165112,
+        "darkRatio": 0.5874588517563267,
+        "lightRatio": 0.1508274334610127,
+        "centerAverage": 37.95959107816004,
+        "foregroundAverage": 21.925430900155188
+      },
+      "emptyPantry": {
+        "average": 8.759037941078203,
+        "darkRatio": 0.8304904332123759,
+        "lightRatio": 0.03495466675221911,
+        "centerAverage": 17.977688907149943,
+        "foregroundAverage": 9.706922674812025
+      },
+      "sealedNursery": {
+        "average": 20.635403115659578,
+        "darkRatio": 0.5110723578903226,
+        "lightRatio": 0.1389994259583688,
+        "centerAverage": 33.80898322068414,
+        "foregroundAverage": 23.578614152732055
+      },
+      "abandonedClinic": {
+        "average": 63.93361179408911,
+        "darkRatio": 0.30574763479952655,
+        "lightRatio": 0.570717689533995,
+        "centerAverage": 92.60787325265623,
+        "foregroundAverage": 69.78989324966342
+      },
+      "floodedLaundry": {
+        "average": 29.104946561193252,
+        "darkRatio": 0.4121275174475428,
+        "lightRatio": 0.22957540397750123,
+        "centerAverage": 40.96038218495121,
+        "foregroundAverage": 21.664539405406018
+      },
+      "pilgrimAlcove": {
+        "average": 31.001776632198595,
+        "darkRatio": 0.40988978629839395,
+        "lightRatio": 0.24766974617276935,
+        "centerAverage": 44.38997982222091,
+        "foregroundAverage": 32.22992784476769
+      },
+      "boilerShrine": {
+        "average": 31.27127417419483,
+        "darkRatio": 0.4790096693359793,
+        "lightRatio": 0.27349589061814317,
+        "centerAverage": 32.15547987526884,
+        "foregroundAverage": 30.666340471103855
+      },
+      "ticketHall": {
+        "average": 23.475143583270846,
+        "darkRatio": 0.5401147395787382,
+        "lightRatio": 0.20913448042357627,
+        "centerAverage": 29.35586947458591,
+        "foregroundAverage": 12.567109211325391
+      },
+      "nightArchive": {
+        "average": 20.039469498646884,
+        "darkRatio": 0.5415022933020456,
+        "lightRatio": 0.16056895431613996,
+        "centerAverage": 30.57205094839037,
+        "foregroundAverage": 14.16724842182033
+      },
+      "workersDormitory": {
+        "average": 32.91559637590463,
+        "darkRatio": 0.5456981824306596,
+        "lightRatio": 0.27646349106683515,
+        "centerAverage": 39.1412196215677,
+        "foregroundAverage": 30.33760821735691
+      },
+      "mortuaryBay": {
+        "average": 50.568592557063695,
+        "darkRatio": 0.3840636418530201,
+        "lightRatio": 0.4250955876708232,
+        "centerAverage": 45.565310575376195,
+        "foregroundAverage": 41.16172265885147
+      }
+    }
+  },
+  "gameplay": {
+    "studiedMonster": true,
+    "blackoutObserved": true,
+    "lastChanceSurvived": true,
+    "collectedMonster": true,
+    "offeringAndNextBuilding": true,
+    "caughtAndRestarted": true,
+    "savedReloadedIndex": true
+  },
+  "network": {
+    "roomCode": "PRWAMD5B",
+    "replicatedTick": 6,
+    "recoveredTick": 12,
+    "peerCount": 2,
+    "consoleErrors": []
+  },
+  "audio": {
+    "ready": true,
+    "contextState": "running",
+    "masterGain": 0.3799999952316284,
+    "warning": {
+      "monsterId": "still-guest",
+      "sensoryChannel": "footstep",
+      "heardSide": "ahead",
+      "motif": "paired-footfall",
+      "cueCount": 4,
+      "firstCueAtSimulationMs": 29900.000000000746,
+      "finalCueAtSimulationMs": 33900.00000000079,
+      "firstIntervalMs": 1425,
+      "finalIntervalMs": 1025,
+      "finalPan": 0.15136043117342576,
+      "pursuitAtSimulationMs": 34650.000000000684
+    },
+    "recentCues": [
+      {
+        "sequence": 1,
+        "atSimulationMs": 29900.000000000746,
+        "phase": "sign",
+        "monsterId": "still-guest",
+        "sensoryChannel": "footstep",
+        "motif": "paired-footfall",
+        "pan": 0.15136043117342576,
+        "threat": 0.08400000000000007,
+        "pulseCount": 2,
+        "intervalMs": 1425
+      },
+      {
+        "sequence": 2,
+        "atSimulationMs": 31400.000000000855,
+        "phase": "sign",
+        "monsterId": "still-guest",
+        "sensoryChannel": "footstep",
+        "motif": "paired-footfall",
+        "pan": 0.15136043117342576,
+        "threat": 0.10800000000000014,
+        "pulseCount": 2,
+        "intervalMs": 1275
+      },
+      {
+        "sequence": 3,
+        "atSimulationMs": 32650.000000000946,
+        "phase": "sign",
+        "monsterId": "still-guest",
+        "sensoryChannel": "footstep",
+        "motif": "paired-footfall",
+        "pan": 0.15136043117342576,
+        "threat": 0.12799999999999997,
+        "pulseCount": 2,
+        "intervalMs": 1150
+      },
+      {
+        "sequence": 4,
+        "atSimulationMs": 33900.00000000079,
+        "phase": "sign",
+        "monsterId": "still-guest",
+        "sensoryChannel": "footstep",
+        "motif": "paired-footfall",
+        "pan": 0.15136043117342576,
+        "threat": 0.14800000000000002,
+        "pulseCount": 2,
+        "intervalMs": 1025
+      },
+      {
+        "sequence": 5,
+        "atSimulationMs": 34650.000000000684,
+        "phase": "approaching",
+        "monsterId": "still-guest",
+        "sensoryChannel": "footstep",
+        "motif": "paired-footfall",
+        "pan": 0.15136043117342576,
+        "threat": 0.08,
+        "pulseCount": 2,
+        "intervalMs": 902
+      }
+    ]
+  },
+  "externalControl": {
+    "version": "horror-corridor-v2.control/1",
+    "callCount": 80,
+    "recentCallTiming": [
+      {
+        "call": "lookBy",
+        "sincePreviousMs": 76.39999999850988
+      },
+      {
+        "call": "step:2",
+        "sincePreviousMs": 190.5
+      },
+      {
+        "call": "status",
+        "sincePreviousMs": 224.10000000149012
+      },
+      {
+        "call": "step:2",
+        "sincePreviousMs": 87.79999999701977
+      },
+      {
+        "call": "status",
+        "sincePreviousMs": 40.600000001490116
+      },
+      {
+        "call": "step:2",
+        "sincePreviousMs": 86.19999999552965
+      },
+      {
+        "call": "status",
+        "sincePreviousMs": 62.900000005960464
+      },
+      {
+        "call": "step:2",
+        "sincePreviousMs": 155.69999999552965
+      },
+      {
+        "call": "status",
+        "sincePreviousMs": 73.30000000447035
+      },
+      {
+        "call": "step:2",
+        "sincePreviousMs": 135.5
+      },
+      {
+        "call": "status",
+        "sincePreviousMs": 120.69999999552965
+      },
+      {
+        "call": "step:2",
+        "sincePreviousMs": 62.600000001490116
+      },
+      {
+        "call": "status",
+        "sincePreviousMs": 52.100000001490116
+      },
+      {
+        "call": "step:2",
+        "sincePreviousMs": 66
+      },
+      {
+        "call": "status",
+        "sincePreviousMs": 68.79999999701977
+      },
+      {
+        "call": "setInput",
+        "sincePreviousMs": 22.5
+      },
+      {
+        "call": "lookBy",
+        "sincePreviousMs": 32.80000000447035
+      },
+      {
+        "call": "step:1",
+        "sincePreviousMs": 52.69999999552965
+      },
+      {
+        "call": "lookBy",
+        "sincePreviousMs": 1325.3999999985099
+      },
+      {
+        "call": "step:1",
+        "sincePreviousMs": 60.900000005960464
+      }
+    ]
+  },
+  "consoleErrors": []
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "charity-ward-abandoned-clinic",
+  "status": "fixed",
+  "visibleProblem": "The Charity Ward clinic was a generic table, shelf, red sign block, and pipe with no readable medical use or local story.",
+  "technicalCause": "The abandoned-clinic descriptor had no specialized renderer realization and therefore fell through to generic prop geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed triage bay with a wheeled stained gurney, rails, medicine cabinet and bottles, IV stand and bag, examination lamp, TRIAGE NO ADMIT sign, and contained cold clinical light.",
+  "boundary": "Content owns the abandoned-clinic identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "Generic furniture and a small red slab sit at the corridor edge without a coherent medical silhouette.",
+    "targetFrame": "A deserted triage bay reads in the midground while the uninterrupted corridor remains visibly walkable.",
+    "visibleDelta": "The gurney and IV establish medical use immediately; wheels, rails, stain, exam lamp, medicine storage, and the cold light turn separate props into one clinical vignette.",
+    "remainingCaveat": "The oblique approach hides most of the sign and cabinet, but the gurney, IV, examination lamp, open route, and medical identity remain readable at normal brightness.",
+    "nextBlocker": "The flooded-laundry descriptor remains a generic furniture cluster and is the next ungrounded district identity."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "genericGate": "PASS dark=30.34% readable=57.26% mean=64.08 edge=5.76",
+    "darkRatio": 0.30574763479952655,
+    "lightRatio": 0.570717689533995,
+    "centerAverage": 92.60787325265623,
+    "foregroundAverage": 69.78989324966342
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/13-abandoned-clinic-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/13-abandoned-clinic.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

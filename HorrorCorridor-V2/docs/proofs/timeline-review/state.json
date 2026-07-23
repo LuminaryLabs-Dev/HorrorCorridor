@@ -1,0 +1,12 @@
+{
+  "schema": "horror-corridor.timeline-state/1",
+  "reviewCount": 4,
+  "totalSimulatedSeconds": 1440,
+  "recordedSimulatedSeconds": 1440,
+  "uniqueContiguousSeconds": 540,
+  "replayedSimulatedSeconds": 900,
+  "lastReviewDurationSeconds": 540,
+  "nextReviewDurationSeconds": 660,
+  "lastRunId": "review-004-2026-07-22T07-06-45-509Z",
+  "updatedAt": "2026-07-22T07:35:14.086Z"
+}

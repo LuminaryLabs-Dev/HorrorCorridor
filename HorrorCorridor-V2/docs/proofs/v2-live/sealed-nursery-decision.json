@@ -1,0 +1,29 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "charity-ward-sealed-nursery",
+  "status": "fixed",
+  "visibleProblem": "The Charity Ward nursery was a full-size shelf, table, red rectangle, and rubble with no child-scale silhouette or sealed-room story.",
+  "technicalCause": "The sealed-nursery descriptor had no specialized renderer realization and therefore fell through to generic prop geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed ward with a rail crib, hanging mobile, toy blocks, height marks, WARD 03 SEALED sign, cold examination light, and red night light.",
+  "boundary": "Content owns the sealed-nursery identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "Generic adult-scale furniture sits against a painted-brick wall.",
+    "targetFrame": "A quarantined child ward reads immediately as a midground horror vignette while the left side remains a clear walking route.",
+    "visibleDelta": "Crib rails establish child scale, the mobile and blocks establish use, the sealed sign establishes history, and the paired cold/red pools establish the focal hierarchy without UI.",
+    "nextBlocker": "The neighboring abandoned-clinic descriptor still uses generic furniture and is the next ungrounded Charity Ward identity."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "genericGate": "PASS dark=51.18% readable=13.92% mean=20.64 edge=4.81",
+    "darkRatio": 0.5125893860733605,
+    "lightRatio": 0.13870152012182058,
+    "centerAverage": 33.76789640515171,
+    "foregroundAverage": 23.578614152732055
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-004-2026-07-22T07-06-45-509Z/screenshots/beat-0143-breath-thief-sign.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/12-sealed-nursery.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

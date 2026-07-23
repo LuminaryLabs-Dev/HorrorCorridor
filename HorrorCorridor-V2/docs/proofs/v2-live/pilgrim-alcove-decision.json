@@ -1,0 +1,30 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "pilgrim-mile-pilgrim-alcove",
+  "status": "fixed",
+  "visibleProblem": "The Pilgrim Mile alcove was a blank glowing sign, an ordinary table, and a square altar that read as unrelated generic props rather than a devotional place.",
+  "technicalCause": "The pilgrim-alcove descriptor had no specialized renderer realization and therefore fell through to generic prop geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed roadside shrine with a stepped arch, faceless haloed effigy, clasped hands, votive candles and bowl, worn kneeler, hanging prayer strips, a PILGRIM MILE KEEP WALKING NO REST sign, and contained amber and sickly halo light.",
+  "boundary": "Content owns the pilgrim-alcove identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned. The live proof selects the actual descriptor from the active route seed and reaches it through normal response-aware Party movement.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "A blank red slab, table, and square altar occupy the wall edge without a shared silhouette or story.",
+    "targetFrame": "A roadside devotional warning reads immediately on the left while the dark Pilgrim Mile continues unobstructed on the right.",
+    "visibleDelta": "The haloed faceless figure creates one focal silhouette; votives, prayer strips, arch, bowl, and complete KEEP WALKING warning turn separate primitives into a coherent shrine.",
+    "remainingCaveat": "The low kneeler is mostly below the capture edge, but the shrine identity, warning, foreground separation, and open route remain clear at normal brightness.",
+    "nextBlocker": "The boiler-shrine descriptor remains generic and is the next unresolved Pilgrim Mile identity."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "genericGate": "PASS dark=41.16% readable=24.62% mean=30.98 edge=6.82",
+    "darkRatio": 0.4122363676570508,
+    "lightRatio": 0.24670498957902467,
+    "centerAverage": 44.388992327692335,
+    "foregroundAverage": 32.22992784476769
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/15-pilgrim-alcove-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/15-pilgrim-alcove.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

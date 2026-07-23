@@ -1,0 +1,32 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "provision-tombs-mortuary-bay",
+  "status": "fixed",
+  "visibleProblem": "The Provision Tombs mortuary bay was one plain table beside a tall generic shelf, so the readable wall communicated storage but no cold intake, body handling, or mortuary ritual.",
+  "technicalCause": "The mortuary-bay descriptor had no specialized renderer realization and therefore fell through to generic table, shelf, and lamp geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed cold-intake bay with numbered body drawers, one attached open tray, a wheeled autopsy slab, folded shroud, head block, instrument stand, floor drain, washable tile, refrigeration lines, articulated examination lamp, intake tags, and a complete COLD DELIVERY / INTAKE 04 / COUNT AGAIN doctrine board.",
+  "boundary": "Content owns the mortuary-bay identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned. The live proof selects the actual descriptor from the active route seed and reaches it through normal response-aware Party movement.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "A generic work table and shelf sit against a readable wall with no sign, process, or mortuary silhouette.",
+    "targetFrame": "A grounded cold-delivery intake shows numbered body storage, one disturbed drawer, an examination surface, and explicit counting doctrine beside an open dark route.",
+    "visibleDelta": "The final frame creates a near-to-far intake sequence: labeled cold drawers and attached tray at the threshold, a wheeled examination slab and cold lamp in the bay, full doctrine farther down-route, and a clear corridor vanishing point on the left.",
+    "corrections": "The first implementation frame was rejected because the proof camera had passed the near edge, leaving the slab and doctrine behind it. Moving drawers near and the slab and sign farther down-route restored the complete room story. The next frame was rejected because the examination lamp crossed the first doctrine line; separating them along the bay depth made all wording readable without hiding the slab.",
+    "remainingCaveat": "The cold bank is deliberately bright under the live flashlight and continues beyond the right capture edge, but its labels, attached disturbed tray, slab, complete doctrine, foreground floor, and open route remain clear at normal brightness.",
+    "nextBlocker": "All twelve authored set-piece identities now have accepted specialized presentation; the next high-value unresolved slice is encounter audio, behavioral variation, or long-route pacing rather than another facade."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "baselineGenericGate": "FAIL dark=64.78% readable=12.08% mean=15.56 edge=3.72",
+    "genericGate": "PASS dark=38.64% readable=42.34% mean=50.47 edge=8.22",
+    "darkRatio": 0.3840636418530201,
+    "lightRatio": 0.4250955876708232,
+    "centerAverage": 45.565310575376195,
+    "foregroundAverage": 41.16172265885147
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/19-mortuary-bay-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/19-mortuary-bay.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

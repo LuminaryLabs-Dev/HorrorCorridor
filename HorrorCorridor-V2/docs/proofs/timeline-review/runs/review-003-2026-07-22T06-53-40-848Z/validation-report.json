@@ -1,0 +1,39 @@
+{
+  "schema": "horror-corridor.timeline-validation/1",
+  "runId": "review-003-2026-07-22T06-53-40-848Z",
+  "status": "passed",
+  "reviewDurationSeconds": 420,
+  "timelineStagesVisited": [
+    "departure",
+    "read-left",
+    "read-right",
+    "deep-delve",
+    "field-index",
+    "long-delve"
+  ],
+  "handoffCount": 0,
+  "recoveryAttempts": 0,
+  "forcedHandoffUsed": false,
+  "encounteredMonsters": [
+    "still-guest",
+    "wall-knocker",
+    "rust-mother",
+    "breath-thief",
+    "bellhop-hushed",
+    "bellhop-echoing",
+    "bellhop-fevered",
+    "bellhop-hollow",
+    "chalk-child-hushed",
+    "chalk-child-echoing",
+    "chalk-child-fevered",
+    "chalk-child-hollow",
+    "drain-singer-hushed",
+    "drain-singer-echoing"
+  ],
+  "distanceMeters": 1082.2398991939394,
+  "buildingNumber": 15,
+  "monsterIndexProgress": 14,
+  "consoleErrors": [],
+  "videoPath": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-003-2026-07-22T06-53-40-848Z/video/page@21184b29625f4f8b43e7258820439e07.webm",
+  "failure": null
+}

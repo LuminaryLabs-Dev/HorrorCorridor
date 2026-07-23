@@ -1,0 +1,32 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "last-platform-workers-dormitory",
+  "status": "fixed",
+  "visibleProblem": "The Last Platform workers dormitory was three isolated wooden tables and a blank red panel against a flat wall, so it communicated no sleeping space, worker life, or shift history.",
+  "technicalCause": "The workers-dormitory descriptor had no specialized renderer realization and therefore fell through to generic table and sign geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed adult shift barracks with two stacked bunk frames, mattresses, pillows and draped blankets, ladder and guard rails, open locker, work coat and hardhat, boots, personal shelf, cup and ID card, floor tags, caged shift light, and a complete NIGHT SHIFT / BUNKS 07-12 / DO NOT WAKE board.",
+  "boundary": "Content owns the workers-dormitory identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned. The live proof selects the actual descriptor from the active route seed and reaches it through normal response-aware Party movement.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "Three unrelated tables sit beneath a blank glowing panel, leaving the wall readable but the supposed dormitory absent.",
+    "targetFrame": "A compact night-shift barracks shows stacked sleeping places and abandoned worker belongings beside an open, dark expedition route.",
+    "visibleDelta": "Adult-scale stacked bunks, layered bedding, ladder, locker, work gear, personal effects, shift debris, and explicit DO NOT WAKE doctrine establish one lived-in-then-abandoned worker space rather than another prop row.",
+    "corrections": "The first implementation frame was rejected because a route-side bunk post crossed the doctrine board. Moving the board onto its own forward bracket restored complete wording. The next frame was human-readable but missed the strict gate at 55.86% dark, so a contained lower-bunk fill raised foreground separation without flattening the corridor; the final frame passes both human and metric review.",
+    "remainingCaveat": "The nearest bunk and caged lamp continue beyond the right and upper capture edges because of corridor perspective, but two bunk levels, bedding, ladder, locker, personal surface, complete warning, foreground floor, and open centerline remain clear at normal brightness.",
+    "nextBlocker": "The mortuary-bay descriptor remains generic and is the final unresolved authored set-piece identity."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "baselineGenericGate": "FAIL dark=62.74% readable=11.96% mean=16.48 edge=2.24",
+    "genericGate": "PASS dark=54.57% readable=27.47% mean=32.75 edge=8.21",
+    "darkRatio": 0.5456981824306596,
+    "lightRatio": 0.27646349106683515,
+    "centerAverage": 39.1412196215677,
+    "foregroundAverage": 30.33760821735691
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/18-workers-dormitory-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/18-workers-dormitory.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

@@ -1,0 +1,421 @@
+{
+  "artifacts": [
+    "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/starting-scene.png",
+    "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/movement-scene.png",
+    "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/report.json"
+  ],
+  "createdAt": "2026-07-19T07:25:04.402Z",
+  "harness": "horror-corridor-live-player-harness",
+  "nexusSimulator": {
+    "commandVocabulary": [
+      "openPage",
+      "click",
+      "holdKey",
+      "assertCanvasExists",
+      "captureScreenshot",
+      "assertGlobalState"
+    ],
+    "root": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2",
+    "source": "local script aligned to NexusSimulator playwright-simtime semantics"
+  },
+  "options": {
+    "actionDurationMs": 900,
+    "actionProfile": "forward",
+    "artifactDir": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player",
+    "browserExecutable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "browserEngine": "chromium",
+    "cdpUrl": "",
+    "cdpPort": 9222,
+    "dryRun": false,
+    "fastLive": true,
+    "headed": false,
+    "keepPageOpen": false,
+    "launchCdpChrome": false,
+    "reuseSessionPage": false,
+    "sessionId": "",
+    "skipBrowser": false,
+    "startServer": false,
+    "url": "http://127.0.0.1:4173/",
+    "thresholds": {
+      "centerCropRatio": 0.82,
+      "maxDarkRatio": 0.9,
+      "minLightRatio": 0.025,
+      "minLights": 8,
+      "minMovementDelta": 0.25,
+      "minProps": 60,
+      "minTextures": 0,
+      "maxHudChromeBrightPixels": 25
+    }
+  },
+  "repoRoot": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V1",
+  "status": "passed",
+  "playwrightSource": "nexus-simulator",
+  "cdpProbe": {
+    "defaultUrls": [
+      "http://127.0.0.1:9222",
+      "http://127.0.0.1:9223"
+    ],
+    "reachableUrls": [],
+    "requestedUrl": null
+  },
+  "launchMode": "explicit-browser",
+  "playMode": "solo",
+  "reusedSessionPage": false,
+  "canvas": {
+    "height": 900,
+    "width": 1400
+  },
+  "consoleErrors": [],
+  "debugAfter": {
+    "enabled": true,
+    "eventCount": 0,
+    "frameCount": 1,
+    "latestFrame": {
+      "screen": "PLAYING",
+      "roomId": "service-threshold-1",
+      "localPlayerId": "listener-xm5747",
+      "gameState": "PLAYING",
+      "snapshot": {
+        "gameState": "PLAYING"
+      },
+      "expedition": {
+        "phase": "delving",
+        "runId": "7926ad47-1",
+        "seed": 2032577863,
+        "elapsedMs": 1450.000000000001,
+        "distanceMeters": 2.7449999999999974,
+        "distanceSinceEncounter": 2.7449999999999974,
+        "score": 5.489999999999995,
+        "fate": "alive",
+        "buildingNumber": 1,
+        "chronicle": [
+          "The service lift closed. The corridor kept going."
+        ],
+        "monsterIndex": {
+          "still-guest": {
+            "monsterId": "still-guest",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wall-knocker": {
+            "monsterId": "wall-knocker",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "rust-mother": {
+            "monsterId": "rust-mother",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "breath-thief": {
+            "monsterId": "breath-thief",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          }
+        },
+        "activeEncounter": null
+      },
+      "localPose": {
+        "position": {
+          "x": 0,
+          "y": 1.68,
+          "z": 4.755000000000003
+        },
+        "rotationY": 0,
+        "pitch": -0.03
+      },
+      "sceneDressing": {
+        "lightCount": 8,
+        "propCount": 68,
+        "textureCount": 0,
+        "referenceRoom": {
+          "id": "service-threshold-1",
+          "streamedBuildingNumber": 1
+        }
+      }
+    },
+    "overlayVisible": false
+  },
+  "debugBefore": {
+    "enabled": true,
+    "eventCount": 0,
+    "frameCount": 1,
+    "latestFrame": {
+      "screen": "PLAYING",
+      "roomId": "service-threshold-1",
+      "localPlayerId": "listener-xm5747",
+      "gameState": "PLAYING",
+      "snapshot": {
+        "gameState": "PLAYING"
+      },
+      "expedition": {
+        "phase": "delving",
+        "runId": "7926ad47-1",
+        "seed": 2032577863,
+        "elapsedMs": 400.0000000000001,
+        "distanceMeters": 0,
+        "distanceSinceEncounter": 0,
+        "score": 0,
+        "fate": "alive",
+        "buildingNumber": 1,
+        "chronicle": [
+          "The service lift closed. The corridor kept going."
+        ],
+        "monsterIndex": {
+          "still-guest": {
+            "monsterId": "still-guest",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "wall-knocker": {
+            "monsterId": "wall-knocker",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "rust-mother": {
+            "monsterId": "rust-mother",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          },
+          "breath-thief": {
+            "monsterId": "breath-thief",
+            "status": "unseen",
+            "encounters": 0,
+            "survivals": 0,
+            "captures": 0,
+            "firstBuilding": null
+          }
+        },
+        "activeEncounter": null
+      },
+      "localPose": {
+        "position": {
+          "x": 0,
+          "y": 1.68,
+          "z": 7.5
+        },
+        "rotationY": 0,
+        "pitch": -0.03
+      },
+      "sceneDressing": {
+        "lightCount": 8,
+        "propCount": 68,
+        "textureCount": 0,
+        "referenceRoom": {
+          "id": "service-threshold-1",
+          "streamedBuildingNumber": 1
+        }
+      }
+    },
+    "overlayVisible": false
+  },
+  "hudChrome": {
+    "bottomLeftBrightPixels": 0,
+    "sampledPixels": 14112,
+    "region": {
+      "left": 0,
+      "top": 774,
+      "right": 112,
+      "bottom": 900
+    }
+  },
+  "luminance": {
+    "average": 6.952935215507854,
+    "crop": {
+      "left": 126,
+      "top": 81,
+      "right": 1274,
+      "bottom": 819,
+      "centerCropRatio": 0.82
+    },
+    "darkRatio": 0.8614911758873687,
+    "height": 900,
+    "lightRatio": 0.03204701472101829,
+    "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/starting-scene.png",
+    "width": 1400
+  },
+  "viewChecks": [
+    {
+      "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/starting-scene.png",
+      "hudChrome": {
+        "bottomLeftBrightPixels": 0,
+        "sampledPixels": 14112,
+        "region": {
+          "left": 0,
+          "top": 774,
+          "right": 112,
+          "bottom": 900
+        }
+      },
+      "luminance": {
+        "average": 6.952935215507854,
+        "crop": {
+          "left": 126,
+          "top": 81,
+          "right": 1274,
+          "bottom": 819,
+          "centerCropRatio": 0.82
+        },
+        "darkRatio": 0.8614911758873687,
+        "height": 900,
+        "lightRatio": 0.03204701472101829,
+        "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/starting-scene.png",
+        "width": 1400
+      }
+    },
+    {
+      "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/movement-scene.png",
+      "hudChrome": {
+        "bottomLeftBrightPixels": 0,
+        "sampledPixels": 14112,
+        "region": {
+          "left": 0,
+          "top": 774,
+          "right": 112,
+          "bottom": 900
+        }
+      },
+      "luminance": {
+        "average": 6.867126034481707,
+        "crop": {
+          "left": 126,
+          "top": 81,
+          "right": 1274,
+          "bottom": 819,
+          "centerCropRatio": 0.82
+        },
+        "darkRatio": 0.8403739742972343,
+        "height": 900,
+        "lightRatio": 0.041750469769506054,
+        "path": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/legacy-live-player/movement-scene.png",
+        "width": 1400
+      }
+    }
+  ],
+  "nexusRuntime": {
+    "after": null,
+    "before": null,
+    "resetReplay": {
+      "passed": true,
+      "skipped": "fast-live preserves the current session instead of constructing proof runtimes"
+    }
+  },
+  "action": {
+    "durationMs": 900,
+    "profile": "forward",
+    "proof": null
+  },
+  "expedition": {
+    "phase": "delving",
+    "runId": "7926ad47-1",
+    "seed": 2032577863,
+    "elapsedMs": 1450.000000000001,
+    "distanceMeters": 2.7449999999999974,
+    "distanceSinceEncounter": 2.7449999999999974,
+    "score": 5.489999999999995,
+    "fate": "alive",
+    "buildingNumber": 1,
+    "chronicle": [
+      "The service lift closed. The corridor kept going."
+    ],
+    "monsterIndex": {
+      "still-guest": {
+        "monsterId": "still-guest",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "wall-knocker": {
+        "monsterId": "wall-knocker",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "rust-mother": {
+        "monsterId": "rust-mother",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      },
+      "breath-thief": {
+        "monsterId": "breath-thief",
+        "status": "unseen",
+        "encounters": 0,
+        "survivals": 0,
+        "captures": 0,
+        "firstBuilding": null
+      }
+    },
+    "activeEncounter": null
+  },
+  "liveControlHeld": true,
+  "validation": {
+    "gates": {
+      "canvasMounted": true,
+      "hiddenPlayUi": true,
+      "noHudIconChrome": true,
+      "lightCount": true,
+      "luminanceReadable": true,
+      "actionObserved": true,
+      "nexusResetReplay": true,
+      "playingReached": true,
+      "propCount": true,
+      "textureCount": true,
+      "wetReflectionViewsHudFree": true,
+      "wetReflectionViewsReadable": true,
+      "floorMaterialDescriptorPublished": true,
+      "floorMaterialNexusPublished": true,
+      "floorMaterialViewsHudFree": true,
+      "floorMaterialViewsReadable": true,
+      "ceilingOverlapViewsHudFree": true,
+      "ceilingOverlapViewsReadable": true,
+      "ceilingFractureDescriptorPublished": true,
+      "ceilingFractureNexusPublished": true,
+      "ceilingFractureViewsHudFree": true,
+      "ceilingFractureViewsReadable": true,
+      "ceilingMaterialDescriptorPublished": true,
+      "ceilingMaterialNexusPublished": true,
+      "ceilingMaterialViewsHudFree": true,
+      "ceilingMaterialViewsReadable": true,
+      "industrialShelvingCompositionPublished": true,
+      "industrialShelvingViewsHudFree": true,
+      "industrialShelvingViewsReadable": true
+    },
+    "expeditionElapsedDelta": 1050.000000000001,
+    "movementDelta": 2.7449999999999974,
+    "pitchAfter": -0.03,
+    "yawDelta": 0,
+    "passed": true
+  },
+  "visibleText": {
+    "length": 0,
+    "sample": ""
+  }
+}

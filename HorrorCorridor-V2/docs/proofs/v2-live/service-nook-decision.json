@@ -1,0 +1,18 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "opening-service-nook",
+  "status": "fixed",
+  "visibleProblem": "The opening shelf, generator, and rubble read as disconnected floating props instead of one believable place.",
+  "change": "The renderer realizes the service-nook descriptor as a recessed maintenance bay with a structural frame, breaker box, conduits, caged animated fan, hazard edge, generator, and local maintenance light.",
+  "boundary": "Content owns the service-nook identity and prop descriptors. The Three.js host only realizes presentation and does not decide gameplay outcomes.",
+  "humanView": {
+    "result": "pass",
+    "finding": "The bay reads as a localized maintenance landmark while the forward walking route remains open.",
+    "lightingCaveat": "The view remains intentionally dark; the project gate passes with 11.64 percent bright pixels and a 30.60 center average."
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-003-2026-07-22T06-53-40-848Z/screenshots/000-start.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/01a-service-nook.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

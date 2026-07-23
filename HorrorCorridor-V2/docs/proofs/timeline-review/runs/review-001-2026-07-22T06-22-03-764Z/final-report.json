@@ -1,0 +1,40 @@
+{
+  "schema": "horror-corridor.timeline-validation/1",
+  "runId": "review-001-2026-07-22T06-22-03-764Z",
+  "status": "passed",
+  "reviewDurationSeconds": 180,
+  "timelineStagesVisited": [
+    "departure",
+    "read-left",
+    "read-right",
+    "deep-delve",
+    "field-index",
+    "long-delve"
+  ],
+  "handoffCount": 1,
+  "recoveryAttempts": 1,
+  "forcedHandoffUsed": true,
+  "encounteredMonsters": [
+    "still-guest",
+    "wall-knocker",
+    "rust-mother",
+    "breath-thief",
+    "bellhop-hushed"
+  ],
+  "distanceMeters": 405.3860617186697,
+  "buildingNumber": 6,
+  "monsterIndexProgress": 5,
+  "consoleErrors": [],
+  "videoPath": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-001-2026-07-22T06-22-03-764Z/video/page@e3903d0b6dac2f0677f38c5d9e59018d.webm",
+  "failure": null,
+  "previousTotalSimulatedSeconds": 0,
+  "totalSimulatedSeconds": 180,
+  "nextReviewDurationSeconds": 300,
+  "artifacts": {
+    "runRoot": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-001-2026-07-22T06-22-03-764Z",
+    "manifest": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-001-2026-07-22T06-22-03-764Z/manifest.json",
+    "events": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-001-2026-07-22T06-22-03-764Z/events.jsonl",
+    "screenshots": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-001-2026-07-22T06-22-03-764Z/screenshots",
+    "video": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-001-2026-07-22T06-22-03-764Z/video/page@e3903d0b6dac2f0677f38c5d9e59018d.webm"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "flood-line-flooded-laundry",
+  "status": "fixed",
+  "visibleProblem": "The Flood Line laundry was two generic tables and a generator with no readable washroom use, standing water, or local story.",
+  "technicalCause": "The flooded-laundry descriptor had no specialized renderer realization and therefore fell through to generic prop geometry.",
+  "change": "The renderer now realizes the descriptor as a recessed industrial washroom with three front-load washers, controls and feed pipes, a wheeled wet-linen cart, raised hanging linen, standing water, a floor drain, a FLOOD LINE CLOSED sign, and contained cyan and submerged red light.",
+  "boundary": "Content owns the flooded-laundry identity and descriptors. The Three.js host specializes presentation only; encounter, route, offering, persistence, and network outcomes remain domain-owned. The live proof recenters through normal Party input before landmark review.",
+  "humanView": {
+    "result": "pass",
+    "currentFrame": "Two generic tables and a generator sit at the corridor edge without a coherent room silhouette.",
+    "targetFrame": "A flooded industrial washroom reads immediately on the left while the dark central route remains visibly open.",
+    "visibleDelta": "Three washer doors establish use at a glance; wet linen, cart, drain, reflections, pipes, sign, and paired cyan-red light make the separate details read as one Flood Line vignette.",
+    "remainingCaveat": "The cart occupies the near side of the bay and partly overlaps the first washer, but it stays out of the central path and strengthens the laundry silhouette.",
+    "nextBlocker": "The pilgrim-alcove descriptor remains generic and is the first unresolved identity in the next district."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "genericGate": "PASS dark=42.27% readable=23.10% mean=29.28 edge=5.62",
+    "darkRatio": 0.42404833407618825,
+    "lightRatio": 0.2311290974942682,
+    "centerAverage": 40.76249707834613,
+    "foregroundAverage": 26.24023923708956
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/14-flooded-laundry-before.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/14-flooded-laundry.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}

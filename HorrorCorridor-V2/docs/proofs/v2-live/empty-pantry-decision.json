@@ -1,0 +1,26 @@
+{
+  "schema": "horror-corridor-v2.visual-decision/1",
+  "scope": "shuttered-market-empty-pantry",
+  "status": "fixed",
+  "visibleProblem": "The first empty pantry read as generic shelving, a table, and rubble placed against a flat corridor wall.",
+  "technicalCause": "Only the closed-tavern and service-nook descriptors had renderer-owned facade realizations; empty-pantry fell through to generic prop shapes.",
+  "change": "The renderer realizes the empty-pantry descriptor as a recessed ration bay with a structural frame, partial rolling shutter, readable RATIONS EMPTY sign, surviving tins, discarded sacks, and a contained amber light pool.",
+  "boundary": "Content owns the empty-pantry identity and prop descriptors. The Three.js host only realizes presentation; route, encounters, progression, and outcomes are unchanged.",
+  "humanView": {
+    "result": "pass",
+    "visibleDelta": "The frame exposes an enclosure silhouette, shutter slats, labeled scarcity, shelf contents, sacks, and a local warm focal pool without adding UI.",
+    "remainingCaveat": "The scene remains intentionally dark. The generic luminance script rejects the frame, but direct inspection shows floor and wall separation, a clear route, and the pantry landmark at normal scale."
+  },
+  "lighting": {
+    "projectGate": "pass",
+    "darkRatio": 0.8304904332123759,
+    "lightRatio": 0.03495466675221911,
+    "centerAverage": 17.977688907149943,
+    "genericGate": "FAIL dark=83.05% readable=3.52% mean=8.8 edge=2.13"
+  },
+  "evidence": {
+    "before": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/timeline-review/runs/review-004-2026-07-22T07-06-45-509Z/screenshots/0097-read-right.png",
+    "after": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/09a-empty-pantry.png",
+    "liveReport": "/Users/crimsonwheeler/Documents/GitHub/HorrorCorridor/HorrorCorridor-V2/docs/proofs/v2-live/report.json"
+  }
+}
