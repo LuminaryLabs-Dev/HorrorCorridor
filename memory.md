@@ -44,6 +44,7 @@ Flashlight ownership stays split: Party intent and pose → Corridor beam/contac
 - The internal authoring preview never starts gameplay, persistence, or networking. It reuses runtime content descriptors and the Three.js presentation adapter; normal `BrowserGame` and the public runtime API remain unchanged.
 - Corridor rendering retains segment groups that overlap the streamed window and disposes only segments that leave it. Read-only semantic queries do not trigger presentation redraws, and proof loops reuse snapshots returned by `step`.
 - Additive object overlap is reconciled through the Corridor-owned `routeGenerator` and `routeServiceDoor` methods. They return immutable profiles from route context; presentation realizes those profiles and never chooses the variant.
+- `harness:content-routing` is the deterministic Agent/Chain validation type for those methods. It owns run artifacts and gates only; the Corridor service remains runtime authority. The cumulative play review remains a separate Orchestrator harness.
 
 ## Product Rules
 

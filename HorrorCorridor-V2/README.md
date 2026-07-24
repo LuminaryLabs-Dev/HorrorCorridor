@@ -36,6 +36,7 @@ src/
 ├── hosts/browser/        fixed-step host, React UI, Three.js realization
 ├── content/              monsters, offerings, chamber descriptors
 ├── authoring/            catalog contracts and development preview fixture
+├── harness/              agent-chain and orchestrator harness contracts
 ├── presentation/         shared set-piece prefab registry
 └── proofs/               semantic control and legacy-harness bridge
 ```
@@ -105,6 +106,7 @@ Setup, tools, lifecycle, and durable-state contracts: [docs/authoring-mcp.md](do
 npm run lint
 npm run build
 npm run proof:runtime
+npm run harness:content-routing
 npm run proof:authoring-mcp
 npm run proof:live
 npm run proof:legacy  # requires the V2 dev server
@@ -112,6 +114,7 @@ npm run review:timeline
 ```
 
 - `proof:runtime` verifies 36/38 kit manifests, deterministic reset/replay, studied and collected outcomes, caught/restart, offering/building progression, save/load, and browser-free snapshots.
+- `harness:content-routing` is the fast Agent/Chain harness for deterministic two-by-two object routing, wall-side placement, immutable profile replay, catalog parity, and reconstructable run artifacts.
 - `proof:runtime` also walks the real Party/Corridor motion path for 600 simulated seconds and validates 1,920 authored meters, 12 districts, 12 set-piece identities, and 124 monster manifestations.
 - `proof:live` drives the game from outside, captures title/spawn/movement/left/right/first service-nook/first closed-tavern/first empty-pantry/first sealed-nursery/blackout/Index/caught views, checks lighting, and proves chunked PeerJS replication plus disconnect/recovery. Visual decision records and explicit `*-before.png` baselines survive proof cleanup. Add `-- --network-only` for a focused transport proof or `-- --url http://127.0.0.1:4174/` to use another port.
 - `proof:legacy` runs the preserved V1 live-player harness against V2.

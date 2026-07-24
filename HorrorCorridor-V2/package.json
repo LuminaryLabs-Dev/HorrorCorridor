@@ -9,12 +9,13 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "authoring:mcp": "tsx tools/authoring-mcp/server.ts",
+    "harness:content-routing": "tsx scripts/content-routing-harness.ts",
     "proof:runtime": "tsx scripts/prove-runtime.ts",
     "proof:authoring-mcp": "tsx scripts/prove-authoring-mcp.ts",
     "proof:live": "node scripts/live-proof.mjs",
     "review:timeline": "node scripts/timeline-review.mjs",
     "proof:legacy": "NEXUS_SIMULATOR_ROOT=\"$PWD\" node ../HorrorCorridor-V1/scripts/horror-corridor-live-player-harness.mjs --fast-live --url \"${HORROR_PROOF_URL:-http://127.0.0.1:4173/}\" --browser-executable '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --browser-engine chromium --action-profile forward --action-duration-ms 900 --artifact-dir docs/proofs/legacy-live-player --max-dark-ratio 0.9 --min-light-ratio 0.025 --min-lights 8 --min-props 60 --min-textures 0 --max-hud-chrome-bright-pixels 25",
-    "validate": "npm run lint && npm run build && npm run proof:runtime"
+    "validate": "npm run lint && npm run build && npm run proof:runtime && npm run harness:content-routing"
   },
   "dependencies": {
     "nexusengine": "https://github.com/LuminaryLabs-Dev/NexusEngine/archive/06305727778d579ca18309221e60c3e41bd066c7.tar.gz",

@@ -23,6 +23,7 @@ Validation:
 ```bash
 cd HorrorCorridor-V2
 npm run validate
+npm run harness:content-routing
 npm run proof:authoring-mcp
 npm run proof:live
 npm run proof:legacy  # run while the V2 dev server is live

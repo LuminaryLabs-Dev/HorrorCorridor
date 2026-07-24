@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "harness-it.contract.v2",
+  "name": "horror-corridor-content-routing",
+  "goal": "Prove every additive generator and service-door profile is deterministic, reachable, catalogued, and placed outside the central route.",
+  "authorityClass": "agent",
+  "layers": ["chain"],
+  "actors": [
+    {
+      "id": "routing-validator",
+      "kind": "deterministic",
+      "authority": "read-content-descriptors-and-write-run-artifacts",
+      "allowedActions": ["build-route-contexts", "call-routing-service", "inspect-chamber-descriptors", "inspect-authoring-catalog", "write-run-artifacts"]
+    }
+  ],
+  "inputs": [
+    { "id": "route-contexts", "schema": "horror-corridor.content-routing-input/1" },
+    { "id": "corridor-content", "schema": "horror-corridor.content-routing-profiles/1" }
+  ],
+  "outputs": [
+    { "id": "routing-results", "schema": "horror-corridor.content-routing-results/1", "lifecycle": "validated" },
+    { "id": "routing-validation", "schema": "horror-corridor.content-routing-validation/1", "lifecycle": "validated" }
+  ],
+  "states": ["pending", "running", "validated", "rejected", "blocked"],
+  "gates": [
+    { "id": "deterministic-replay", "owner": "routing-validator", "onPass": "running", "onFail": "rejected" },
+    { "id": "variant-coverage", "owner": "routing-validator", "onPass": "running", "onFail": "rejected" },
+    { "id": "placement-boundary", "owner": "routing-validator", "onPass": "running", "onFail": "rejected" },
+    { "id": "catalog-parity", "owner": "routing-validator", "onPass": "validated", "onFail": "rejected" }
+  ],
+  "retryPolicy": {
+    "maxAttempts": 1,
+    "timeoutMs": 30000,
+    "mutationPolicy": "no-automatic-mutation-retry",
+    "onExhausted": "blocked"
+  },
+  "memoryPolicy": {
+    "runState": "artifacts/content-routing-harness/{runId}/manifest.json",
+    "carryForward": ["contract-version", "validator-version"],
+    "discard": ["incomplete-run-state", "unvalidated-results"]
+  },
+  "artifacts": {
+    "runRoot": "artifacts/content-routing-harness/{runId}",
+    "manifest": "manifest.json",
+    "events": "events.jsonl",
+    "decisions": "decisions/",
+    "validationReport": "validation-report.json",
+    "finalReport": "final-report.json"
+  },
+  "provider": { "required": false, "profile": null, "liveProofRequired": false },
+  "approvals": [],
+  "promotion": {
+    "owner": "routing-validator",
+    "requires": ["deterministic-replay", "variant-coverage", "placement-boundary", "catalog-parity"]
+  },
+  "tests": {
+    "smoke": "Load content profiles, create a run manifest, and emit the first chain event.",
+    "happy": "Reach two generator and two service-door variants with deterministic replay, safe placement, and catalog parity.",
+    "failure": "Reject an invalid segment budget or a missing variant without emitting a validated output.",
+    "retry": "No chain retry is permitted; a failed run blocks and a rerun receives a new run id.",
+    "resume": "Deterministic replay creates a new immutable run instead of resuming partial chain output.",
+    "artifactInspection": "Reconstruct inputs, routed outputs, gate decisions, validation, and final status from one run directory."
+  }
+}
