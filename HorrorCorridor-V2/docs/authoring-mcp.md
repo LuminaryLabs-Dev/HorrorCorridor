@@ -47,6 +47,8 @@ Every tool returns `horror-corridor.authoring-tool-result/1` with `success`, `da
 
 Resources expose intent, the complete resolved catalog, individual content, packets, proof reports, live preview sessions, and preview PNGs. Prompts provide canonical implementation, focused-review, cohesion, and promotion instructions.
 
+The resolved catalog currently maps 206 entries, including four Corridor-owned object variants. Generator and service-door variants retain separate IDs and source lineage while `routeGenerator` and `routeServiceDoor` select them deterministically at runtime.
+
 ## Preview and proof
 
 The development-only preview selects a set piece, district, monster, phase, and camera without starting gameplay, persistence, networking, or route traversal. `mortuary-bay`, `cold-delivery`, and `morgue-twin-hushed` are the golden slice.

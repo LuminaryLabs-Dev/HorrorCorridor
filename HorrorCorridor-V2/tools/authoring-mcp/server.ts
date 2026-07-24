@@ -25,6 +25,7 @@ const CONTENT_KINDS = [
   "monster-family",
   "monster",
   "audio-motif",
+  "object-variant",
   "offering",
   "progression-beat",
 ] as const;

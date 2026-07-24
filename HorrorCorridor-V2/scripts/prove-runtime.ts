@@ -14,9 +14,16 @@ import {
   CORRIDOR_SEGMENT_LENGTH_METERS,
   WALKABLE_CONTENT_MINUTES,
   WALKABLE_CONTENT_SEGMENTS,
+  createAuthoredCorridorSetPiece,
   createCorridorSetPiece,
   districtForSegment,
 } from "../src/content/chamber";
+import {
+  CORRIDOR_GENERATOR_VARIANTS,
+  CORRIDOR_SERVICE_DOOR_VARIANTS,
+  createCorridorContentRoutingService,
+  type CorridorContentRouteContext,
+} from "../src/content/corridorContentRouting";
 import { MONSTER_FAMILY_COUNT, MONSTER_PROFILES, MONSTERS_BY_ID, type MonsterProfile } from "../src/content/monsters";
 
 const STEP = 1 / 60;
@@ -165,6 +172,43 @@ function proveIndependentDomainResets(): void {
   assert.equal(deterministicDigest(shared.snapshot()), sharedInitial);
 }
 
+function proveCorridorContentRouting(): Readonly<{ methods: readonly string[]; generatorVariants: number; serviceDoorVariants: number }> {
+  const routing = createCorridorContentRoutingService();
+  const contexts: CorridorContentRouteContext[] = Array.from({ length: 96 }, (_, segmentIndex) => ({
+    routeSeed: 0x48435632,
+    segmentIndex,
+    districtId: districtForSegment(segmentIndex).id,
+    setPieceKind: segmentIndex % 2 === 0 ? "service-nook" : "closed-tavern",
+  }));
+  const generatorIds = new Set(contexts.map((context) => routing.routeGenerator(context).id));
+  const serviceDoorIds = new Set(contexts.map((context) => routing.routeServiceDoor(context).id));
+  assert.deepEqual(generatorIds, new Set(CORRIDOR_GENERATOR_VARIANTS.map((variant) => variant.id)));
+  assert.deepEqual(serviceDoorIds, new Set(CORRIDOR_SERVICE_DOOR_VARIANTS.map((variant) => variant.id)));
+  assert.strictEqual(routing.routeGenerator(contexts[0]), routing.routeGenerator(contexts[0]));
+  assert.strictEqual(routing.routeServiceDoor(contexts[1]), routing.routeServiceDoor(contexts[1]));
+
+  const corridor = createCorridorDomain(202, createDeterministicRandom(303), routing);
+  assert.strictEqual(corridor.routeGenerator(contexts[0]), routing.routeGenerator(contexts[0]));
+  assert.strictEqual(corridor.routeServiceDoor(contexts[1]), routing.routeServiceDoor(contexts[1]));
+
+  const serviceNook = createAuthoredCorridorSetPiece("service-nook", "service-mouth", 2, -12, -1, contexts[0].routeSeed, routing);
+  const generator = serviceNook.props.find((prop) => prop.kind === "generator");
+  assert(generator?.routedObject, "Service nooks must receive a routed generator descriptor.");
+  assert(generator.routedObject.placementTags.includes("non-blocking"));
+
+  const closedTavern = createAuthoredCorridorSetPiece("closed-tavern", "shuttered-market", 2, -12, -1, contexts[0].routeSeed, routing);
+  const serviceDoor = closedTavern.props.find((prop) => prop.kind === "service-door");
+  assert(serviceDoor?.routedObject, "Closed taverns must receive a routed service-door descriptor.");
+  assert(serviceDoor.routedObject.placementTags.includes("non-blocking"));
+  assert(Math.abs(serviceDoor.position.x) >= 3, "Routed service doors must stay wall-side rather than obstructing the central route.");
+
+  return Object.freeze({
+    methods: Object.freeze(["routeGenerator", "routeServiceDoor"]),
+    generatorVariants: generatorIds.size,
+    serviceDoorVariants: serviceDoorIds.size,
+  });
+}
+
 function proveContentDepth(): Readonly<{ monsters: number; families: number; sensoryAudioMotifs: number; districts: number; setPieces: number; meters: number; walkMinutes: number; simulatedWalkMeters: number }> {
   assert(MONSTER_PROFILES.length > 120, "The Monster Index must contain more than 120 built manifestations.");
   assert.equal(new Set(MONSTER_PROFILES.map((profile) => profile.id)).size, MONSTER_PROFILES.length);
@@ -222,6 +266,7 @@ function proveContentDepth(): Readonly<{ monsters: number; families: number; sen
 async function main(): Promise<void> {
   const persistence = createMemoryPersistenceAdapter();
   proveIndependentDomainResets();
+  const contentRouting = proveCorridorContentRouting();
   const content = proveContentDepth();
   const runtime = createHorrorCorridorV2({ seed: "proof-expedition", adapters: { persistence } });
   const developmentRuntime = createHorrorCorridorV2({ seed: "proof-development", development: true });
@@ -288,6 +333,7 @@ async function main(): Promise<void> {
     explicitShippingGraph: runtime.diagnostics().explicitKitCount,
     schemas: ["horror-corridor-v2.snapshot/1", "horror-corridor-v2.network/1", "horror-corridor-v2.save/1"],
     content,
+    contentRouting,
     proven: [
       "independent-dsk-reset-replay",
       "deterministic-reset-and-replay",
@@ -301,6 +347,7 @@ async function main(): Promise<void> {
       "six-distinct-sensory-warning-motifs",
       "ten-minute-authored-route-horizon",
       "more-than-120-monster-manifestations",
+      "corridor-owned-additive-content-routing",
     ],
   }, null, 2));
 }

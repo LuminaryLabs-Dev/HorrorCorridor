@@ -150,6 +150,30 @@
     "version": 4,
     "updatedAt": "2026-07-23T17:55:15.511Z"
   },
+  "object-variant:generator:open-frame": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-24T12:38:40Z"
+  },
+  "object-variant:generator:enclosed-service": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-24T12:38:40Z"
+  },
+  "object-variant:service-door:rail-frame": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-24T12:38:40Z"
+  },
+  "object-variant:service-door:oxidized-panel": {
+    "lifecycle": "mapped",
+    "evidenceRefs": [],
+    "version": 1,
+    "updatedAt": "2026-07-24T12:38:40Z"
+  },
   "monster-family:still-guest": {
     "lifecycle": "mapped",
     "evidenceRefs": [],

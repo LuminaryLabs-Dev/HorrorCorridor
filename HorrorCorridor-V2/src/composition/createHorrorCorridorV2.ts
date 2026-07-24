@@ -14,6 +14,7 @@ import {
   type SemanticInput,
 } from "../contracts";
 import { createCorridorDomain } from "../corridor";
+import { createCorridorContentRoutingService } from "../content/corridorContentRouting";
 import { createDreadDomain } from "../dread";
 import { createExpeditionDomain } from "../expedition";
 import { createPartyDomain } from "../party";
@@ -49,7 +50,8 @@ export function createHorrorCorridorV2(options: HorrorCorridorV2Options = {}): H
   const corridorRandom = createDeterministicRandom((seed ^ 0x0c0111d0) >>> 0);
   const dreadRandom = createDeterministicRandom((seed ^ 0x000d2ead) >>> 0);
   const expedition = createExpeditionDomain(seed);
-  const corridor = createCorridorDomain(seed, corridorRandom);
+  const corridorContentRouting = createCorridorContentRoutingService();
+  const corridor = createCorridorDomain(seed, corridorRandom, corridorContentRouting);
   const party = createPartyDomain(explorerId);
   const dread = createDreadDomain(dreadRandom);
   const sharedExpedition = createSharedExpeditionDomain(seed, mode, options.roomCode);

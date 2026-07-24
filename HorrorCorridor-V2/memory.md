@@ -7,6 +7,7 @@
 - V1 assets and behavior may be clean-room ported selectively, but V1 modules are never imported.
 - The active world is a continuous service corridor streamed in deterministic eight-meter segments around the party. It has no forward-axis clamp, blocking threshold door, or building-transition teleport.
 - Grounded wall-side set-piece descriptors form recognizable local places such as closed tavern fronts, service nooks, and pilgrim alcoves while keeping the central route open.
+- Corridor owns immutable additive object profiles and exposes `routeGenerator` and `routeServiceDoor`; route seed, segment, district, and set piece select the profile deterministically. Three.js only realizes the returned descriptor.
 - Dread remains dormant for the first 42 meters after an encounter/building transition so Corridor can establish a safe exploration rhythm.
 - Fixed simulation and deterministic random state are part of the snapshot contract.
 - Movement keeps the player safe during the last-chance darkness window; a stopped player can be caught.

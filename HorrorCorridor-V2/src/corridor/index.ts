@@ -1,6 +1,10 @@
 import type { CorridorSnapshot, OfferingId, PartySnapshot } from "../contracts";
 import type { DeterministicRandom } from "../composition/determinism";
 import { clamp } from "../composition/determinism";
+import {
+  CORRIDOR_CONTENT_ROUTING,
+  type CorridorContentRoutingService,
+} from "../content/corridorContentRouting";
 import { offeringForBuilding } from "../content/offerings";
 
 type CorridorState = {
@@ -40,7 +44,11 @@ function initialState(seed: number): CorridorState {
 
 export type CorridorDomain = ReturnType<typeof createCorridorDomain>;
 
-export function createCorridorDomain(seed: number, random: DeterministicRandom) {
+export function createCorridorDomain(
+  seed: number,
+  random: DeterministicRandom,
+  contentRouting: CorridorContentRoutingService = CORRIDOR_CONTENT_ROUTING,
+) {
   const initialRandomState = random.state();
   let state = initialState(seed);
 
@@ -56,6 +64,8 @@ export function createCorridorDomain(seed: number, random: DeterministicRandom) 
 
   return Object.freeze({
     snapshot,
+    routeGenerator: contentRouting.routeGenerator,
+    routeServiceDoor: contentRouting.routeServiceDoor,
     resolveMotion(position: PartySnapshot["position"]): PartySnapshot["position"] {
       const x = clamp(position.x, -3.15, 3.15);
       return { x, y: position.y, z: position.z };

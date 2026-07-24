@@ -14,7 +14,7 @@ HorrorCorridor is an endless first-person horror expedition. Monsters are collec
 ## Domain Ownership
 
 - Expedition owns run progression, score, fate, Chronicle, and Monster Index.
-- Corridor owns chambers, routes, offerings, illumination, beam contact, and acoustics.
+- Corridor owns chambers, routes, deterministic content-variant routing, offerings, illumination, beam contact, and acoustics.
 - Party owns explorer identity, body, gaze, flashlight intent, and condition.
 - Dread owns monsters, signs, pursuit, blackout, last chance, and capture.
 - Shared Expedition owns authority, replication, presence, reconnect, and recovery.
@@ -43,6 +43,7 @@ Flashlight ownership stays split: Party intent and pose → Corridor beam/contac
 - Lifecycle advances only through adjacent evidence gates: `mapped → specified → previewed → playable → integrated → promoted`. Three accepted deltas in one related slice, or any cross-domain risk, makes cohesion review due.
 - The internal authoring preview never starts gameplay, persistence, or networking. It reuses runtime content descriptors and the Three.js presentation adapter; normal `BrowserGame` and the public runtime API remain unchanged.
 - Corridor rendering retains segment groups that overlap the streamed window and disposes only segments that leave it. Read-only semantic queries do not trigger presentation redraws, and proof loops reuse snapshots returned by `step`.
+- Additive object overlap is reconciled through the Corridor-owned `routeGenerator` and `routeServiceDoor` methods. They return immutable profiles from route context; presentation realizes those profiles and never chooses the variant.
 
 ## Product Rules
 

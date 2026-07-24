@@ -1,4 +1,8 @@
 import { CORRIDOR_DISTRICTS, type SetPieceKind } from "../content/chamber";
+import {
+  CORRIDOR_GENERATOR_VARIANTS,
+  CORRIDOR_SERVICE_DOOR_VARIANTS,
+} from "../content/corridorContentRouting";
 import { MONSTER_PROFILES } from "../content/monsters";
 import { OFFERINGS } from "../content/offerings";
 import type {
@@ -9,6 +13,7 @@ import type {
 
 const SOURCE = {
   chamber: "HorrorCorridor-V2/src/content/chamber.ts",
+  contentRouting: "HorrorCorridor-V2/src/content/corridorContentRouting.ts",
   monsters: "HorrorCorridor-V2/src/content/monsters.ts",
   audio: "HorrorCorridor-V2/src/adapters/spatialAudio.ts",
   offerings: "HorrorCorridor-V2/src/content/offerings.ts",
@@ -95,6 +100,31 @@ export function buildAuthoringCatalog(
       variationAxes: ["district", "side", "camera-distance", "local-light", "prop-composition"],
       acceptance: ["Named silhouette is visible at normal brightness.", "The route remains open.", "Presentation owns no gameplay outcome."],
       runtime: { kind, districtIds: districts.map((district) => district.id) },
+    }));
+  }
+
+  const objectVariants = [...CORRIDOR_GENERATOR_VARIANTS, ...CORRIDOR_SERVICE_DOOR_VARIANTS];
+  for (const variant of objectVariants) {
+    const familyVariants = objectVariants.filter((value) => value.family === variant.family);
+    const setPieceId = variant.family === "generator" ? "set-piece:service-nook" : "set-piece:closed-tavern";
+    seeds.push(entry(`object-variant:${variant.id}`, "object-variant", {
+      domain: "corridor",
+      title: variant.title,
+      intent: variant.intent,
+      playerExperience: `The player reads ${variant.title} as a grounded ${variant.family} identity without mistaking it for a route blocker.`,
+      sourceRefs: [SOURCE.contentRouting],
+      dependencies: [setPieceId],
+      neighbors: familyVariants
+        .filter((value) => value.id !== variant.id)
+        .map((value) => `object-variant:${value.id}`),
+      pacingRole: `One deterministic, non-blocking ${variant.family} landmark routed within its owning Corridor set piece.`,
+      variationAxes: ["route-seed", "segment", "district", "set-piece", "silhouette"],
+      acceptance: [
+        "The Corridor routing service selects the variant deterministically.",
+        "The central route remains open.",
+        "Presentation realizes the descriptor without selecting content.",
+      ],
+      runtime: { ...variant },
     }));
   }
 

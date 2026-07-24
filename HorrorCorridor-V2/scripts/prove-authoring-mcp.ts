@@ -122,7 +122,7 @@ async function main(): Promise<void> {
     await call("horror_authoring_status");
     const catalogResult = await call("catalog_list", { limit: 500 });
     const catalog = dataRecord(catalogResult);
-    assert.equal(catalog.total, 202);
+    assert.equal(catalog.total, 206);
     await call("content_get", { contentId: "set-piece:mortuary-bay" });
     await call("context_build", { contentId: "set-piece:mortuary-bay" });
 

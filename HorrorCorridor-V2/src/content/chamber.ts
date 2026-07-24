@@ -1,13 +1,21 @@
+import {
+  CORRIDOR_CONTENT_ROUTING,
+  type CorridorContentRouteContext,
+  type CorridorContentRoutingService,
+  type RoutedCorridorObjectProfile,
+} from "./corridorContentRouting";
+
 export const CORRIDOR_SEGMENT_LENGTH_METERS = 8;
 export const WALKABLE_CONTENT_MINUTES = 10;
 export const WALKABLE_CONTENT_SEGMENTS = 240;
 
 export type ChamberPropDescriptor = Readonly<{
   id: string;
-  kind: "lamp" | "shelf" | "generator" | "pipe" | "rubble" | "altar" | "counter" | "table" | "sign";
+  kind: "lamp" | "shelf" | "generator" | "service-door" | "pipe" | "rubble" | "altar" | "counter" | "table" | "sign";
   position: Readonly<{ x: number; y: number; z: number }>;
   rotationY?: number;
   scale?: Readonly<{ x: number; y: number; z: number }>;
+  routedObject?: RoutedCorridorObjectProfile;
 }>;
 
 export type CorridorDistrict = Readonly<{
@@ -64,20 +72,50 @@ export function districtForSegment(segmentIndex: number): CorridorDistrict {
   return CORRIDOR_DISTRICTS[districtIndex];
 }
 
-function propsFor(kind: SetPieceKind, id: string, x: number, z: number, side: number, facing: number): readonly ChamberPropDescriptor[] {
+function propsFor(
+  kind: SetPieceKind,
+  id: string,
+  x: number,
+  z: number,
+  side: number,
+  facing: number,
+  routeContext: CorridorContentRouteContext,
+  contentRouting: CorridorContentRoutingService,
+): readonly ChamberPropDescriptor[] {
   const near = side * 2.25;
   const sign = (offset = 0): ChamberPropDescriptor => ({ id: `${id}-sign`, kind: "sign", position: { x: side * 3.45, y: 2.4, z: z + offset }, rotationY: facing });
   const table = (offset = 0): ChamberPropDescriptor => ({ id: `${id}-table-${offset}`, kind: "table", position: { x: near, y: 0, z: z + offset }, rotationY: 0.1 * side });
   const shelf = (offset = 0): ChamberPropDescriptor => ({ id: `${id}-shelf-${offset}`, kind: "shelf", position: { x, y: 0, z: z + offset }, rotationY: facing });
   switch (kind) {
-    case "closed-tavern": return [{ id: `${id}-counter`, kind: "counter", position: { x, y: 0, z }, rotationY: facing }, table(1.9), sign(-1.3), { id: `${id}-lamp`, kind: "lamp", position: { x, y: 3.1, z: z + 0.3 } }];
-    case "service-nook": return [shelf(-0.8), { id: `${id}-generator`, kind: "generator", position: { x: near, y: 0, z: z + 1.45 }, rotationY: facing }, { id: `${id}-rubble`, kind: "rubble", position: { x: near, y: 0, z: z + 2.25 } }];
+    case "closed-tavern": return [
+      { id: `${id}-counter`, kind: "counter", position: { x, y: 0, z }, rotationY: facing },
+      sign(-1.3),
+      { id: `${id}-lamp`, kind: "lamp", position: { x, y: 3.1, z: z + 0.3 } },
+      {
+        id: `${id}-service-door`,
+        kind: "service-door",
+        position: { x: side * 3.18, y: 0, z: z + 1.45 },
+        rotationY: facing,
+        routedObject: contentRouting.routeServiceDoor(routeContext),
+      },
+    ];
+    case "service-nook": return [
+      shelf(-0.8),
+      {
+        id: `${id}-generator`,
+        kind: "generator",
+        position: { x: near, y: 0, z: z + 1.45 },
+        rotationY: facing,
+        routedObject: contentRouting.routeGenerator(routeContext),
+      },
+      { id: `${id}-rubble`, kind: "rubble", position: { x: near, y: 0, z: z + 2.25 } },
+    ];
     case "pilgrim-alcove": return [table(), sign(0.4), { id: `${id}-altar`, kind: "altar", position: { x: near, y: 0, z: z - 1.65 } }];
     case "abandoned-clinic": return [table(-0.8), shelf(1.25), sign(-2), { id: `${id}-pipe`, kind: "pipe", position: { x: side * 3.15, y: 2.7, z } }];
-    case "flooded-laundry": return [table(-1.2), table(1.25), { id: `${id}-generator`, kind: "generator", position: { x, y: 0, z }, rotationY: facing }];
+    case "flooded-laundry": return [table(-1.2), table(1.25), { id: `${id}-generator`, kind: "generator", position: { x, y: 0, z }, rotationY: facing, routedObject: contentRouting.routeGenerator(routeContext) }];
     case "sealed-nursery": return [shelf(-1.5), table(0.8), sign(1.9), { id: `${id}-rubble`, kind: "rubble", position: { x: near, y: 0, z: z - 0.4 } }];
     case "night-archive": return [shelf(-1.7), shelf(0), shelf(1.7), sign(-2.5)];
-    case "boiler-shrine": return [{ id: `${id}-generator`, kind: "generator", position: { x, y: 0, z }, rotationY: facing }, { id: `${id}-altar`, kind: "altar", position: { x: near, y: 0, z: z + 1.8 } }, { id: `${id}-pipe`, kind: "pipe", position: { x: side * 3.2, y: 2.75, z } }];
+    case "boiler-shrine": return [{ id: `${id}-generator`, kind: "generator", position: { x, y: 0, z }, rotationY: facing, routedObject: contentRouting.routeGenerator(routeContext) }, { id: `${id}-altar`, kind: "altar", position: { x: near, y: 0, z: z + 1.8 } }, { id: `${id}-pipe`, kind: "pipe", position: { x: side * 3.2, y: 2.75, z } }];
     case "ticket-hall": return [{ id: `${id}-counter`, kind: "counter", position: { x, y: 0, z }, rotationY: facing }, sign(-1.9), sign(1.9)];
     case "empty-pantry": return [shelf(-1.6), shelf(1.1), table(), { id: `${id}-rubble`, kind: "rubble", position: { x: near, y: 0, z: z + 2 } }];
     case "workers-dormitory": return [table(-1.8), table(), table(1.8), sign(-2.6)];
@@ -85,7 +123,12 @@ function propsFor(kind: SetPieceKind, id: string, x: number, z: number, side: nu
   }
 }
 
-export function createCorridorSetPiece(routeSeed: number, segmentIndex: number, centerZ: number): ChamberDescriptor {
+export function createCorridorSetPiece(
+  routeSeed: number,
+  segmentIndex: number,
+  centerZ: number,
+  contentRouting: CorridorContentRoutingService = CORRIDOR_CONTENT_ROUTING,
+): ChamberDescriptor {
   const hash = hashSegment(routeSeed, segmentIndex);
   const side = (hash & 1) === 0 ? -1 : 1;
   const x = side * 2.72;
@@ -93,11 +136,12 @@ export function createCorridorSetPiece(routeSeed: number, segmentIndex: number, 
   const district = districtForSegment(segmentIndex);
   const kind = district.setPieces[hash % district.setPieces.length];
   const id = `${kind}-${segmentIndex}`;
+  const routeContext = { routeSeed, segmentIndex, districtId: district.id, setPieceKind: kind };
   return Object.freeze({
     id,
     title: `${district.name}: ${kind.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")}`,
     materials: [district.material, "oxidized-steel"],
-    props: propsFor(kind, id, x, centerZ, side, facing),
+    props: propsFor(kind, id, x, centerZ, side, facing, routeContext, contentRouting),
     district,
     kind,
   });
@@ -109,17 +153,20 @@ export function createAuthoredCorridorSetPiece(
   segmentIndex: number,
   centerZ: number,
   side: -1 | 1 = -1,
+  routeSeed = 0x0c0111d0,
+  contentRouting: CorridorContentRoutingService = CORRIDOR_CONTENT_ROUTING,
 ): ChamberDescriptor {
   const district = CORRIDOR_DISTRICTS.find((value) => value.id === districtId);
   if (!district) throw new Error(`Unknown authored corridor district: ${districtId}`);
   const x = side * 2.72;
   const facing = side < 0 ? Math.PI / 2 : -Math.PI / 2;
   const id = `authoring-${kind}-${segmentIndex}`;
+  const routeContext = { routeSeed, segmentIndex, districtId: district.id, setPieceKind: kind };
   return Object.freeze({
     id,
     title: `${district.name}: ${kind.split("-").map((word) => word[0].toUpperCase() + word.slice(1)).join(" ")}`,
     materials: [district.material, "oxidized-steel"],
-    props: propsFor(kind, id, x, centerZ, side, facing),
+    props: propsFor(kind, id, x, centerZ, side, facing, routeContext, contentRouting),
     district,
     kind,
   });

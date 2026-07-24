@@ -18,6 +18,7 @@ export type AuthoringContentKind =
   | "monster-family"
   | "monster"
   | "audio-motif"
+  | "object-variant"
   | "offering"
   | "progression-beat";
 

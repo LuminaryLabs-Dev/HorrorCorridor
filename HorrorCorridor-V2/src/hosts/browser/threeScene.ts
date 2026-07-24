@@ -10,6 +10,10 @@ import {
   type CorridorDistrict,
   type SetPieceKind,
 } from "../../content/chamber";
+import type {
+  CorridorObjectMaterialFamily,
+  CorridorObjectPart,
+} from "../../content/corridorContentRouting";
 import { MONSTERS_BY_ID, type MonsterProfile } from "../../content/monsters";
 import { bindCorridorPrefabBuilders } from "../../presentation/prefabRegistry";
 
@@ -112,6 +116,20 @@ function createSurfaceMaps(materialIdentity: string, role: SurfaceRole): Surface
 function disposeMaterial(material: DisposableMaterial): void {
   if (Array.isArray(material)) material.forEach((entry) => entry.dispose());
   else material.dispose();
+}
+
+function createTrapezoidGeometry(part: CorridorObjectPart): THREE.BoxGeometry {
+  const geometry = new THREE.BoxGeometry(part.size.x, part.size.y, part.size.z);
+  const position = geometry.getAttribute("position");
+  const topScale = part.topScale ?? 1;
+  for (let vertex = 0; vertex < position.count; vertex += 1) {
+    if (position.getY(vertex) <= 0) continue;
+    position.setX(vertex, position.getX(vertex) * topScale);
+    position.setZ(vertex, position.getZ(vertex) * topScale);
+  }
+  position.needsUpdate = true;
+  geometry.computeVertexNormals();
+  return geometry;
 }
 
 export type ThreeSceneAdapter = ReturnType<typeof createThreeSceneAdapter>;
@@ -2102,6 +2120,48 @@ export function createThreeSceneAdapter(
 
   function buildProp(prop: ChamberPropDescriptor, materials: ReturnType<typeof createMaterials>): void {
     const { x, y, z } = prop.position;
+    if (prop.routedObject) {
+      const materialFor = (family: CorridorObjectMaterialFamily): THREE.MeshStandardMaterial => {
+        if (family === "painted-metal") return materials.steel;
+        if (family === "rubber-cable") return materials.black;
+        return materials.rust;
+      };
+      const group = new THREE.Group();
+      group.name = `${prop.id}-${prop.routedObject.id}`;
+      group.position.set(x, y, z);
+      group.rotation.y = prop.rotationY ?? 0;
+      group.userData.contentProfileId = prop.routedObject.id;
+      group.userData.contentFamily = prop.routedObject.family;
+      for (const routedPart of prop.routedObject.parts) {
+        let geometry: THREE.BufferGeometry;
+        const partRotation = new THREE.Euler();
+        if (routedPart.shape === "trapezoid") {
+          geometry = createTrapezoidGeometry(routedPart);
+        } else if (routedPart.shape === "cylinder") {
+          const axis = routedPart.axis ?? "y";
+          const height = axis === "x" ? routedPart.size.x : axis === "z" ? routedPart.size.z : routedPart.size.y;
+          const radius = axis === "x"
+            ? Math.max(routedPart.size.y, routedPart.size.z) / 2
+            : axis === "z"
+              ? Math.max(routedPart.size.x, routedPart.size.y) / 2
+              : Math.max(routedPart.size.x, routedPart.size.z) / 2;
+          geometry = new THREE.CylinderGeometry(radius, radius * 0.94, height, routedPart.radialSegments ?? 14);
+          if (axis === "x") partRotation.z = Math.PI / 2;
+          if (axis === "z") partRotation.x = Math.PI / 2;
+        } else {
+          geometry = new THREE.BoxGeometry(routedPart.size.x, routedPart.size.y, routedPart.size.z);
+        }
+        const mesh = new THREE.Mesh(geometry, materialFor(routedPart.materialFamily));
+        mesh.name = `${group.name}-${routedPart.id}`;
+        mesh.position.set(routedPart.center.x, routedPart.center.y, routedPart.center.z);
+        mesh.rotation.copy(partRotation);
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+        group.add(mesh);
+      }
+      world.add(group);
+      return;
+    }
     if (prop.kind === "shelf") {
       for (let level = 0; level < 4; level += 1) {
         addBox(`${prop.id}-shelf-${level}`, [x, 0.45 + level * 0.66, z], [1.35, 0.08, 0.54], materials.steel, { rotationY: prop.rotationY });

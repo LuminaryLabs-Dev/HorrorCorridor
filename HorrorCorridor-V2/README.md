@@ -27,7 +27,7 @@ The adapter uses binary chunking because the 124-entry Index makes authoritative
 src/
 ├── composition/          deterministic root temporal ensemble
 ├── expedition/           progress, fate, Chronicle, Monster Index
-├── corridor/             chamber, route, light, acoustics, offerings
+├── corridor/             chamber, route, content routing, light, acoustics, offerings
 ├── party/                explorer body, gaze, intent, condition
 ├── dread/                signs, pursuit, blackout, response, capture
 ├── shared-expedition/    authority, replication, reconnect, recovery
@@ -54,6 +54,8 @@ browser input
 ```
 
 Only root composition coordinates this order. Domain snapshots contain no React, Three.js, PeerJS, WebAudio, or browser objects.
+
+Corridor content overlap stays additive: `routeGenerator` and `routeServiceDoor` deterministically select immutable profiles from route context. The Three.js adapter renders the selected descriptor but does not choose content.
 
 ## NexusEngine Composition
 
